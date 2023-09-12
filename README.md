@@ -4,8 +4,8 @@
 
 ---
 *Links:* 
-*Project Pitch:* https://docs.google.com/presentation/d/1oWdBqHFe8299t91JThk7zTl_vFgyKYVjIXRORhOs4zI/edit#slide=id.p
-*Trello:* https://trello.com/invite/b/Ox45nhFf/ATTI249400479013806dc81d355bd674a5e36A398597/csp-project-backlog
+[Project Pitch] (https://docs.google.com/presentation/d/1oWdBqHFe8299t91JThk7zTl_vFgyKYVjIXRORhOs4zI/edit#slide=id.p)
+[Trello:] (https://trello.com/invite/b/Ox45nhFf/ATTI249400479013806dc81d355bd674a5e36A398597/csp-project-backlog)
 
 ---
 
