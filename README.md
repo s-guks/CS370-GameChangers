@@ -26,10 +26,10 @@
 ---
 
 **Member C: James Lai**  
-*Skills:*  <br>
-*Tools:*  <br>
-*Interests:*<br>
-*Bio:* Senior CS Major. Food eater and avid poker enthusiast.<br>
+*Skills:* C#, Java, C++, Python, JavaScript, TypeScript, SQL, YAML, JSON (JWT), HTML/CSS <br>
+*Tools:*  Git, Jira, Postman, MySQL, Figma, Google Cloud, Microsoft Azure, Azure DevOps <br>
+*Interests:* Food eater and avid poker enthusiast.<br>
+*Bio:* Senior CS Major. <br>
 
 ---
 
