@@ -1,5 +1,5 @@
-## CS370-GameChangers
-# Emory CS 370 Fall 2023
+# CS370-GameChangers
+## Emory CS 370 Fall 2023
 **Current Members:** Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
 
 ---
@@ -53,7 +53,7 @@
 *Skills:* Java, Python, C, HTML, CSS, TypeScript, Angular, UI/UX Design <br>
 *Tools:* Figma, Git/Github, Canva, VS Code, Trello <br>
 *Interests:* Video Games, Books, Creative Writing, Ice Hockey <br>
-*Bio:* Senior majoring in CS and Creative Writing. <br>
+*Bio:* Senior majoring in CS and Creative Writing <br>
 
 
 
