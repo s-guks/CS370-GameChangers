@@ -18,10 +18,10 @@
 ---
 
 **Member B: Danielle Linbeck**  
-*Skills:* <br>
-*Tools:*   <br>
-*Interests:*<br>
-*Bio:* <br>
+*Skills:* Java, C, SQL, Python, JavaScript, HTML/CSS <br>
+*Tools:* VS Code, Trello, Canva, PostgreSQL, Twine <br>
+*Interests:* Video Games, Horror Movies, Art, Writing <br>
+*Bio:* Senior CS Major<br>
 
 ---
 
