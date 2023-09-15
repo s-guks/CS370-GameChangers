@@ -42,10 +42,10 @@
 ---
 
 **Member E: Shirley Yang**  
-*Skills:* <br>
-*Tools:* <br>
-*Interests:*<br>
-*Bio:* <br>
+*Skills:* Java, Javascript, HTML, R <br>
+*Tools:* IntelliJ, R studio, WebStorm, Latex, Mathematica, Github, Microsoftware<br>
+*Interests:* Love food, piano, music,bouldering, switch <br>
+*Bio:* Senior, Qss-Biology major, CS minor<br>
 
 ---
 
