@@ -34,10 +34,10 @@
 ---
 
 **Member D: Samuel Yang**  
-*Skills:* <br>
-*Tools:* <br>
-*Interests:* <br>
-*Bio:* <br>
+*Skills:* Java, Python, Wolfram, R, NLP
+*Tools:* IntelliJ, Pycharm, Pymol, Mathematica, DataCamp, R studio, Github, Microsoftware
+*Interests:* basketball, fitness, music, movie
+*Bio:* Senior Biology BS and QSS-informatics major
 
 ---
 
