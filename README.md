@@ -10,10 +10,10 @@
 ---
 
 **Member A: Brian Hsu**  
-*Skills:* <br>
-*Tools:* <br>
-*Interests:* <br>
-*Bio:* <br>
+*Skills:* Python, Java, C, Assembly, HTML/CSS<br>
+*Tools:*  VS Code, Pycharm<br>
+*Interests:* Travel, Basketball, Video Games<br>
+*Bio:* Senior CS & Finance Major<br>
 
 ---
 
