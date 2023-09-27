@@ -68,8 +68,8 @@ crashlytics-build.properties
 SOULS/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/[Aa]ssets/[Ss]treamingAssets/aa/*
+SOULS/[Aa]ssets/[Ss]treamingAssets/aa.meta
+SOULS/[Aa]ssets/[Ss]treamingAssets/aa/*
 SOULS/Temp/UnityLockfile
 SOULS/Temp/FSTimeGet-da97638ac0df3094890fa183224969ed
 SOULS/Temp/workerlic
