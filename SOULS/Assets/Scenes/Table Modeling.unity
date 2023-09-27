@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1442,8 +1442,8 @@ Transform:
   m_GameObject: {fileID: 1678739729}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7157491, y: 0.009244293, z: 0.0041265567, w: -0.69828415}
-  m_LocalPosition: {x: -4.83, y: -5.49, z: -0.85}
-  m_LocalScale: {x: 1.303732, y: 1.303732, z: 1.303732}
+  m_LocalPosition: {x: -2.45, y: -0.34, z: -0.85}
+  m_LocalScale: {x: 0.6285372, y: 1.303732, z: 0.7238733}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5475,7 +5475,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 108572896}
+  m_Mesh: {fileID: 1963002638}
 --- !u!33 &1997590709
 MeshFilter:
   m_ObjectHideFlags: 10
