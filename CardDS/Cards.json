@@ -1,154 +1,204 @@
 {
     "cards": [
       {
-        "cardName": "Shirley the Software Developer",
+        "cardName": "Smith the Software Developer",
         "description": "A skilled programmer who develops software applications.",
-        "attack": 5,
-        "defense": 7
+        "attack": 3,
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Samuel the Doctor",
         "description": "A medical professional who diagnoses and treats illnesses.",
-        "attack": 8,
-        "defense": 3
+        "attack": 2,
+        "health": 5,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Eric the Architect",
         "description": "A professional who designs buildings and structures.",
-        "attack": 6,
-        "defense": 4
+        "attack": 2,
+        "health": 3,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Jason the Chef",
         "description": "A culinary expert who creates delicious dishes.",
-        "attack": 10,
-        "defense": 9
+        "attack": 5,
+        "health": 2,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Nikki the Lawyer",
         "description": "A legal expert who provides advice and represents clients in court.",
         "attack": 3,
-        "defense": 2
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Jeff the professor",
         "description": "An educator who imparts knowledge and skills to students.",
-        "attack": 7,
-        "defense": 6
+        "attack": 2,
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "James the Artist",
         "description": "A creative professional who produces visual or performing art.",
-        "attack": 2,
-        "defense": 8
+        "attack": 1,
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Ryan the Mechanic",
         "description": "A technician who repairs and maintains machinery and vehicles.",
-        "attack": 6,
-        "defense": 8
+        "attack": 4,
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Paul the Detective",
         "description": "An investigator who solves crimes and mysteries.",
-        "attack": 7,
-        "defense": 3
+        "attack": 4,
+        "health": 2,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Bob the CEO",
         "description": "A top executive responsible for leading a company.",
-        "attack": 9,
-        "defense": 7
+        "attack": 4,
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Kelly the Nurse",
         "description": "A healthcare professional who cares for patients.",
-        "attack": 5,
-        "defense": 9
+        "attack": 1,
+        "health": 5,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Brian the Engineer",
         "description": "A technical expert who designs and builds complex systems.",
-        "attack": 8,
-        "defense": 6
+        "attack": 2,
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Lucas the Firefighter",
         "description": "A brave responder who extinguishes fires and saves lives.",
-        "attack": 10,
-        "defense": 4
+        "attack": 2,
+        "health": 5,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Donald the Psychologist",
         "description": "A mental health professional who provides therapy and counseling.",
-        "attack": 7,
-        "defense": 2
+        "attack": 2,
+        "health": 5,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Chloe the Pilot",
         "description": "A skilled aviator who operates aircraft.",
-        "attack": 6,
-        "defense": 5
+        "attack": 3,
+        "health": 1,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Kevin the Police Officer",
         "description": "A law enforcement officer who upholds the law and protects the community.",
-        "attack": 9,
-        "defense": 10
+        "attack": 4,
+        "health": 3,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Ariana the Accountant",
         "description": "A financial expert who manages and audits accounts.",
-        "attack": 8,
-        "defense": 8
+        "attack": 2,
+        "health": 2,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Sophia the Journalist",
         "description": "A reporter who investigates and reports news stories.",
-        "attack": 7,
-        "defense": 5
+        "attack": 3,
+        "health": 2,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Danielle the Scientist",
         "description": "A researcher who conducts experiments and advances knowledge.",
-        "attack": 8,
-        "defense": 7
+        "attack": 5,
+        "health": 3,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Julia the Graphic Designer",
         "description": "A creative professional who designs visual content.",
-        "attack": 6,
-        "defense": 3
+        "attack": 1,
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Dylan the Astronaut",
         "description": "A space explorer who ventures beyond Earth's atmosphere.",
-        "attack": 9,
-        "defense": 6
+        "attack": 3,
+        "health": 3,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Richard the Musician",
         "description": "An artist who creates music and performs for audiences.",
-        "attack": 4,
-        "defense": 4
+        "attack": 2,
+        "health": 4,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Emily the Athlete",
         "description": "A sports professional who competes in physical games and events.",
-        "attack": 8,
-        "defense": 5
+        "attack": 4,
+        "health": 3,
+        "texture": null,
+        "boarder color": null
       },
       {
-        "cardName": "Frank the Chef",
-        "description": "A culinary expert who creates delicious dishes.",
+        "cardName": "Frank the Butcher",
+        "description": "An evil, brutal person.",
         "attack": 5,
-        "defense": 7
+        "health": 3,
+        "texture": null,
+        "boarder color": null
       },
       {
         "cardName": "Travis the Translator",
         "description": "A language expert who translates text or speech between languages.",
-        "attack": 7,
-        "defense": 8
+        "attack": 2,
+        "health": 3,
+        "texture": null,
+        "boarder color": null
       }
     ]
   }
