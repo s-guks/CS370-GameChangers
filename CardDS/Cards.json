@@ -5,6 +5,7 @@
         "description": "A skilled programmer who develops software applications.",
         "attack": 3,
         "health": 4,
+        "skill": null,
         "texture": 1,
         "boarder color": null
       },
@@ -13,6 +14,7 @@
         "description": "A medical professional who diagnoses and treats illnesses.",
         "attack": 2,
         "health": 5,
+        "skill": null,
         "texture": 2,
         "boarder color": null
       },
@@ -21,6 +23,7 @@
         "description": "A professional who designs buildings and structures.",
         "attack": 2,
         "health": 3,
+        "skill": null,
         "texture": 3,
         "boarder color": null
       },
@@ -29,6 +32,7 @@
         "description": "A culinary expert who creates delicious dishes.",
         "attack": 5,
         "health": 2,
+        "skill": null,
         "texture": 4,
         "boarder color": null
       },
@@ -37,6 +41,7 @@
         "description": "A legal expert who provides advice and represents clients in court.",
         "attack": 3,
         "health": 4,
+        "skill": null,
         "texture": 5,
         "boarder color": null
       },
@@ -45,6 +50,7 @@
         "description": "An educator who imparts knowledge and skills to students.",
         "attack": 2,
         "health": 4,
+        "skill": null,
         "texture": 6,
         "boarder color": null
       },
@@ -53,6 +59,7 @@
         "description": "A creative professional who produces visual or performing art.",
         "attack": 1,
         "health": 4,
+        "skill": null,
         "texture": 7,
         "boarder color": null
       },
@@ -61,6 +68,7 @@
         "description": "A technician who repairs and maintains machinery and vehicles.",
         "attack": 4,
         "health": 4,
+        "skill": null,
         "texture": 8,
         "boarder color": null
       },
@@ -69,6 +77,7 @@
         "description": "An investigator who solves crimes and mysteries.",
         "attack": 4,
         "health": 2,
+        "skill": null,
         "texture": 9,
         "boarder color": null
       },
@@ -77,6 +86,7 @@
         "description": "A top executive responsible for leading a company.",
         "attack": 4,
         "health": 4,
+        "skill": null,
         "texture": 10,
         "boarder color": null
       },
@@ -85,6 +95,7 @@
         "description": "A healthcare professional who cares for patients.",
         "attack": 1,
         "health": 5,
+        "skill": null,
         "texture": 11,
         "boarder color": null
       },
@@ -93,6 +104,7 @@
         "description": "A technical expert who designs and builds complex systems.",
         "attack": 2,
         "health": 4,
+        "skill": null,
         "texture": 12,
         "boarder color": null
       },
@@ -101,6 +113,7 @@
         "description": "A brave responder who extinguishes fires and saves lives.",
         "attack": 2,
         "health": 5,
+        "skill": null,
         "texture": 13,
         "boarder color": null
       },
@@ -109,6 +122,7 @@
         "description": "A mental health professional who provides therapy and counseling.",
         "attack": 2,
         "health": 5,
+        "skill": null,
         "texture": 14,
         "boarder color": null
       },
@@ -117,6 +131,7 @@
         "description": "A skilled aviator who operates aircraft.",
         "attack": 3,
         "health": 1,
+        "skill": null,
         "texture": 15,
         "boarder color": null
       },
@@ -125,6 +140,7 @@
         "description": "A law enforcement officer who upholds the law and protects the community.",
         "attack": 4,
         "health": 3,
+        "skill": null,
         "texture": 16,
         "boarder color": null
       },
@@ -133,6 +149,7 @@
         "description": "A financial expert who manages and audits accounts.",
         "attack": 2,
         "health": 2,
+        "skill": null,
         "texture": 17,
         "boarder color": null
       },
@@ -141,6 +158,7 @@
         "description": "A reporter who investigates and reports news stories.",
         "attack": 3,
         "health": 2,
+        "skill": null,
         "texture": 18,
         "boarder color": null
       },
@@ -149,6 +167,7 @@
         "description": "A researcher who conducts experiments and advances knowledge.",
         "attack": 5,
         "health": 3,
+        "skill": null,
         "texture": 19,
         "boarder color": null
       },
@@ -157,6 +176,7 @@
         "description": "A creative professional who designs visual content.",
         "attack": 1,
         "health": 4,
+        "skill": null,
         "texture": 20,
         "boarder color": null
       },
@@ -165,6 +185,7 @@
         "description": "A space explorer who ventures beyond Earth's atmosphere.",
         "attack": 3,
         "health": 3,
+        "skill": null,
         "texture": 21,
         "boarder color": null
       },
@@ -173,6 +194,7 @@
         "description": "An artist who creates music and performs for audiences.",
         "attack": 2,
         "health": 4,
+        "skill": null,
         "texture": 22,
         "boarder color": null
       },
@@ -181,6 +203,7 @@
         "description": "A sports professional who competes in physical games and events.",
         "attack": 4,
         "health": 3,
+        "skill": null,
         "texture": 23,
         "boarder color": null
       },
@@ -189,6 +212,7 @@
         "description": "An evil, brutal person.",
         "attack": 5,
         "health": 3,
+        "skill": null,
         "texture": 24,
         "boarder color": null
       },
@@ -197,6 +221,7 @@
         "description": "A language expert who translates text or speech between languages.",
         "attack": 2,
         "health": 3,
+        "skill": null,
         "texture": 25,
         "boarder color": null
       }
