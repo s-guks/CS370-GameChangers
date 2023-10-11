@@ -1,22 +1,24 @@
 {
     "cards": [
       {
-        "cardName": "Smith the Software Developer",
+        "cardName": "Carla the Software Developer",
         "description": "A skilled programmer who develops software applications.",
         "attack": 3,
         "health": 4,
         "skill": null,
         "texture": 1,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Samuel the Doctor",
         "description": "A medical professional who diagnoses and treats illnesses.",
         "attack": 2,
-        "health": 5,
+        "health": 6,
         "skill": null,
         "texture": 2,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Eric the Architect",
@@ -25,7 +27,8 @@
         "health": 3,
         "skill": null,
         "texture": 3,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Jason the Chef",
@@ -34,7 +37,8 @@
         "health": 2,
         "skill": null,
         "texture": 4,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Nikki the Lawyer",
@@ -43,7 +47,8 @@
         "health": 4,
         "skill": null,
         "texture": 5,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Jeff the professor",
@@ -52,7 +57,8 @@
         "health": 4,
         "skill": null,
         "texture": 6,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "James the Artist",
@@ -61,7 +67,8 @@
         "health": 4,
         "skill": null,
         "texture": 7,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Ryan the Mechanic",
@@ -70,7 +77,8 @@
         "health": 4,
         "skill": null,
         "texture": 8,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Paul the Detective",
@@ -79,25 +87,28 @@
         "health": 2,
         "skill": null,
         "texture": 9,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Bob the CEO",
         "description": "A top executive responsible for leading a company.",
-        "attack": 4,
+        "attack": 5,
         "health": 4,
         "skill": null,
         "texture": 10,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Kelly the Nurse",
         "description": "A healthcare professional who cares for patients.",
         "attack": 1,
-        "health": 5,
+        "health": 6,
         "skill": null,
         "texture": 11,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Brian the Engineer",
@@ -106,7 +117,8 @@
         "health": 4,
         "skill": null,
         "texture": 12,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Lucas the Firefighter",
@@ -115,7 +127,8 @@
         "health": 5,
         "skill": null,
         "texture": 13,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Donald the Psychologist",
@@ -124,7 +137,8 @@
         "health": 5,
         "skill": null,
         "texture": 14,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Chloe the Pilot",
@@ -133,7 +147,8 @@
         "health": 1,
         "skill": null,
         "texture": 15,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Kevin the Police Officer",
@@ -142,7 +157,8 @@
         "health": 3,
         "skill": null,
         "texture": 16,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Ariana the Accountant",
@@ -151,16 +167,18 @@
         "health": 2,
         "skill": null,
         "texture": 17,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
-        "cardName": "Sophia the Journalist",
+        "cardName": "Sofia the Journalist",
         "description": "A reporter who investigates and reports news stories.",
         "attack": 3,
         "health": 2,
         "skill": null,
         "texture": 18,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Danielle the Scientist",
@@ -169,7 +187,8 @@
         "health": 3,
         "skill": null,
         "texture": 19,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Julia the Graphic Designer",
@@ -178,7 +197,8 @@
         "health": 4,
         "skill": null,
         "texture": 20,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Dylan the Astronaut",
@@ -187,7 +207,8 @@
         "health": 3,
         "skill": null,
         "texture": 21,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Richard the Musician",
@@ -196,7 +217,8 @@
         "health": 4,
         "skill": null,
         "texture": 22,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Emily the Athlete",
@@ -205,16 +227,18 @@
         "health": 3,
         "skill": null,
         "texture": 23,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Frank the Butcher",
         "description": "An evil, brutal person.",
-        "attack": 5,
+        "attack": 6,
         "health": 3,
         "skill": null,
         "texture": 24,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       },
       {
         "cardName": "Travis the Translator",
@@ -223,7 +247,8 @@
         "health": 3,
         "skill": null,
         "texture": 25,
-        "boarder color": null
+        "borderColor": null,
+        "probability": 1
       }
     ]
   }

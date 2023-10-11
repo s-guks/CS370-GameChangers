@@ -27,7 +27,7 @@ namespace CSPproject
         public List<Card> deserializeCards()
         {
 
-            string jsonFilePath = "/Users/jameslai/deckDataStructure/cards.json";
+            string jsonFilePath = "CardDS/Cards.json";
             string jsonData = File.ReadAllText(jsonFilePath);
 
             Card c = JsonConvert.DeserializeObject<Card>(jsonData);
