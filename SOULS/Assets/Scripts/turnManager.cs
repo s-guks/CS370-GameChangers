@@ -47,7 +47,7 @@ public class turnManager : MonoBehaviour
         Debug.Log("player's turn--click z!");
     }
 
-    void playerAttackPhase() {
+    public void playerAttackPhase() {
         //switch camera
         //enable card selection/attacking
         //enable end phase button 
@@ -77,4 +77,5 @@ public class turnManager : MonoBehaviour
         mainCamera.GetComponent<Camera>().enabled = false;
         tableCamera.GetComponent<Camera>().enabled = true;
     }
+
 }

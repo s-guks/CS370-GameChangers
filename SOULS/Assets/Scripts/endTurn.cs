@@ -5,25 +5,20 @@ using UnityEngine.UI;
 
 public class endTurn : MonoBehaviour
 {
-    public GameObject mainCamera;
-    public GameObject tableCamera;
+    turnManager turnManagerScript;
 
     // This method is automatically called when the button is clicked
     public void OnEndTurn()
     {
         // End turn button disabled
         Button endTurnButton = GetComponent<Button>();
-        endTurnButton.interactable = false;
-        playerAttackPhase();
-    }
-
-    void playerAttackPhase()
-    {
-        // Switch camera
-        // Enable card selection/attacking
-        // Enable end phase button
-        mainCamera.GetComponent<Camera>().enabled = false;
-        tableCamera.GetComponent<Camera>().enabled = true;
-        Debug.Log("Attack phase - click x!");
+        turnManagerScript = GameObject.FindGameObjectWithTag("turnManager").GetComponent<turnManager>();
+        if (turnManagerScript != null)
+        {
+            
+            turnManagerScript.playerAttackPhase();
+        }
+        //endTurnButton.interactable = false;
+        Debug.Log("End Turn Button Clicked!"); // Add a console output here
     }
 }
