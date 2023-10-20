@@ -10,19 +10,19 @@ namespace CSPproject {
             Stack <Card> s= new Stack<Card>();
             Card c1 = new Card();
             c1.Attack = "fire";
-            c1.Defense = "fire";
+            c1.Health = "fire";
             c1.Name = "fire";
             c1.Description = "fire";
 
             Card c2 = new Card();
             c2.Attack = "WATER";
-            c2.Defense = "w";
+            c2.Health = "w";
             c2.Name = "water";
             c2.Description = "water";
 
             Card c3 = new Card();
             c3.Attack = "light";
-            c3.Defense = "light";
+            c3.Health = "light";
             c3.Name = "light";
             c3.Description = "light";
 

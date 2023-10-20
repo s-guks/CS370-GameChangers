@@ -21,9 +21,6 @@ namespace CSPproject
     }
     
 
-
-
-
     public class Program
     {
         public static Card CopyCard(Card original)
@@ -84,6 +81,5 @@ namespace CSPproject
                 Console.WriteLine(card);
             }
         }
-
     }
 }
