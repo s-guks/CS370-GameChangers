@@ -54,53 +54,45 @@ namespace CSPproject
             return deck;
         }
 
-        //public static void Main(string[] args)
-        //{
+        public static void Main(string[] args)
+        {
 
-        //    DeckMaker deckMaker = new DeckMaker();
-        //    List<Card> cardPool = deckMaker.DeserializeCards(); // Deserialize cards from the JSON file
+            DeckMaker deckMaker = new DeckMaker();
+            List<Card> cardPool = deckMaker.DeserializeCards(); // Deserialize cards from the JSON file
 
-        //    Stack<Card> deck1 = CreateRandomDeck(cardPool);
-        //    Stack<Card> deck2 = CreateRandomDeck(cardPool);
-        //    Console.WriteLine("Random Deck of 25 Cards:");
-        //    Console.WriteLine("deck 1:");
-        //    foreach (Card card in deck1)
-        //    {
-        //        Console.WriteLine(card);
-        //    }
+            Stack<Card> deck1 = CreateRandomDeck(cardPool);
+            Stack<Card> deck2 = CreateRandomDeck(cardPool);
+            Console.WriteLine("Random Deck of 25 Cards:");
+            Console.WriteLine("deck 1:");
+            foreach (Card card in deck1)
+            {
+                Console.WriteLine(card);
+            }
 
-        //    Console.WriteLine("deck 2:");
-        //    foreach (Card card in deck2)
-        //    {
-        //        Console.WriteLine(card);
-        //    }
+            Console.WriteLine("deck 2:");
+            foreach (Card card in deck2)
+            {
+                Console.WriteLine(card);
+            }
 
-        //public static void Main(string[] args)
-        //{
-        //    DeckMaker deckMaker = new DeckMaker();
-        //    List<Card> cardPool = deckMaker.DeserializeCards();  // Deserialize cards from the JSON file.
+            //public static void Main(string[] args)
+            //{
+            //    DeckMaker deckMaker = new DeckMaker();
+            //    List<Card> cardPool = deckMaker.DeserializeCards();  // Deserialize cards from the JSON file.
 
+            //    Stack<Card> deck = CreateRandomDeck(cardPool); // Assuming you have a method called CreateRandomDeck
 
-        //    Stack<Card> deck1 = CreateRandomDeck(cardPool);
-        //    Stack<Card> deck2 = CreateRandomDeck(cardPool);
-
-        //    Hand hand1 = new Hand(deck1);
-        //    Hand hand2 = new Hand(deck2);
-
-        //    Console.WriteLine("deck 1:");
-        //    hand1.DisplayHand();
-        //    Console.WriteLine("deck 2:");
-        //    hand2.DisplayHand();
-
-        //}
+            //    Hand hand = new Hand(deck);
+            //    hand.DisplayHand();
+            //}
 
 
-    }
+        }
 
 
 
     }
-
+}
 
 
 

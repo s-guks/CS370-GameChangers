@@ -21,6 +21,9 @@ namespace CSPproject
     }
     
 
+
+
+
     public class Program
     {
         public static Card CopyCard(Card original)
@@ -68,18 +71,19 @@ namespace CSPproject
 
 
 
-        public static void Main(string[] args)
-        {
-            DeckMaker deckMaker = new DeckMaker();
-            List<Card> cardList = deckMaker.DeserializeCards(); // Deserialize cards from the JSON file.
+        //public static void Main(string[] args)
+        //{
+        //    DeckMaker deckMaker = new DeckMaker();
+        //    List<Card> cardList = deckMaker.DeserializeCards(); // Deserialize cards from the JSON file.
 
-            List<Card> shuffledCards = Shuffle(cardList);
+        //    List<Card> shuffledCards = Shuffle(cardList);
 
-            Console.WriteLine("Shuffled Deck:");
-            foreach (Card card in shuffledCards)
-            {
-                Console.WriteLine(card);
-            }
-        }
+        //    Console.WriteLine("Shuffled Deck:");
+        //    foreach (Card card in shuffledCards)
+        //    {
+        //        Console.WriteLine(card);
+        //    }
+        //}
+
     }
 }
