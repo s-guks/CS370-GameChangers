@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class turnManager : MonoBehaviour
 {
-    bool firstTurn = true;
+    public bool firstTurn = true;
     public GameObject mainCamera;
     public GameObject tableCamera;
 
@@ -39,6 +39,21 @@ public class turnManager : MonoBehaviour
         }
     }
 
+    public void endTurn() {
+        if (firstTurn) {
+                firstTurn = false;
+                Debug.Log("first turn!");
+                opponentFirstTurn();
+            }
+            else {
+                playerAttackPhase();
+            }
+    }
+
+    public void endAttack() {
+        opponentTurn();
+    }
+
     void playerTurn() {
         //enable draw card button
         //enable end turn button
@@ -47,8 +62,7 @@ public class turnManager : MonoBehaviour
         Debug.Log("player's turn--click z!");
     }
 
-    public void playerAttackPhase() {
-        //switch camera
+    void playerAttackPhase() {
         //enable card selection/attacking
         //enable end phase button 
         mainCamera.GetComponent<Camera>().enabled = false;

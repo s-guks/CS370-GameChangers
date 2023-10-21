@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class buttonAction : MonoBehaviour
 {
-    endTurn endTurnScript; // Reference to the script containing the endTurn method
+    //public endTurn endTurn = GetComponent<endTurn>(); // Reference to the script containing the endTurn method
     public GameObject mainCamera;
     public GameObject tableCamera;
 
@@ -13,17 +13,17 @@ public class buttonAction : MonoBehaviour
     {
         Debug.Log("Button Clicked!"); //temporary notice
         // Future button animation goes here
-        endTurnScript = GameObject.FindGameObjectWithTag("endTurn").GetComponent<endTurn>();
+        //endTurn = GameObject.FindGameObjectWithTag("endTurn").GetComponent<endTurn>();
 
-        if (endTurnScript != null)
+        if (true)//(endTurn != null)
         {
-            Debug.Log(endTurnScript);
-            endTurnScript.OnEndTurn();
+            //Debug.Log(endTurn);
+            //endTurn.EndTurn();
         }
-        else
-        {
-            Debug.LogError("End Turn Script not found.");
-        }
+        //else
+        //{
+        //    Debug.LogError("End Turn Script not found.");
+        //}
             /* Then call other functions here like:
                 -Draw Card */
     }
