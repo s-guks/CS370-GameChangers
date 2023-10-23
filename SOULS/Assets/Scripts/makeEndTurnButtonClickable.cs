@@ -24,8 +24,7 @@ public class makeEndTurnButtonClickable : MonoBehaviour
         RaycastHit hit; //variable to track where ray intersects with game objects
         if(Input.GetMouseButtonDown(0)) { //if user clicks
             if(Physics.Raycast(ray,out hit) && hit.collider.gameObject == gameObject) { //if click on button
-                //unityEvent.Invoke(); //trigger event in separate script
-                turnManager.endTurn();
+                turnManager.endTurn(); //trigger event in separate script
             }
         }
     }
