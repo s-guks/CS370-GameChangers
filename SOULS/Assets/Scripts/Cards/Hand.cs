@@ -40,20 +40,5 @@ namespace CSPproject
                 Console.WriteLine(card);
             }
         }
-
-        public void AddCard(Card card)
-        {
-            Cards.Add(card);
-        }
-
-        public void RemoveCard(Card card)
-        {
-            Cards.Remove(card);
-        }
-
-        public List<Card> GetCards()
-        {
-            return Cards;
-        }
     }
 }
