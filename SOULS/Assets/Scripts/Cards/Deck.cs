@@ -1,7 +1,7 @@
 ﻿using System;
 using CSPproject;
-using System.Reflection.Metadata;
-
+using System.IO;
+using Newtonsoft.Json;
 using System.Collections.Generic; // Import the namespace for LinkedList<T>
 
 namespace CSPproject
@@ -10,15 +10,21 @@ namespace CSPproject
     {
         // Declare a field or property to store the linked list of cards
         public Stack<Card> Cards { get; set; }
-
-
-
         // Add methods and functionality for the Deck class as needed
     }
-
-    public class getdeck
+    public class GetDeck
     {
         public static readonly Random random = new Random();  // Static instance of Random
+        public static List<Card> DeserializeCards()
+        {
+            string jsonFilePath = "Cards.json"; // Assuming the filename is "cardsjson.json"
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Cards.json";
+            string jsonData = File.ReadAllText(path);
+
+            CardsContainer container = JsonConvert.DeserializeObject<CardsContainer>(jsonData);
+
+            return container.Cards;
+        }
         public static Card CopyCard(Card original)
         {
             return new Card
@@ -56,10 +62,7 @@ namespace CSPproject
 
         public static void Main(string[] args)
         {
-
-            DeckMaker deckMaker = new DeckMaker();
-            List<Card> cardPool = deckMaker.DeserializeCards(); // Deserialize cards from the JSON file
-
+            List<Card> cardPool = DeserializeCards();
             Stack<Card> deck1 = CreateRandomDeck(cardPool);
             Stack<Card> deck2 = CreateRandomDeck(cardPool);
             Console.WriteLine("Random Deck of 25 Cards:");
