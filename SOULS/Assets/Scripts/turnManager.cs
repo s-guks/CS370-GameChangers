@@ -36,33 +36,18 @@ public class turnManager : MonoBehaviour
     {
         if (Input.GetButtonDown("EndTurn")) 
         {
-            if (isPlayerTurn) {
-                //disable draw card button
-                if (firstTurn) {
-                    firstTurn = false;
-                    isPlayerTurn = false;
-                    Debug.Log("first turn!");
-                    opponentFirstTurn();
-                }
-                else {
-                    isPlayerTurn = false;
-                    playerAttackPhase();
-                }
-            }
+            endTurn();
         }
         if (Input.GetButtonDown("EndAttack")) 
         {
-            if (isPlayerAttack) {
-                isPlayerAttack = false;
-                opponentTurn();
-            }
+            endAttack();
         }
     }
 
     public void endTurn() {
         if (isPlayerTurn) {
             isPlayerTurn = false;
-            if (firstTurn) {
+                if (firstTurn) {
                     firstTurn = false;
                     Debug.Log("first turn!");
                     opponentFirstTurn();
