@@ -12,6 +12,7 @@
 [Project Proposal](https://docs.google.com/presentation/d/1oWdBqHFe8299t91JThk7zTl_vFgyKYVjIXRORhOs4zI/edit#slide=id.p) <br>
 [Trello](https://trello.com/invite/b/Ox45nhFf/ATTI249400479013806dc81d355bd674a5e36A398597/csp-project-backlog) <br>
 [Functions List](https://docs.google.com/document/d/1tSavKbClF670-tG4Z7Up-BwLSC9Qqs-TPa8wJTj-48Q/edit?usp=sharing) <br>
+[Sprint Timeline](https://docs.google.com/document/d/1WYvsGLdKtCPHooCMdgniGkq3gmHA9t2zn91hrpFuEkg/edit?usp=sharing) <br>
 
 ---
 
