@@ -6,7 +6,7 @@ using UnityEngine.Events; //added to trigger events
 
 public class makeEndTurnButtonClickable : MonoBehaviour
 {
-    public UnityEvent unityEvent = new UnityEvent(); //variable to call unity events
+    //public UnityEvent unityEvent = new UnityEvent(); //variable to call unity events
     public GameObject button; //variable for button object
     public turnManager turnManager;
 

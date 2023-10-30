@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-//from /cards/Deck.cs import 
 
 public class turnManager : MonoBehaviour
 {
@@ -42,6 +42,10 @@ public class turnManager : MonoBehaviour
         {
             endAttack();
         }
+        if (Input.GetButtonDown("Esc")) 
+        {
+            winGame();
+        }
     }
 
     public void endTurn() {
@@ -63,6 +67,15 @@ public class turnManager : MonoBehaviour
             isPlayerAttack = false;
             opponentTurn();
         }
+    }
+
+    public void winGame() {
+        //put win game music here
+        SceneManager.LoadScene("WinGame", LoadSceneMode.Single);
+    }
+
+    public void loseGame() {
+        SceneManager.LoadScene("LoseGame", LoadSceneMode.Single);
     }
 
     void playerTurn() {
