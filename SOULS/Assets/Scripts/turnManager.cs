@@ -46,6 +46,10 @@ public class turnManager : MonoBehaviour
         {
             winGame();
         }
+        if (Input.GetButtonDown("Lose")) 
+        {
+            loseGame();
+        }
     }
 
     public void endTurn() {
