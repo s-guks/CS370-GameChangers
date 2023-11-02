@@ -5,7 +5,7 @@ using UnityEngine;
 public class growOnMouseOver : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 finalScaleMultiplier = new Vector3(1.2f, 1.1f, 1.0f);
+    private Vector3 finalScaleMultiplier = new Vector3(1.08f, 1.05f, 1.08f);
     [SerializeField]
     private AnimationCurve animationCurve;
 
