@@ -4,67 +4,36 @@ using UnityEngine;
 
 public class TableSlotManager : MonoBehaviour
 {
-    public GameObject[] cardHolders;  // Array to store card holder game objects
-    public GameObject cardObjectPrefab;  // Reference to the card object prefab
-    private GameObject[] occupiedSlots;  // Array to store occupied slot status
-    private GameObject selectedCard;    // The currently selected card object
-    private int selectedSlot = -1;      // The selected card holder slot, initially -1 to indicate no slot selected
+    private PlayerSlotManager playerSlotManager; // Reference to PlayerSlotManager
+    private OpponentSlotManager opponentSlotManager; // Reference to OpponentSlotManager
+    private bool playersturn = true;
+    private int opponentslot1 = 7;
+    private int opponentslot2 = 8;
+    private int opponentslot3 = 9;
+    private int opponentslot4 = 10;
+    private int opponentslot5 = 11;
+    private int opponentslot6 = 12;
 
-    private void Start()
+    void Start()
     {
-        occupiedSlots = new GameObject[cardHolders.Length];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        for (int i = 0; i < 6; i++)
+        playerSlotManager = FindObjectOfType<PlayerSlotManager>(); // Find and store the PlayerSlotManager
+        opponentSlotManager = FindObjectOfType<OpponentSlotManager>(); // Find and store the OpponentSlotManager
+        if(playersturn)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
-            {
-                SelectSlot(i);
-            }
-        }
-
-        // Check for input to place the selected card
-        if (selectedCard != null && selectedSlot >= 0 && !IsSlotOccupied(selectedSlot))
-        {
-            PlaceCard(selectedSlot);
+            PlayerSlotManagerUpdate();
+            playersturn = false;
+        }else{
+            OpponentSlotManagerStart();
         }
     }
 
-    void SelectSlot(int slotIndex)
+    void PlayerSlotManagerUpdate()
     {
-        if (slotIndex >= 0 && slotIndex < cardHolders.Length)
-        {
-            selectedSlot = slotIndex;
-            Debug.Log("Selected slot: " + (slotIndex + 1));
-        }
+        playerSlotManager.Update(); // Call a method in PlayerSlotManager
     }
 
-    bool IsSlotOccupied(int slotIndex)
+    void OpponentSlotManagerStart()
     {
-        return occupiedSlots[slotIndex] != null;
-    }
-
-    void PlaceCard(int slotIndex)
-    {
-        if (slotIndex >= 0 && slotIndex < cardHolders.Length)
-        {
-            if (!IsSlotOccupied(slotIndex))
-            {
-                GameObject cardHolder = cardHolders[slotIndex];
-                GameObject newCardObject = Instantiate(cardObjectPrefab, cardHolder.transform);
-                newCardObject.transform.localPosition = Vector3.zero; // You may need to adjust the card's position.
-                occupiedSlots[slotIndex] = newCardObject; // Mark the slot as occupied
-                selectedCard = null; // Reset the selected card
-                selectedSlot = -1; // Reset the selected slot
-                Debug.Log("Placed card in slot: " + (slotIndex + 1));
-            }
-            else
-            {
-                Debug.Log("Slot " + (slotIndex + 1) + " is already occupied.");
-            }
-        }
+        opponentSlotManager.Start(); // Call a method in OpponentSlotManager
     }
 }
