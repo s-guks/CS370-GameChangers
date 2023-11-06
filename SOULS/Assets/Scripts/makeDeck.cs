@@ -13,7 +13,7 @@ using UnityEngine.Events;
 public class Card : ScriptableObject
 {
     public string cardName;
-    public string description;
+    public int id;
     public int attack;
     public int health;
     public string? skill;
@@ -27,10 +27,6 @@ public class makeDeck : MonoBehaviour {
     public Dictionary<string, Stack<Card>> Decks;
     public Dictionary<string, List<Card>> Hands;
     public List<Card> Cards;
-    //public List<Card> d1test;
-    //public List<Card> d2test;
-    //public List<Card> h1test;
-    //public List<Card> h2test;
 
 
     public void GameStart()
@@ -49,9 +45,10 @@ public class makeDeck : MonoBehaviour {
     {
         
         Cards = new(0);
+
         Card c1 = ScriptableObject.CreateInstance<Card>();
         c1.cardName = "Bob the Butcher";
-        c1.description = "A skilled programmer who develops software applications.";
+        c1.id = 1;
         c1.attack = 5;
         c1.health = 1;
         c1.skill = null;
@@ -62,7 +59,7 @@ public class makeDeck : MonoBehaviour {
 
         Card c2 = ScriptableObject.CreateInstance<Card>();
         c2.cardName = "Lenny the Lawyer";
-        c2.description = "A skilled programmer who develops software applications.";
+        c2.id = 2;
         c2.attack = 2;
         c2.health = 4;
         c2.skill = null;
@@ -73,7 +70,7 @@ public class makeDeck : MonoBehaviour {
 
         Card c3 = ScriptableObject.CreateInstance<Card>();
         c3.cardName = "Misha the Mechanic";
-        c3.description = "A skilled programmer who develops software applications.";
+        c3.id = 3;
         c3.attack = 3;
         c3.health = 2;
         c3.skill = null;
@@ -84,7 +81,7 @@ public class makeDeck : MonoBehaviour {
 
         Card c4 = ScriptableObject.CreateInstance<Card>();
         c4.cardName = "Natalie the Nurse";
-        c4.description = "A skilled programmer who develops software applications.";
+        c4.id = 4;
         c4.attack = 2;
         c4.health = 5;
         c4.skill = null;
@@ -95,7 +92,7 @@ public class makeDeck : MonoBehaviour {
 
         Card c5 = ScriptableObject.CreateInstance<Card>();
         c5.cardName = "Paul the Policeman";
-        c5.description = "A skilled programmer who develops software applications.";
+        c5.id = 5;
         c5.attack = 3;
         c5.health = 3;
         c5.skill = null;
@@ -112,7 +109,7 @@ public class makeDeck : MonoBehaviour {
         int r = rand.Next(0, 5);
         Card temp = ScriptableObject.CreateInstance<Card>();
         temp.cardName = Cards[r].cardName;
-        temp.description = Cards[r].description;
+        temp.id = Cards[r].id;
         temp.attack = Cards[r].attack;
         temp.health = Cards[r].health;
         temp.skill = Cards[r].skill;
@@ -134,7 +131,7 @@ public class makeDeck : MonoBehaviour {
             int r = rand.Next(0, 5);
             Card temp = ScriptableObject.CreateInstance<Card>();
             temp.cardName = Cards[r].cardName;
-            temp.description = Cards[r].description;
+            temp.id = Cards[r].id;
             temp.attack = Cards[r].attack;
             temp.health = Cards[r].health;
             temp.skill = Cards[r].skill;
