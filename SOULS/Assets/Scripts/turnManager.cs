@@ -17,16 +17,13 @@ public class turnManager : MonoBehaviour
     public GameObject mainCamera;
     public GameObject tableCamera;
 
+    public makeDeck makeDeck;
+
     // Start is called before the first frame update
     void Start()
     {
-        //create pool of cards
-        //List<Card> cardPool = DeserializeCards();
-
-        //create player and opponent deck
-        //Stack<Card> playerDeck = CreateRandomDeck(cardPool);
-        //Stack<Card> opponentDeck = CreateRandomDeck(cardPool);
-        //draw card X4
+        makeDeck = GameObject.Find("makeDeck").GetComponent<makeDeck>();
+        makeDeck.GameStart();
         isPlayerTurn = true;
         playerTurn();
     }
