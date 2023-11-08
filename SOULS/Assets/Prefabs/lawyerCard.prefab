@@ -30135,7 +30135,7 @@ GameObject:
   - component: {fileID: 9014821738783138729}
   m_Layer: 0
   m_Name: lawyerHP
-  m_TagString: Untagged
+  m_TagString: healthSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

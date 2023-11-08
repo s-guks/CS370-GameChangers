@@ -12,18 +12,21 @@ public class loseHealth : MonoBehaviour
     void Start()
     {
         deckScript = GetComponent<makeDeck>(); //pulling deck script to reference variable
+        //Material[] mats = Resources.LoadAll<Material>("Materials/numbers");
+        //Debug.Log("Materials" + mats);
     }
 
     public void getsAttackedBy(Card hitCard, Card attackingCard){ //takes in two card objects and lowers the health of the hit card based on the attacking card's attack stat   
 
-        spriteHP = hitCard.transform.GetChild(9).gameObject; //HP sprite is 9th index child object of card
+        //spriteHP = hitCard.gameObject.transform.GetChild(9).gameObject; //HP sprite is 9th index child object of card
+        //spriteHP = hitCard.FindWithTag("healthSprite");
        
-        HPtoLose = attackingCard.attack; //get attack of attackingCard
-        currentHP = hitCard.health;//get current health of hitCard
-        newHealth = currentHP - HPtoLose;//calculate new health
+        int HPtoLose = attackingCard.attack; //get attack of attackingCard
+        int currentHP = hitCard.health;//get current health of hitCard
+        int newHealth = currentHP - HPtoLose;//calculate new health
 
         if(newHealth <= 0){ //if health <= 0, update sprite to 0 and kill card
-            updatedHPMaterial = numbers.Load<Material>("newZero"); //get material for zero sprite
+            updatedHPMaterial = Resources.Load<Material>("newZero"); //get material for zero sprite
             spriteHP.GetComponent<SpriteRenderer>().material = updatedHPMaterial; //update HP sprite to zero
             Destroy(hitCard); //kill card
             
@@ -31,22 +34,22 @@ public class loseHealth : MonoBehaviour
             switch(newHealth) 
             { //fetch proper material for new health
             case 1:
-                updatedHPMaterial = numbers.Load<Material>("newOne"); 
+                updatedHPMaterial = Resources.Load<Material>("newOne"); 
                 break;
             case 2:
-                updatedHPMaterial = numbers.Load<Material>("newTwo");
+                updatedHPMaterial = Resources.Load<Material>("newTwo");
                 break;
             case 3:
-                updatedHPMaterial = numbers.Load<Material>("newThree");
+                updatedHPMaterial = Resources.Load<Material>("newThree");
                 break;
             case 4:
-                updatedHPMaterial = numbers.Load<Material>("newFour");
+                updatedHPMaterial = Resources.Load<Material>("newFour");
                 break;
             case 5:
-                updatedHPMaterial = numbers.Load<Material>("newFive");
+                updatedHPMaterial = Resources.Load<Material>("newFive");
                 break;
             case 6:
-                updatedHPMaterial = numbers.Load<Material>("newSix");
+                updatedHPMaterial = Resources.Load<Material>("newSix");
                 break;
             default: //if health not a possible value
                 Debug.Log("Error: newHealth out of bounds"); //log error

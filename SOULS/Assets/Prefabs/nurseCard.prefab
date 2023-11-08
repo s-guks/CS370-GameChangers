@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 4143292760815945901}
   m_Layer: 0
   m_Name: nurseHP
-  m_TagString: Untagged
+  m_TagString: healthSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 6908357382149048313}
   m_Layer: 0
   m_Name: nurseCard
-  m_TagString: Untagged
+  m_TagString: healthSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

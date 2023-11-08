@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 5983526788027520640}
   m_Layer: 0
   m_Name: mechHP
-  m_TagString: Untagged
+  m_TagString: healthSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
