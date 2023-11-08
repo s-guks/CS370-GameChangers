@@ -16,9 +16,10 @@ public class loseHealth : MonoBehaviour
         //Debug.Log("Materials" + mats);
     }
 
-    public void getsAttackedBy(Card hitCard, Card attackingCard){ //takes in two card objects and lowers the health of the hit card based on the attacking card's attack stat   
-
-        //spriteHP = hitCard.gameObject.transform.GetChild(9).gameObject; //HP sprite is 9th index child object of card
+    //takes in two card objects and lowers the health of the hit card based on the attacking card's attack stat
+    public void getsAttackedBy(Card hitCard, Card attackingCard){    
+        //Get reference card's game object first
+        spriteHP = hitCard.gameObject.transform.GetChild(9).gameObject; //HP sprite is 9th index child object of card
         //spriteHP = hitCard.FindWithTag("healthSprite");
        
         int HPtoLose = attackingCard.attack; //get attack of attackingCard
