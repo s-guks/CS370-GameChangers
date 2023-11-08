@@ -18,12 +18,20 @@ public class turnManager : MonoBehaviour
     public GameObject tableCamera;
 
     public makeDeck makeDeck;
+    public spawnHand spawnHand;
+    public bool drawWasClicked;
 
     // Start is called before the first frame update
     void Start()
     {
         makeDeck = GameObject.Find("makeDeck").GetComponent<makeDeck>();
+        spawnHand = GameObject.Find("spawnHand").GetComponent<spawnHand>();
+        
+        //draw cards
         makeDeck.GameStart();
+        spawnHand.spawnCards();
+
+        //start game (player's turn)
         isPlayerTurn = true;
         playerTurn();
     }
@@ -82,6 +90,7 @@ public class turnManager : MonoBehaviour
     void playerTurn() {
         isPlayerTurn = true;
         //enable draw card button
+        drawWasClicked = false;
         //enable end turn button
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;

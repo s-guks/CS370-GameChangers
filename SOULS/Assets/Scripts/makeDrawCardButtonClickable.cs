@@ -9,11 +9,15 @@ public class makeDrawCardButtonClickable : MonoBehaviour
     //public UnityEvent unityEvent = new UnityEvent(); //variable to call unity events
     public GameObject button; //variable for button object
     public makeDeck makeDeck;
+    public spawnHand spawnHand;
+    public turnManager turnManager;
 
     // Start is called before the first frame update
     void Start()
     {
         makeDeck = GameObject.Find("makeDeck").GetComponent<makeDeck>();
+        spawnHand = GameObject.Find("spawnHand").GetComponent<spawnHand>();
+        turnManager = GameObject.Find("turnManager").GetComponent<turnManager>();
         button = this.gameObject; //setting unity object as button
     }
 
@@ -24,10 +28,19 @@ public class makeDrawCardButtonClickable : MonoBehaviour
         RaycastHit hit; //variable to track where ray intersects with game objects
         if(Input.GetMouseButtonDown(0)) { //if user clicks
             if(Physics.Raycast(ray,out hit) && hit.collider.gameObject == gameObject) { //if click on button
-                Debug.Log("hi");
-                makeDeck.Draw("hand1", "deck1", 1); //trigger event in separate script
-                
-                foreach (Card c in makeDeck.Hands["hand1"]) Debug.Log(c.cardName);
+                if (turnManager.isPlayerTurn && !turnManager.drawWasClicked) {
+                    //draw card into database
+                    makeDeck.Draw("hand1", "deck1", 1); 
+
+                    //spawn card
+                    spawnHand.spawnDraw();
+
+                    //can only draw one card per turn
+                    turnManager.drawWasClicked = true;
+                    
+                    //for testing
+                    //foreach (Card c in makeDeck.Hands["hand1"]) Debug.Log(c.cardName);
+                }
             }
         }
     }
