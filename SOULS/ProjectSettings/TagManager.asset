@@ -6,6 +6,7 @@ TagManager:
   tags:
   - endTurn
   - turnManager
+  - healthSprite
   layers:
   - Default
   - TransparentFX

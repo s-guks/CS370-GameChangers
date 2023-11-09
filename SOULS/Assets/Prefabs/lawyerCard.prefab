@@ -29945,8 +29945,8 @@ Transform:
   m_GameObject: {fileID: 5922886928879633051}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.00000072492384, w: 1}
-  m_LocalPosition: {x: 0.007, y: 0.052399993, z: -0.587}
-  m_LocalScale: {x: 0.54385185, y: 0.54385185, z: 0.54385185}
+  m_LocalPosition: {x: 0.013, y: 0.052399993, z: -0.597}
+  m_LocalScale: {x: 0.5775163, y: 0.5775163, z: 0.5775163}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8099632612899877489}
@@ -30067,7 +30067,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7367cb90529054a05b6ca4a99747f692, type: 2}
+  - {fileID: 2100000, guid: 9f137a62b1e8447a6a457da131c4f8b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30135,7 +30135,7 @@ GameObject:
   - component: {fileID: 9014821738783138729}
   m_Layer: 0
   m_Name: lawyerHP
-  m_TagString: Untagged
+  m_TagString: healthSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30149,8 +30149,8 @@ Transform:
   m_GameObject: {fileID: 7237404740321328149}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.00000072492384, w: 1}
-  m_LocalPosition: {x: 0.329, y: 0.052399993, z: -0.584}
-  m_LocalScale: {x: 0.5616864, y: 0.5616864, z: 0.5616864}
+  m_LocalPosition: {x: 0.347, y: 0.052399993, z: -0.588}
+  m_LocalScale: {x: 0.6122608, y: 0.6122608, z: 0.6122608}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8099632612899877489}
@@ -30271,7 +30271,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a60b79b5b92a1473b8e82d4f8e1f333a, type: 2}
+  - {fileID: 2100000, guid: 77febe53cfa1a4086aa827f38a7e7598, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

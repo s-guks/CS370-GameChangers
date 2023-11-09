@@ -17185,7 +17185,7 @@ GameObject:
   - component: {fileID: 1369841467144967852}
   m_Layer: 0
   m_Name: butchHP
-  m_TagString: Untagged
+  m_TagString: healthSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17199,8 +17199,8 @@ Transform:
   m_GameObject: {fileID: 1459504738620313431}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.00000072492384, w: 1}
-  m_LocalPosition: {x: 0.33335, y: 0.052399993, z: -0.589}
-  m_LocalScale: {x: 0.5616864, y: 0.5616864, z: 0.5616864}
+  m_LocalPosition: {x: 0.36, y: 0.052399993, z: -0.6}
+  m_LocalScale: {x: 0.5418252, y: 0.5418252, z: 0.5418252}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1757597086367601567}
@@ -17321,7 +17321,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8542c8fdc4460403ba509395d0b127d1, type: 2}
+  - {fileID: 2100000, guid: 4ffd90718776a4d7d993d129280d2457, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17749,8 +17749,8 @@ Transform:
   m_GameObject: {fileID: 3077857229910186320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.00000072492384, w: 1}
-  m_LocalPosition: {x: -0.012, y: 0.052399993, z: -0.577}
-  m_LocalScale: {x: 0.6426571, y: 0.6426571, z: 0.6426571}
+  m_LocalPosition: {x: 0.019, y: 0.052399993, z: -0.593}
+  m_LocalScale: {x: 0.58705777, y: 0.58705777, z: 0.58705777}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1757597086367601567}
@@ -17871,7 +17871,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 285816c03fef64577bc21ed5025f2aa2, type: 2}
+  - {fileID: 2100000, guid: 88461a782dfe54dd8acbc7156d05cdbd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
