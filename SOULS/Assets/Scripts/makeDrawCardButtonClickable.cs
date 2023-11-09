@@ -39,7 +39,7 @@ public class makeDrawCardButtonClickable : MonoBehaviour
                     turnManager.drawWasClicked = true;
                     
                     //for testing
-                    //foreach (Card c in makeDeck.Hands["hand1"]) Debug.Log(c.cardName);
+                    foreach (Card c in makeDeck.Hands["hand1"]) Debug.Log(c.idObj);
                 }
             }
         }

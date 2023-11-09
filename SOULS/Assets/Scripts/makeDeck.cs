@@ -14,6 +14,7 @@ public class Card : ScriptableObject
 {
     public string cardName;
     public int id;
+    public int idObj;
     public int attack;
     public int health;
     public string? skill;
@@ -27,6 +28,8 @@ public class makeDeck : MonoBehaviour {
     public Dictionary<string, Stack<Card>> Decks;
     public Dictionary<string, List<Card>> Hands;
     public List<Card> Cards;
+
+    public int globalId = 0;
 
 
     public void GameStart()
@@ -55,6 +58,7 @@ public class makeDeck : MonoBehaviour {
         c1.texture = 1;
         c1.borderColor = null;
         c1.probability = 1;
+        c1.idObj = 0;
         Cards.Add(c1);
 
         Card c2 = ScriptableObject.CreateInstance<Card>();
@@ -66,6 +70,7 @@ public class makeDeck : MonoBehaviour {
         c2.texture = 1;
         c2.borderColor = null;
         c2.probability = 1;
+        c2.idObj = 0;
         Cards.Add(c2);
 
         Card c3 = ScriptableObject.CreateInstance<Card>();
@@ -77,6 +82,7 @@ public class makeDeck : MonoBehaviour {
         c3.texture = 1;
         c3.borderColor = null;
         c3.probability = 1;
+        c3.idObj = 0;
         Cards.Add(c3);
 
         Card c4 = ScriptableObject.CreateInstance<Card>();
@@ -88,6 +94,7 @@ public class makeDeck : MonoBehaviour {
         c4.texture = 1;
         c4.borderColor = null;
         c4.probability = 1;
+        c4.idObj = 0;
         Cards.Add(c4);
 
         Card c5 = ScriptableObject.CreateInstance<Card>();
@@ -99,6 +106,7 @@ public class makeDeck : MonoBehaviour {
         c5.texture = 1;
         c5.borderColor = null;
         c5.probability = 1;
+        c5.idObj = 0;
         Cards.Add(c5);
        
     }
@@ -116,6 +124,10 @@ public class makeDeck : MonoBehaviour {
         temp.texture = Cards[r].texture;
         temp.borderColor = Cards[r].borderColor;
         temp.probability = Cards[r].probability;
+
+        //idObj is unique for each card
+        temp.idObj = globalId;
+        globalId = globalId + 1;
 
         return temp;
 
@@ -138,6 +150,11 @@ public class makeDeck : MonoBehaviour {
             temp.texture = Cards[r].texture;
             temp.borderColor = Cards[r].borderColor;
             temp.probability = Cards[r].probability;
+
+            //idObj is unique for each card
+            temp.idObj = globalId;
+            globalId = globalId + 1;
+
             st.Push(temp);
         }
         Stack<Card> deck = st;
