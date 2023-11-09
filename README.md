@@ -4,6 +4,7 @@
 
 ---
 **Links:** <br>
+[Sprint 7](https://docs.google.com/presentation/d/1zNFlW2Mme1dszAlPT7xyroy-G7-WdNrEFqM3euskduA/edit#slide=id.g285146d2de8_2_1540) <br>
 [Sprint 6](https://docs.google.com/presentation/d/1AY7oRZFdKcCpWTRR7ZDauV4nz9rFj0WTXKzpFI0j3UE/edit?usp=sharing) <br>
 [Sprint 5](https://docs.google.com/presentation/d/16NwYxn2YLF7hW1fJyc-IWQ1-dl39KmfO1AtW9A-4kVc/edit#slide=id.g28e0cbf70ff_1_25) <br>
 [Sprint 4](https://docs.google.com/presentation/d/1bZDrkimwGz5LyNLvg2VdiFtd7SapGp8bhuIGPBdoGhc/edit#slide=id.g285146d2de8_2_1540) <br>
