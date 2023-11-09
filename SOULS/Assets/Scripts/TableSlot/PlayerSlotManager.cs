@@ -14,6 +14,7 @@ public class PlayerSlotManager : MonoBehaviour
     public bool interpolateRotation = true;
 
     private bool isMoving = false;
+    private bool frontrowfull = false;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private bool hasMoved = false;
@@ -34,6 +35,7 @@ public class PlayerSlotManager : MonoBehaviour
     {
         originalPosition = transform.position;
         originalRotation = transform.rotation;
+        frontRowFullCheck();
         if (!hasMoved)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) && !isMoving && !slot1check)
@@ -75,6 +77,50 @@ public class PlayerSlotManager : MonoBehaviour
         }
     }
 
+    public void moveByClick(int num)
+    {
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+        frontRowFullCheck();
+        if (num==1 && !isMoving && !slot1check)
+        {
+            StartCoroutine(MoveCard(slot1));
+            slot1check = true;
+            Debug.Log("Bottom left slot (1) card moved.");
+        }
+        else if (num==2 && !isMoving && !slot2check)
+        {
+            StartCoroutine(MoveCard(slot2));
+            slot2check = true;
+            Debug.Log("Bottom left slot (2) card moved.");
+        }
+        else if (num==3 && !isMoving && !slot3check)
+        {
+            StartCoroutine(MoveCard(slot3));
+            slot3check = true;
+            Debug.Log("Bottom left slot (3) card moved.");
+        }
+        else if (num==4 && !isMoving && !slot4check && frontrowfull) //only move card if card (1)is not moving (2)slot is empty (3) front row is full
+        {
+            Debug.Log("Front Row Full check.");
+            StartCoroutine(MoveCard(slot4));
+            slot4check = true;
+            Debug.Log("Bottom left slot (4) card moved.");
+        }
+        else if (num==5 && !isMoving && !slot5check && frontrowfull)
+        {
+            StartCoroutine(MoveCard(slot5));
+            slot5check = true;
+            Debug.Log("Bottom left slot (5) card moved.");
+        }
+        else if (num==6 && !isMoving && !slot6check && frontrowfull)
+        {
+            StartCoroutine(MoveCard(slot6));
+            slot6check = true;
+            Debug.Log("Bottom left slot (6) card moved.");
+        }
+    }
+
     IEnumerator MoveCard(Transform newLocation)
     {
         isMoving = true;
@@ -105,5 +151,14 @@ public class PlayerSlotManager : MonoBehaviour
         }
 
         isMoving = false;
+    }
+
+    // Check if front row is full, prevent move card to backrow if front row is not full
+    void frontRowFullCheck()
+    {
+        if(slot1check && slot2check && slot3check)
+        {
+            frontrowfull = true;
+        }
     }
 }
