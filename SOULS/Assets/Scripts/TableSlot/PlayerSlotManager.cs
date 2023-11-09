@@ -14,7 +14,6 @@ public class PlayerSlotManager : MonoBehaviour
     public bool interpolateRotation = true;
 
     private bool isMoving = false;
-    private bool frontrowfull = false;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private bool hasMoved = false;
@@ -35,7 +34,6 @@ public class PlayerSlotManager : MonoBehaviour
     {
         originalPosition = transform.position;
         originalRotation = transform.rotation;
-        frontRowFullCheck();
         if (!hasMoved)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) && !isMoving && !slot1check)
@@ -81,7 +79,11 @@ public class PlayerSlotManager : MonoBehaviour
     {
         originalPosition = transform.position;
         originalRotation = transform.rotation;
-        frontRowFullCheck();
+        bool frontrowfull = false;
+        if (num == 4 || num == 5 || num == 6)
+        {
+            frontrowfull = frontRowFullCheck(num);
+        }
         if (num==1 && !isMoving && !slot1check)
         {
             StartCoroutine(MoveCard(slot1));
@@ -154,11 +156,16 @@ public class PlayerSlotManager : MonoBehaviour
     }
 
     // Check if front row is full, prevent move card to backrow if front row is not full
-    void frontRowFullCheck()
+    bool frontRowFullCheck(int n)
     {
-        if(slot1check && slot2check && slot3check)
+        int num = n - 3;
+        if((slot1check && num == 1) || (slot2check && num == 2) || (slot3check && num == 3))
         {
-            frontrowfull = true;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
