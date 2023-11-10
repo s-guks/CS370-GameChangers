@@ -23,7 +23,7 @@ public class PlayerSlotManager : MonoBehaviour
     private bool slot4check = false;
     private bool slot5check = false;
     private bool slot6check = false;
-    
+    private bool cardSelected = false;
 
     public void Start()
     {
@@ -79,6 +79,20 @@ public class PlayerSlotManager : MonoBehaviour
         }
         */
     }
+
+    public void cardClicked(GameObject card){
+        cardSelected = true;
+        Debug.Log("Card Clicked");
+        //pass card to whichever function needs it
+    }
+
+    public void moveByClickInt(int num)
+    {
+        //if(cardSelected = true){slots can be clicked}
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+        frontRowFullCheck();
+        if (num==1 && !isMoving && !slot1check)
     
     public void moveByClick(Transform cardObject, int num)
     {
