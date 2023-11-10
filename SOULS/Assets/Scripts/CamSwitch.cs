@@ -26,4 +26,9 @@ public class CamSwitch : MonoBehaviour
             mainCamera.GetComponent<Camera>().enabled = false;
         }
     }
+
+    public void switchToTable(){
+        mainCamera.GetComponent<Camera>().enabled = false;
+        tableCamera.GetComponent<Camera>().enabled = true;
+    }
 }
