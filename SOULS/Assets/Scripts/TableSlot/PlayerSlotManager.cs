@@ -14,7 +14,6 @@ public class PlayerSlotManager : MonoBehaviour
     public bool interpolateRotation = true;
 
     private bool isMoving = false;
-    private bool frontrowfull = false;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private bool hasMoved = false;
@@ -28,15 +27,17 @@ public class PlayerSlotManager : MonoBehaviour
 
     public void Start()
     {
+        /*
         originalPosition = transform.position;
         originalRotation = transform.rotation;
+        */
     }
-
+    
     public void Update()
     {
+        /*
         originalPosition = transform.position;
         originalRotation = transform.rotation;
-        frontRowFullCheck();
         if (!hasMoved)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) && !isMoving && !slot1check)
@@ -76,6 +77,7 @@ public class PlayerSlotManager : MonoBehaviour
                 slot6check = true;
             }
         }
+        */
     }
 
     public void cardClicked(GameObject card){
@@ -84,52 +86,66 @@ public class PlayerSlotManager : MonoBehaviour
         //pass card to whichever function needs it
     }
 
-    public void moveByClick(int num)
+    public void moveByClickInt(int num)
     {
         //if(cardSelected = true){slots can be clicked}
         originalPosition = transform.position;
         originalRotation = transform.rotation;
         frontRowFullCheck();
         if (num==1 && !isMoving && !slot1check)
+    
+    public void moveByClick(Transform cardObject, int num)
+    {
+        originalPosition = cardObject.position;
+        originalRotation = cardObject.rotation;
+        bool frontrowfull = false;
+
+        if (num == 4 || num == 5 || num == 6)
         {
-            StartCoroutine(MoveCard(slot1));
+            frontrowfull = frontRowFullCheck(num);
+        }
+
+        if (num == 1 && !isMoving && !slot1check)
+        {
+            StartCoroutine(MoveCard(cardObject, slot1));
             slot1check = true;
             Debug.Log("Bottom left slot (1) card moved.");
         }
-        else if (num==2 && !isMoving && !slot2check)
+        else if (num == 2 && !isMoving && !slot2check)
         {
-            StartCoroutine(MoveCard(slot2));
+            StartCoroutine(MoveCard(cardObject, slot2));
             slot2check = true;
             Debug.Log("Bottom left slot (2) card moved.");
         }
-        else if (num==3 && !isMoving && !slot3check)
+        else if (num == 3 && !isMoving && !slot3check)
         {
-            StartCoroutine(MoveCard(slot3));
+            StartCoroutine(MoveCard(cardObject, slot3));
             slot3check = true;
             Debug.Log("Bottom left slot (3) card moved.");
         }
-        else if (num==4 && !isMoving && !slot4check && frontrowfull) //only move card if card (1)is not moving (2)slot is empty (3) front row is full
+        else if (num == 4 && !isMoving && !slot4check && frontrowfull)
         {
             Debug.Log("Front Row Full check.");
-            StartCoroutine(MoveCard(slot4));
+            StartCoroutine(MoveCard(cardObject, slot4));
             slot4check = true;
             Debug.Log("Bottom left slot (4) card moved.");
         }
-        else if (num==5 && !isMoving && !slot5check && frontrowfull)
+        else if (num == 5 && !isMoving && !slot5check && frontrowfull)
         {
-            StartCoroutine(MoveCard(slot5));
+            StartCoroutine(MoveCard(cardObject, slot5));
             slot5check = true;
             Debug.Log("Bottom left slot (5) card moved.");
         }
-        else if (num==6 && !isMoving && !slot6check && frontrowfull)
+        else if (num == 6 && !isMoving && !slot6check && frontrowfull)
         {
-            StartCoroutine(MoveCard(slot6));
+            StartCoroutine(MoveCard(cardObject, slot6));
             slot6check = true;
             Debug.Log("Bottom left slot (6) card moved.");
         }
     }
 
-    IEnumerator MoveCard(Transform newLocation)
+
+    IEnumerator MoveCard(Transform cardObject, Transform newLocation)
     {
         isMoving = true;
         Vector3 targetPosition = newLocation.position;
@@ -141,32 +157,37 @@ public class PlayerSlotManager : MonoBehaviour
         {
             float distanceCovered = (Time.time - startTime) * speed;
             float fractionOfJourney = distanceCovered / journeyLength;
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, fractionOfJourney);
+            cardObject.position = Vector3.Lerp(originalPosition, targetPosition, fractionOfJourney);
 
             if (interpolateRotation)
             {
-                transform.rotation = Quaternion.Slerp(originalRotation, targetRotation, fractionOfJourney);
+                cardObject.rotation = Quaternion.Slerp(originalRotation, targetRotation, fractionOfJourney);
             }
 
             yield return null;
         }
 
-        transform.position = targetPosition;
+        cardObject.position = targetPosition;
 
         if (interpolateRotation)
         {
-            transform.rotation = targetRotation;
+            cardObject.rotation = targetRotation;
         }
 
         isMoving = false;
     }
 
     // Check if front row is full, prevent move card to backrow if front row is not full
-    void frontRowFullCheck()
+    bool frontRowFullCheck(int n)
     {
-        if(slot1check && slot2check && slot3check)
+        int num = n - 3;
+        if((slot1check && num == 1) || (slot2check && num == 2) || (slot3check && num == 3))
         {
-            frontrowfull = true;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

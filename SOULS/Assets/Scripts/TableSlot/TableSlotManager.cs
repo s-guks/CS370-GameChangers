@@ -13,6 +13,7 @@ public class TableSlotManager : MonoBehaviour
     private int opponentslot4 = 10;
     private int opponentslot5 = 11;
     private int opponentslot6 = 12;
+    
 
     void Start()
     {
