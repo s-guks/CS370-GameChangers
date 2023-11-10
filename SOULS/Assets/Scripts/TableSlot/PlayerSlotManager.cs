@@ -23,15 +23,19 @@ public class PlayerSlotManager : MonoBehaviour
     private bool slot4check = false;
     private bool slot5check = false;
     private bool slot6check = false;
+    
 
     public void Start()
     {
+        /*
         originalPosition = transform.position;
         originalRotation = transform.rotation;
+        */
     }
-
+    
     public void Update()
     {
+        /*
         originalPosition = transform.position;
         originalRotation = transform.rotation;
         if (!hasMoved)
@@ -73,57 +77,61 @@ public class PlayerSlotManager : MonoBehaviour
                 slot6check = true;
             }
         }
+        */
     }
-
-    public void moveByClick(int num)
+    
+    public void moveByClick(Transform cardObject, int num)
     {
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        originalPosition = cardObject.position;
+        originalRotation = cardObject.rotation;
         bool frontrowfull = false;
+
         if (num == 4 || num == 5 || num == 6)
         {
             frontrowfull = frontRowFullCheck(num);
         }
-        if (num==1 && !isMoving && !slot1check)
+
+        if (num == 1 && !isMoving && !slot1check)
         {
-            StartCoroutine(MoveCard(slot1));
+            StartCoroutine(MoveCard(cardObject, slot1));
             slot1check = true;
             Debug.Log("Bottom left slot (1) card moved.");
         }
-        else if (num==2 && !isMoving && !slot2check)
+        else if (num == 2 && !isMoving && !slot2check)
         {
-            StartCoroutine(MoveCard(slot2));
+            StartCoroutine(MoveCard(cardObject, slot2));
             slot2check = true;
             Debug.Log("Bottom left slot (2) card moved.");
         }
-        else if (num==3 && !isMoving && !slot3check)
+        else if (num == 3 && !isMoving && !slot3check)
         {
-            StartCoroutine(MoveCard(slot3));
+            StartCoroutine(MoveCard(cardObject, slot3));
             slot3check = true;
             Debug.Log("Bottom left slot (3) card moved.");
         }
-        else if (num==4 && !isMoving && !slot4check && frontrowfull) //only move card if card (1)is not moving (2)slot is empty (3) front row is full
+        else if (num == 4 && !isMoving && !slot4check && frontrowfull)
         {
             Debug.Log("Front Row Full check.");
-            StartCoroutine(MoveCard(slot4));
+            StartCoroutine(MoveCard(cardObject, slot4));
             slot4check = true;
             Debug.Log("Bottom left slot (4) card moved.");
         }
-        else if (num==5 && !isMoving && !slot5check && frontrowfull)
+        else if (num == 5 && !isMoving && !slot5check && frontrowfull)
         {
-            StartCoroutine(MoveCard(slot5));
+            StartCoroutine(MoveCard(cardObject, slot5));
             slot5check = true;
             Debug.Log("Bottom left slot (5) card moved.");
         }
-        else if (num==6 && !isMoving && !slot6check && frontrowfull)
+        else if (num == 6 && !isMoving && !slot6check && frontrowfull)
         {
-            StartCoroutine(MoveCard(slot6));
+            StartCoroutine(MoveCard(cardObject, slot6));
             slot6check = true;
             Debug.Log("Bottom left slot (6) card moved.");
         }
     }
 
-    IEnumerator MoveCard(Transform newLocation)
+
+    IEnumerator MoveCard(Transform cardObject, Transform newLocation)
     {
         isMoving = true;
         Vector3 targetPosition = newLocation.position;
@@ -135,21 +143,21 @@ public class PlayerSlotManager : MonoBehaviour
         {
             float distanceCovered = (Time.time - startTime) * speed;
             float fractionOfJourney = distanceCovered / journeyLength;
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, fractionOfJourney);
+            cardObject.position = Vector3.Lerp(originalPosition, targetPosition, fractionOfJourney);
 
             if (interpolateRotation)
             {
-                transform.rotation = Quaternion.Slerp(originalRotation, targetRotation, fractionOfJourney);
+                cardObject.rotation = Quaternion.Slerp(originalRotation, targetRotation, fractionOfJourney);
             }
 
             yield return null;
         }
 
-        transform.position = targetPosition;
+        cardObject.position = targetPosition;
 
         if (interpolateRotation)
         {
-            transform.rotation = targetRotation;
+            cardObject.rotation = targetRotation;
         }
 
         isMoving = false;
