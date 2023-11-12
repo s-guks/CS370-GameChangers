@@ -40,10 +40,10 @@ public class OpponentSlotManager : MonoBehaviour
         
     }
 
-    public void moveByClick(Transform cardObject, int num)
+    public void moveByClick(GameObject cardObject, int num)
     {
-        originalPosition = cardObject.position;
-        originalRotation = cardObject.rotation;
+        originalPosition = cardObject.transform.position;
+        originalRotation = cardObject.transform.rotation;
         bool frontrowfull = false;
 
         if (num == 10 || num == 11 || num == 12)
@@ -53,38 +53,38 @@ public class OpponentSlotManager : MonoBehaviour
 
         if (num == 7 && !isMoving && !slot7check)
         {
-            StartCoroutine(MoveCard(cardObject, slot7));
+            StartCoroutine(MoveCard(cardObject.transform, slot7));
             slot7check = true;
             Debug.Log("Bottom left slot (7) card moved.");
         }
         else if (num == 8 && !isMoving && !slot8check)
         {
-            StartCoroutine(MoveCard(cardObject, slot8));
+            StartCoroutine(MoveCard(cardObject.transform, slot8));
             slot8check = true;
             Debug.Log("Bottom left slot (8) card moved.");
         }
         else if (num == 9 && !isMoving && !slot9check)
         {
-            StartCoroutine(MoveCard(cardObject, slot9));
+            StartCoroutine(MoveCard(cardObject.transform, slot9));
             slot9check = true;
             Debug.Log("Bottom left slot (9) card moved.");
         }
         else if (num == 10 && !isMoving && !slot10check && frontrowfull)
         {
             Debug.Log("Front Row Full check.");
-            StartCoroutine(MoveCard(cardObject, slot10));
+            StartCoroutine(MoveCard(cardObject.transform, slot10));
             slot10check = true;
             Debug.Log("Bottom left slot (10) card moved.");
         }
         else if (num == 11 && !isMoving && !slot11check && frontrowfull)
         {
-            StartCoroutine(MoveCard(cardObject, slot11));
+            StartCoroutine(MoveCard(cardObject.transform, slot11));
             slot11check = true;
             Debug.Log("Bottom left slot (11) card moved.");
         }
         else if (num == 12 && !isMoving && !slot12check && frontrowfull)
         {
-            StartCoroutine(MoveCard(cardObject, slot12));
+            StartCoroutine(MoveCard(cardObject.transform, slot12));
             slot12check = true;
             Debug.Log("Bottom left slot (12) card moved.");
         }

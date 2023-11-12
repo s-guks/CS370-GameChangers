@@ -24,6 +24,7 @@ public class PlayerSlotManager : MonoBehaviour
     private bool slot5check = false;
     private bool slot6check = false;
     private bool cardSelected = false;
+    private GameObject cardObject;
 
     public void Start()
     {
@@ -83,21 +84,15 @@ public class PlayerSlotManager : MonoBehaviour
     public void cardClicked(GameObject card){
         cardSelected = true;
         Debug.Log("Card Clicked");
+        cardObject = card;
+        Vector3 cardPosition = cardObject.transform.position;
         //pass card to whichever function needs it
     }
-
-    public void moveByClickInt(int num)
-    {
-        //if(cardSelected = true){slots can be clicked}
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
-        frontRowFullCheck();
-        if (num==1 && !isMoving && !slot1check)
     
-    public void moveByClick(Transform cardObject, int num)
+    public void moveByClick(int num)
     {
-        originalPosition = cardObject.position;
-        originalRotation = cardObject.rotation;
+        originalPosition = cardObject.transform.position;
+        originalRotation = cardObject.transform.rotation;
         bool frontrowfull = false;
 
         if (num == 4 || num == 5 || num == 6)
@@ -107,38 +102,38 @@ public class PlayerSlotManager : MonoBehaviour
 
         if (num == 1 && !isMoving && !slot1check)
         {
-            StartCoroutine(MoveCard(cardObject, slot1));
+            StartCoroutine(MoveCard(cardObject.transform, slot1));
             slot1check = true;
             Debug.Log("Bottom left slot (1) card moved.");
         }
         else if (num == 2 && !isMoving && !slot2check)
         {
-            StartCoroutine(MoveCard(cardObject, slot2));
+            StartCoroutine(MoveCard(cardObject.transform, slot2));
             slot2check = true;
             Debug.Log("Bottom left slot (2) card moved.");
         }
         else if (num == 3 && !isMoving && !slot3check)
         {
-            StartCoroutine(MoveCard(cardObject, slot3));
+            StartCoroutine(MoveCard(cardObject.transform, slot3));
             slot3check = true;
             Debug.Log("Bottom left slot (3) card moved.");
         }
         else if (num == 4 && !isMoving && !slot4check && frontrowfull)
         {
             Debug.Log("Front Row Full check.");
-            StartCoroutine(MoveCard(cardObject, slot4));
+            StartCoroutine(MoveCard(cardObject.transform, slot4));
             slot4check = true;
             Debug.Log("Bottom left slot (4) card moved.");
         }
         else if (num == 5 && !isMoving && !slot5check && frontrowfull)
         {
-            StartCoroutine(MoveCard(cardObject, slot5));
+            StartCoroutine(MoveCard(cardObject.transform, slot5));
             slot5check = true;
             Debug.Log("Bottom left slot (5) card moved.");
         }
         else if (num == 6 && !isMoving && !slot6check && frontrowfull)
         {
-            StartCoroutine(MoveCard(cardObject, slot6));
+            StartCoroutine(MoveCard(cardObject.transform, slot6));
             slot6check = true;
             Debug.Log("Bottom left slot (6) card moved.");
         }
