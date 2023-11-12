@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6843410204913602491}
+  - component: {fileID: -1076019755718968553}
   - component: {fileID: -3433437955212697993}
   m_Layer: 0
   m_Name: policeCard
@@ -48,6 +49,20 @@ Transform:
   - {fileID: 6455201440039939149}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1076019755718968553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13109733255405143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cafcaa6caad114bb8b270b442ccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upAmount: 0.2
+  speed: 0.5
 --- !u!114 &-3433437955212697993
 MonoBehaviour:
   m_ObjectHideFlags: 0

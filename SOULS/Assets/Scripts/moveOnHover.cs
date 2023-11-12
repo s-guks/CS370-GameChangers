@@ -11,28 +11,55 @@ public class moveOnHover : MonoBehaviour
     private  Vector3 upPos;
     private  Vector3 currPos;
 
-    public GameObject card;
+    //public GameObject card;
     
     void Start() {
-        card = this.transform.parent.gameObject;
-	    dnPos = card.transform.position;
-	    upPos = card.transform.position + Vector3.up * upAmount;
+        //card = this.transform.parent.gameObject;
+	    dnPos = transform.position;
+	    upPos = transform.position + Vector3.back * upAmount;
 	    currPos = dnPos;
+
+        //Debug.Log("dnPos" + dnPos);
+        //Debug.Log("upPos" + upPos);
     }
 
     Ray ray;
 	RaycastHit hit;
 
+    private bool hovered = false;
+
     void Update() {
-            transform.position = Vector3.MoveTowards(card.transform.position, currPos, speed * Time.deltaTime);
-            
-            /*
+            transform.position = Vector3.MoveTowards(transform.position, currPos, speed * Time.deltaTime);
+                
                 ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if(Physics.Raycast(ray, out hit))
+
+
+
+                //shoidfhsaifdhskjlabshfdosahf
+                //i hate this so much
+                //I'm just trying to make the cards move forward on hover
+                //and move back when the mouse leaves
+                //the issue is that hit.collider.gameObject never equals this.gameObject
+                //the issue is that the invisible clicky box is only on the nurse card :(
+                //the OTHER issue is that I can't get component the clickableNurse component for some reason
+                if(Physics.Raycast(ray, out hit)
+                    //&& hit.collider.gameObject == this.gameObject.GetComponent<clickableNurse>()
+                    && !hovered)// && hit.collider.gameObject == this.gameObject)
                 {
-                    print (hit.collider.name);
+                    Debug.Log(hit.collider.gameObject);
+                    Debug.Log(this.gameObject);
+                    hovered = true;
+                    currPos = upPos; 
+                    Debug.Log("yahoooo");
+                    //print (hit.collider.name);
                 }
-            */
+                if(hovered) {
+                    hovered = false;
+                    currPos = dnPos; 
+                    Debug.Log("whahoh");
+                }
+                
+            
     }
 
     void OnMouseEnter() { 

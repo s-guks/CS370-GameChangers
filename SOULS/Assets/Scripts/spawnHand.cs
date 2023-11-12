@@ -21,7 +21,7 @@ public class spawnHand : MonoBehaviour
     
     //positions cards spawn in 
     private float horizontalPos = -0.8f;
-    private float verticalPos = -0.2f;
+    private float verticalPos = -0.1f;
     private float depthPos = -5.5f;
 
     //number of cards held
@@ -97,14 +97,14 @@ public class spawnHand : MonoBehaviour
             }
             cardTracker.addToHand(cardObj);
 
-            //doesn't work
-            cardObj.AddComponent("moveOnHover");
+            //doesn't work?
+            //cardObj.AddComponent<moveOnHover>();
             
             //calculate space between cards
             horizontalPos += cardLocHorizontal;
             if (i % 2 == 0) {
                 depthPos += cardLocDepth;
-                
+                verticalPos -= cardLocVertical;
             }
             else {
                 depthPos -= cardLocDepth;
