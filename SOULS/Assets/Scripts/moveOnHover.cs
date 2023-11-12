@@ -39,9 +39,9 @@ public class moveOnHover : MonoBehaviour
                 //i hate this so much
                 //I'm just trying to make the cards move forward on hover
                 //and move back when the mouse leaves
-                //the issue is that hit.collider.gameObject never equals this.gameObject
+                //hit.collider.gameObject never equals this.gameObject
                 //the issue is that the invisible clicky box is only on the nurse card :(
-                //the OTHER issue is that I can't get component the clickableNurse component for some reason
+                //the Other issue is that I can't get component the clickableNurse component for some reason
                 if(Physics.Raycast(ray, out hit)
                     //&& hit.collider.gameObject == this.gameObject.GetComponent<clickableNurse>()
                     && !hovered)// && hit.collider.gameObject == this.gameObject)
