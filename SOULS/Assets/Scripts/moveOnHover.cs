@@ -62,6 +62,7 @@ public class moveOnHover : MonoBehaviour
             
     }
 
+    //ignore these, they don't work
     void OnMouseEnter() { 
         currPos = upPos; 
         Debug.Log("yahoooo");
