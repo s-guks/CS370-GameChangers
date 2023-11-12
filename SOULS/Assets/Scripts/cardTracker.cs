@@ -9,6 +9,7 @@ public class cardTracker : MonoBehaviour
     public List<GameObject> cardObjects = new List<GameObject>(); //tracked as game objects
         //gameObject = equivalent to the individual instance of GameObject that this script is currently attached to
     public List<Card> cardsBySlot = new List<Card>(); //tracked as card scriptable objects
+    public List<GameObject> cardsInHand = new List<GameObject>(); //same thing but for the player's hand
     private Card temp;
     private Exception e;
 
@@ -33,6 +34,15 @@ public class cardTracker : MonoBehaviour
 
     public void addToSlot(Card card, int slot){ //adds card (scriptable) to list, using index to track slot
         cardsBySlot.Insert(slot, card);
+        //removeFromHand(card);
+    }
+
+    public void addToHand(GameObject card){ //same thing but for the hand
+        cardsInHand.Add(card);
+    }
+
+    public void removeFromHand(GameObject card) { //card is played
+        cardsInHand.Remove(card);
     }
 
     public void clearSlot(int slot){ //clears the slot that has the passed card contained in it
