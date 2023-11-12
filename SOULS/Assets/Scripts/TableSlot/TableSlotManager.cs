@@ -7,12 +7,6 @@ public class TableSlotManager : MonoBehaviour
     private PlayerSlotManager playerSlotManager; // Reference to PlayerSlotManager
     private OpponentSlotManager opponentSlotManager; // Reference to OpponentSlotManager
     private bool playersturn = true;
-    private int opponentslot1 = 7;
-    private int opponentslot2 = 8;
-    private int opponentslot3 = 9;
-    private int opponentslot4 = 10;
-    private int opponentslot5 = 11;
-    private int opponentslot6 = 12;
     
 
     void Start()
