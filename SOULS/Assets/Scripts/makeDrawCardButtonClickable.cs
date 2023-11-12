@@ -33,13 +33,13 @@ public class makeDrawCardButtonClickable : MonoBehaviour
                     makeDeck.Draw("hand1", "deck1", 1); 
 
                     //spawn card
-                    spawnHand.spawnDraw();
+                    spawnHand.spawnCards();
 
                     //can only draw one card per turn
                     turnManager.drawWasClicked = true;
                     
                     //for testing
-                    foreach (Card c in makeDeck.Hands["hand1"]) Debug.Log(c.idObj);
+                    //foreach (Card c in makeDeck.Hands["hand1"]) Debug.Log(c.idObj);
                 }
             }
         }

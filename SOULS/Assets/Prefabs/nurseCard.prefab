@@ -559,6 +559,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1258919864736896616}
+  - component: {fileID: -3034192095669799829}
+  - component: {fileID: -5186317397899503022}
   m_Layer: 0
   m_Name: nurseCard
   m_TagString: healthSprite
@@ -597,6 +599,36 @@ Transform:
   - {fileID: 4869217338819814155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3034192095669799829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426979132595914400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cafcaa6caad114bb8b270b442ccb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upAmount: 0.2
+  speed: 0.5
+--- !u!114 &-5186317397899503022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426979132595914400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 204c95e759f9742b7941a5c0d80d7738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  button: {fileID: 0}
 --- !u!1 &1463587253570933685
 GameObject:
   m_ObjectHideFlags: 0
