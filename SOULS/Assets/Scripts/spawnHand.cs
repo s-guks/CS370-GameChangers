@@ -7,7 +7,7 @@ public class spawnHand : MonoBehaviour
     //other monobehaviors to reference
     public makeDeck makeDeck;
     public cardTracker cardTracker;
-    public moveOnHover moveOnHover;
+    //public moveOnHover moveOnHover;
 
     //private List<int> handList;
     //private GameObject[] allObjects;
@@ -34,13 +34,21 @@ public class spawnHand : MonoBehaviour
     private float cardLocHorizontal = 0f;
     private float cardLocVertical = 0.05f;
     private float cardLocDepth = -0.1f;
+
+    //move on hover variables
+    public float upAmount = 0.2f;
+    public float speed = 0.5f;
+
+    private  Vector3 dnPos;
+    private  Vector3 upPos;
+    //private  Vector3 currPos;
     
     // Start is called before the first frame update
     void Start()
     {
          makeDeck = GameObject.Find("makeDeck").GetComponent<makeDeck>();
          cardTracker = GameObject.Find("cardTracker").GetComponent<cardTracker>();
-         moveOnHover = GameObject.Find("moveOnHover").GetComponent<moveOnHover>();
+         //moveOnHover = GameObject.Find("moveOnHover").GetComponent<moveOnHover>();
 
         //size of spawnable box
          boxDistance = (0.8f) + (1.1f);
@@ -56,6 +64,31 @@ public class spawnHand : MonoBehaviour
         //make sure number of cards in hand and space between them is up to date
         cardsHeld = makeDeck.Hands["hand1"].Count;
         cardLocHorizontal = boxDistance / cardsHeld;
+
+        /*
+        //make cards hoverable
+        //currently broken
+        Ray ray;
+	    RaycastHit hit;
+                
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        foreach (GameObject c in cardTracker.cardsInHand) {
+            dnPos = c.transform.position;
+	        upPos = c.transform.position + Vector3.back * upAmount;
+            //Debug.Log(dnPos + " " + upPos);
+	        //currPos = dnPos;
+
+            if(Physics.Raycast(ray, out hit)
+                    && hit.collider.gameObject == c.transform.gameObject) //.transform.parent.gameObject)
+            {
+                c.transform.position = Vector3.MoveTowards(transform.position, upPos, speed * Time.deltaTime);
+            }
+            //c.transform.position = Vector3.MoveTowards(transform.position, dnPos, speed * Time.deltaTime);  
+        }
+        */
+
+
     }
 
     public void spawnCards() {

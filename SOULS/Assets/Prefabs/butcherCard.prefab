@@ -32800,7 +32800,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1757597086367601567}
-  - component: {fileID: 5212996401755123788}
   - component: {fileID: 2221751707500763645}
   m_Layer: 0
   m_Name: butcherCard
@@ -32840,20 +32839,6 @@ Transform:
   - {fileID: 9201531138726353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5212996401755123788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7917711668828861444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5cafcaa6caad114bb8b270b442ccb07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upAmount: 0.2
-  speed: 0.5
 --- !u!114 &2221751707500763645
 MonoBehaviour:
   m_ObjectHideFlags: 0

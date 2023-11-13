@@ -108,8 +108,12 @@ public class turnManager : MonoBehaviour
 
     void opponentFirstTurn() {
         isOpponentTurn = true;
+
         //opponent plays cards
+        Draw("hand2", "deck2", 1);
         //opponent DOES NOT have an attack phase
+
+        //switch cammeras
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;
         Debug.Log("opponent's first turn");
@@ -119,7 +123,11 @@ public class turnManager : MonoBehaviour
 
     void opponentTurn() {
         isOpponentTurn = true;
+
         //opponent plays cards
+        Draw("hand2", "deck2", 1);
+
+        //switch cammeras
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;
         Debug.Log("opponent's turn");
