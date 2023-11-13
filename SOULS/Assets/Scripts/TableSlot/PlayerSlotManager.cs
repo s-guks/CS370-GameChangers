@@ -113,6 +113,7 @@ public class PlayerSlotManager : MonoBehaviour
             emptySlots.Add(6);
         return emptySlots;
     }
+
     public void moveForward()
     {
         List<int> emptySlots = checkEmpty();
