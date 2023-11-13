@@ -156,6 +156,7 @@ public class PlayerSlotManager : MonoBehaviour
         originalPosition = cardObject.transform.position;
         originalRotation = cardObject.transform.rotation;
         bool frontrowfull = false;
+        isMoving = false;
 
         if (num == 4 || num == 5 || num == 6)
         {
@@ -196,7 +197,7 @@ public class PlayerSlotManager : MonoBehaviour
             slot4check = true;
             Debug.Log("Bottom left slot (4) card moved.");
         }
-        else if (num == 5 && !isMoving && !slot5check && frontrowfull)
+        else if (num == 5 && !isMoving && !slot5check)// && frontrowfull)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot5));
             slot5Object = cardObject;
@@ -204,7 +205,7 @@ public class PlayerSlotManager : MonoBehaviour
             slot5check = true;
             Debug.Log("Bottom left slot (5) card moved.");
         }
-        else if (num == 6 && !isMoving && !slot6check && frontrowfull)
+        else if (num == 6 && !isMoving && !slot6check)// && frontrowfull)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot6));
             slot6Object = cardObject;

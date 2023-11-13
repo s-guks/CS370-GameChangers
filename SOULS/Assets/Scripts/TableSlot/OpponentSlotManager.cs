@@ -111,6 +111,7 @@ public class OpponentSlotManager : MonoBehaviour
         originalPosition = cardObject.transform.position;
         originalRotation = cardObject.transform.rotation;
         bool frontrowfull = false;
+        isMoving = false;
 
         if (num == 10 || num == 11 || num == 12)
         {
@@ -138,7 +139,7 @@ public class OpponentSlotManager : MonoBehaviour
             slot9check = true;
             Debug.Log("Bottom left slot (9) card moved.");
         }
-        else if (num == 10 && !isMoving && !slot10check && frontrowfull)
+        else if (num == 10 && !isMoving && !slot10check)// && frontrowfull)
         {
             Debug.Log("Front Row Full check.");
             StartCoroutine(MoveCard(cardObject.transform, slot10));
@@ -146,19 +147,27 @@ public class OpponentSlotManager : MonoBehaviour
             slot10check = true;
             Debug.Log("Bottom left slot (10) card moved.");
         }
-        else if (num == 11 && !isMoving && !slot11check && frontrowfull)
+        else if (num == 11 && !isMoving && !slot11check)// && frontrowfull)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot11));
             slot11Object = cardObject;
             slot11check = true;
             Debug.Log("Bottom left slot (11) card moved.");
         }
-        else if (num == 12 && !isMoving && !slot12check && frontrowfull)
+        else if (num == 12 && !isMoving && !slot12check)// && frontrowfull)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot12));
             slot12Object = cardObject;
             slot12check = true;
             Debug.Log("Bottom left slot (12) card moved.");
+        }else{
+            Debug.Log("Error.");
+            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot7check= "+slot7check);
+            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot8check= "+slot8check);
+            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot9check= "+slot9check);
+            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot10check= "+slot10check+ ", frontrollfull"+frontrowfull);
+            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot11check= "+slot11check);
+            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot12check= "+slot12check);
         }
     }
 
