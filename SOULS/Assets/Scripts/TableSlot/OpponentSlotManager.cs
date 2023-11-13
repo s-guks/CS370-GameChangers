@@ -138,7 +138,7 @@ public class OpponentSlotManager : MonoBehaviour
             slot9check = true;
             Debug.Log("Bottom left slot (9) card moved.");
         }
-        else if (num == 10 && !isMoving && !slot10check && frontrowfull)
+        else if (num == 10 && !isMoving && !slot10check) // && frontrowfull)
         {
             Debug.Log("Front Row Full check.");
             StartCoroutine(MoveCard(cardObject.transform, slot10));
@@ -146,14 +146,14 @@ public class OpponentSlotManager : MonoBehaviour
             slot10check = true;
             Debug.Log("Bottom left slot (10) card moved.");
         }
-        else if (num == 11 && !isMoving && !slot11check && frontrowfull)
+        else if (num == 11 && !isMoving && !slot11check) // && frontrowfull)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot11));
             slot11Object = cardObject;
             slot11check = true;
             Debug.Log("Bottom left slot (11) card moved.");
         }
-        else if (num == 12 && !isMoving && !slot12check && frontrowfull)
+        else if (num == 12 && !isMoving && !slot12check) // && frontrowfull)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot12));
             slot12Object = cardObject;
@@ -195,7 +195,7 @@ public class OpponentSlotManager : MonoBehaviour
         isMoving = false;
     }
 
-    // Check if front row is full, prevent move card to backrow if front row is not full
+    // Check if front row is full
     bool frontRowFullCheck(int n)
     {
         int num = n - 3;
