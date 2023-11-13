@@ -128,7 +128,7 @@ public class PlayerSlotManager : MonoBehaviour
             slot1check = true;
             slot4check = false;
         }
-        else if (slot5check && emptySlots.Contains(2))
+        if (slot5check && emptySlots.Contains(2))
         {
             // Move from slot 5 to slot 2
             Debug.Log("Slot 2 is Empty and Slot 5 is Filled");
@@ -139,7 +139,7 @@ public class PlayerSlotManager : MonoBehaviour
             slot2check = true;
             slot5check = false;
         }
-        else if (slot6check && emptySlots.Contains(3))
+        if (slot6check && emptySlots.Contains(3))
         {
             // Move from slot 6 to slot 3
             Debug.Log("Slot 3 is Empty and Slot 6 is Filled");

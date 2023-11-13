@@ -82,7 +82,7 @@ public class OpponentSlotManager : MonoBehaviour
             slot7check = true;
             slot10check = false;
         }
-        else if (slot11check && emptySlots.Contains(8))
+        if (slot11check && emptySlots.Contains(8))
         {
             // Move from slot 11 to slot 8
             Debug.Log("Slot 8 is Empty and Slot 11 is Filled");
@@ -93,7 +93,7 @@ public class OpponentSlotManager : MonoBehaviour
             slot8check = true;
             slot11check = false;
         }
-        else if (slot12check && emptySlots.Contains(9))
+        if (slot12check && emptySlots.Contains(9))
         {
             // Move from slot 12 to slot 9
             Debug.Log("Slot 9 is Empty and Slot 12 is Filled");
