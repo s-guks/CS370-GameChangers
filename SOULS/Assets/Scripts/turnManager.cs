@@ -39,6 +39,7 @@ public class turnManager : MonoBehaviour
 
     //list of empty opponent slots
     private List<int> emptySlots;
+    private List<int> playerEmptySlots;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +69,7 @@ public class turnManager : MonoBehaviour
         {
             endAttack();
         }
+        /*
         if (Input.GetButtonDown("Esc")) 
         {
             winGame();
@@ -76,6 +78,7 @@ public class turnManager : MonoBehaviour
         {
             loseGame();
         }
+        */
     }
 
     public void endTurn() {
@@ -88,6 +91,12 @@ public class turnManager : MonoBehaviour
                 }
                 else {
                     playerAttackPhase();
+
+                    //check if player has won after their attack phase ends
+                    emptySlots = OpponentSlotManager.checkEmpty();
+                    if (emptySlots.Count == 6) {
+                        winGame();
+                    }
                 }
         }
     }
@@ -100,7 +109,6 @@ public class turnManager : MonoBehaviour
     }
 
     public void winGame() {
-        //put win game music here
         SceneManager.LoadScene("WinGame", LoadSceneMode.Single);
     }
 
@@ -219,7 +227,7 @@ public class turnManager : MonoBehaviour
         
         if (emptySlots.Count > 0) {
             foreach (Card c in makeDeck.Hands["hand2"]) {
-                if (i < r) {
+                if (i <= r) {
                     GameObject cardObj = null;
                     
                     if (c.id == 1) {
@@ -259,6 +267,12 @@ public class turnManager : MonoBehaviour
         //turn is over
         isOpponentTurn = false;
         opponentAttackPhase();
+
+        //check if opponent has won after opponsnt's attack phase ends
+        playerEmptySlots = PlayerSlotManager.checkEmpty();
+            if (playerEmptySlots.Count == 6) {
+                loseGame();
+            }
         playerTurn();
     }
 
