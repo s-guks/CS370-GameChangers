@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//WIP
+//CURRENTLY SUPER BROKEN AND NOT CONNECTED TO ANYTHING
+
 public class moveOnHover : MonoBehaviour
 {
     public float upAmount = 0.2f;
@@ -43,11 +46,11 @@ public class moveOnHover : MonoBehaviour
                 //the issue is that the invisible clicky box is only on the nurse card :(
                 //the Other issue is that I can't get component the clickableNurse component for some reason
                 if(Physics.Raycast(ray, out hit)
-                    //&& hit.collider.gameObject == this.gameObject.GetComponent<clickableNurse> //this.gameObject will already be the clickable box, since you can't actually click the empty parent object
+                    && hit.collider.gameObject == this.gameObject.transform.parent.gameObject //this.gameObject will already be the clickable box, since you can't actually click the empty parent object
                     && !hovered)// && hit.collider.gameObject == this.gameObject)
                 {
-                    Debug.Log(hit.collider.gameObject);
-                    Debug.Log(this.gameObject); //if you need to pull the empty parent, use (childObject.transform.parent.gameObject)
+                    Debug.Log("hovering" + hit.collider.gameObject);
+                    Debug.Log("parent" + this.gameObject.transform.parent.gameObject); //if you need to pull the empty parent, use (childObject.transform.parent.gameObject)
                     hovered = true;
                     currPos = upPos; 
                     Debug.Log("yahoooo");
