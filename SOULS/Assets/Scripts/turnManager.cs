@@ -145,8 +145,11 @@ public class turnManager : MonoBehaviour
         //place 3 or 4 cards
         var rand = new System.Random();
         int r = rand.Next(3, 5);
+        int r2 = 0;
         int i = 0;
+        Debug.Log("r " + r + " i " + i);
         foreach (Card c in makeDeck.Hands["hand2"]) {
+            Debug.Log("r " + r + " i " + i);
             if (i < r) {
                 GameObject cardObj = null;
                 
@@ -167,11 +170,15 @@ public class turnManager : MonoBehaviour
                 }
 
                 //get list of empty slots
-                List<int> emptySlots = OpponentSlotManager.checkEmpty();
-                int r2 = rand.Next(0, emptySlots.Count);
+                emptySlots = OpponentSlotManager.checkEmpty();
+                r2 = rand.Next(0, emptySlots.Count);
 
                 //move card to random empty slot
                 OpponentSlotManager.moveByClick(cardObj, emptySlots[r2]);
+                foreach (int slot in emptySlots) {
+                    Debug.Log("empty slots: " + slot);
+                }
+                
                 Debug.Log("moved " + cardObj + " to " + emptySlots[r2]);
 
                 i+=1;
