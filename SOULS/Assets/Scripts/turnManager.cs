@@ -44,6 +44,7 @@ public class turnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //find other scripts so the turn manager can reference them
         makeDeck = GameObject.Find("makeDeck").GetComponent<makeDeck>();
         spawnHand = GameObject.Find("spawnHand").GetComponent<spawnHand>();
         OpponentSlotManager = GameObject.Find("OpponentSlotManager").GetComponent<OpponentSlotManager>();
@@ -61,6 +62,7 @@ public class turnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //z ends the turn, x ends the attack phase; mostly used for testing
         if (Input.GetButtonDown("EndTurn")) 
         {
             endTurn();
@@ -81,9 +83,18 @@ public class turnManager : MonoBehaviour
         */
     }
 
+    /*
+    end the player's turn
+    the first turn triggers the opponent's first turn
+    every other turn triggers the player's attack phase and then checks the win condition 
+    (player defeated all of opponent's cards)
+    public, can be referenced by other scripts (the end turn button)
+    */
     public void endTurn() {
+        //only ends the player's turn if it's currently the player's turn
         if (isPlayerTurn) {
             isPlayerTurn = false;
+                //different first turn
                 if (firstTurn) {
                     firstTurn = false;
                     Debug.Log("first turn!");
@@ -101,6 +112,8 @@ public class turnManager : MonoBehaviour
         }
     }
 
+    //end the attack phase
+    //public, can be referenced by other scripts
     public void endAttack() {
         if (isPlayerAttack) {
             isPlayerAttack = false;
@@ -108,42 +121,55 @@ public class turnManager : MonoBehaviour
         }
     }
 
+    //load the You Won scene
+    //public, can be referenced by other scripts
     public void winGame() {
         SceneManager.LoadScene("WinGame", LoadSceneMode.Single);
     }
 
+    //load the You Lost scene
+    //public, can be referenced by other scripts
     public void loseGame() {
         SceneManager.LoadScene("LoseGame", LoadSceneMode.Single);
     }
 
+    //alter the game state to the player's turn
     private void playerTurn() {
         isPlayerTurn = true;
+
         //enable draw card button
         drawWasClicked = false;
-        //enable end turn button
+
+        //swap the camera to the main camera
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;
         Debug.Log("player's turn--click z!");
     }
 
+    //the player's cards attack the opponent's cards
     private void playerAttackPhase() {
         isPlayerAttack = true; 
+
+        //swap the camera to the table camera
         mainCamera.GetComponent<Camera>().enabled = false;
         tableCamera.GetComponent<Camera>().enabled = true;
 
+        //cards in the back row without a card in front of them move forward
+        //this happens once before the attacking starts and once after
         PlayerSlotManager.moveForward();
 
-        //cards attack each other
+        //TO DO: cards attack each other
 
         PlayerSlotManager.moveForward();
 
         Debug.Log("attack phase--click x!");
     }
 
+    //alter the game state to the opponent's first turn
     private void opponentFirstTurn() {
         isOpponentTurn = true;
 
-        //switch cammeras
+        //swap the camera to the main camera
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;
 
@@ -205,13 +231,14 @@ public class turnManager : MonoBehaviour
         playerTurn();
     }
 
+    //alter the game state to the opponent's turn (every turn but the first)
     private void opponentTurn() {
         isOpponentTurn = true;
 
         //opponent plays cards
         makeDeck.Draw("hand2", "deck2", 1);
 
-        //switch cammeras
+        //swap the camera to the main camera
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;
         
@@ -261,7 +288,7 @@ public class turnManager : MonoBehaviour
         }
 
 
-        //if there are cards in the back row, move them forward
+        //if there are cards in the back row with no card in front of them, move them forward
         OpponentSlotManager.moveForward();
 
         //turn is over
@@ -276,14 +303,21 @@ public class turnManager : MonoBehaviour
         playerTurn();
     }
 
+    //opponent's cards attack the player's cards
     private void opponentAttackPhase() {
         isOpponentAttack = true;
-        //opponent attacks
+
+        //swap the camera to the table camera
         mainCamera.GetComponent<Camera>().enabled = false;
         tableCamera.GetComponent<Camera>().enabled = true;
+
+        //TO DO: opponent attacks
+
         Debug.Log("opponent's attack phase");
 
+        //if there are cards in the back row with no card in front of them, move them forward
         OpponentSlotManager.moveForward();
+
         isOpponentAttack = false;
     }
 

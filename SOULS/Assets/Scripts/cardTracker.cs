@@ -34,7 +34,6 @@ public class cardTracker : MonoBehaviour
 
     public void addToSlot(Card card, int slot){ //adds card (scriptable) to list, using index to track slot
         cardsBySlot.Insert(slot, card);
-        //removeFromHand(card);
     }
 
     public void addToHand(GameObject card){ //same thing but for the hand
