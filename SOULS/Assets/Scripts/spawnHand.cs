@@ -128,7 +128,8 @@ public class spawnHand : MonoBehaviour
             else if (c.id == 5) {
                 cardObj = Instantiate(police5, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
             }
-            cardTracker.addToHand(cardObj);
+            cardTracker.addToHand(cardObj); //adding game object to hand card tracker
+            cardTracker.addCardToDict(cardObj, c); //adding game and script object to card dictionary
 
             //doesn't work?
             //cardObj.AddComponent<moveOnHover>();

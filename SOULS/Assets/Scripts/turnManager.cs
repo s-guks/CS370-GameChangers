@@ -24,6 +24,7 @@ public class turnManager : MonoBehaviour
     public spawnHand spawnHand;
     public OpponentSlotManager OpponentSlotManager;
     public PlayerSlotManager PlayerSlotManager;
+    public attackPhase attackPhase;
     
     //positions cards spawn in (opponent)
         private float horizontalPos = -1.494676f;
@@ -49,6 +50,7 @@ public class turnManager : MonoBehaviour
         spawnHand = GameObject.Find("spawnHand").GetComponent<spawnHand>();
         OpponentSlotManager = GameObject.Find("OpponentSlotManager").GetComponent<OpponentSlotManager>();
         PlayerSlotManager = GameObject.Find("PlayerSlotManager").GetComponent<PlayerSlotManager>();
+        attackPhase = GameObject.Find("attackPhase").GetComponent<attackPhase>();
         
         //draw cards
         makeDeck.GameStart();
@@ -159,6 +161,7 @@ public class turnManager : MonoBehaviour
         PlayerSlotManager.moveForward();
 
         //TO DO: cards attack each other
+        attackPhase.startAttack(true); //true means it is the player's attack phase
 
         PlayerSlotManager.moveForward();
 
@@ -312,6 +315,7 @@ public class turnManager : MonoBehaviour
         tableCamera.GetComponent<Camera>().enabled = true;
 
         //TO DO: opponent attacks
+        attackPhase.startAttack(false); //false means it is not the player's attack (ie. it's the opponent's)
 
         Debug.Log("opponent's attack phase");
 

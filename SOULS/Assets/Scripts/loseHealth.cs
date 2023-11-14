@@ -19,21 +19,22 @@ public class loseHealth : MonoBehaviour
     }
 
     //takes in two card objects and lowers the health of the hit card based on the attacking card's attack stat
-    public void getsAttackedBy(Card hitCard, Card attackingCard){     
-        GameObject hurtCard = cardTracker.getObjectByID(hitCard.idObj); //Get reference card's game object first
-        spriteHP = hurtCard.gameObject.transform.GetChild(10).gameObject; //HP sprite is 10th index child object of card
+    public bool getsAttackedBy(GameObject hitCard, GameObject attackingCard){ //returns true if hitCard dies
+        Card hurtCard = cardTracker.getScriptable(hitCard); //Get reference card's scriptable first
+        Card aggroCard = cardTracker.getScriptable(attackingCard);
+        spriteHP = hitCard.gameObject.transform.GetChild(10).gameObject; //HP sprite is 10th index child object of card
         //spriteHP = hurtCard.gameObject.FindWithTag("healthSprite");
        
-        int HPtoLose = attackingCard.attack; //get attack of attackingCard
-        int currentHP = hitCard.health;//get current health of hitCard
+        int HPtoLose = aggroCard.attack; //get attack of attackingCard
+        int currentHP = hurtCard.health;//get current health of hitCard
         int newHealth = currentHP - HPtoLose;//calculate new health
 
         if(newHealth <= 0){ //if health <= 0, update sprite to 0 and kill card
-            hitCard.health = 0; //updating card's health stat
+            hurtCard.health = 0; //updating card's health stat
             updatedHPMaterial = Resources.Load<Material>("newZero"); //get material for zero sprite
             spriteHP.GetComponent<SpriteRenderer>().material = updatedHPMaterial; //update HP sprite to zero
-            Destroy(hitCard); //kill card
-            
+            Destroy(hitCard); //kill card object
+            return true;
         } else { //else, update hp sprite and card hp to new health
             switch(newHealth) 
             { //fetch proper material for new health
@@ -60,7 +61,8 @@ public class loseHealth : MonoBehaviour
                 break;
             }
             spriteHP.GetComponent<SpriteRenderer>().material = updatedHPMaterial; //update HP sprite
-            hitCard.health = newHealth; //updating health stat in card
+            hurtCard.health = newHealth; //updating health stat in card
+            return false;
         }
     }
 
