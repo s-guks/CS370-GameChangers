@@ -114,6 +114,7 @@ public class PlayerSlotManager : MonoBehaviour
         return emptySlots;
     }
 
+    // Check empty fron slots and move card to forward slots
     public void moveForward()
     {
         List<int> emptySlots = checkEmpty();
@@ -152,6 +153,8 @@ public class PlayerSlotManager : MonoBehaviour
             slot6check = false;
         }
     }
+    
+    // Move card to desginated location
     public void moveByClick(int num)
     {
         originalPosition = cardObject.transform.position;
