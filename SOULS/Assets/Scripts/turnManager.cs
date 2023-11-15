@@ -41,6 +41,9 @@ public class turnManager : MonoBehaviour
     private List<int> emptySlots;
     private List<int> playerEmptySlots;
 
+    //check if no cards are being played
+    private int tieCheck;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -94,8 +97,7 @@ public class turnManager : MonoBehaviour
         //only ends the player's turn if it's currently the player's turn
         if (isPlayerTurn) {
             isPlayerTurn = false;
-                //different first turn
-                if (firstTurn) {
+                if (firstTurn) {    //different first turn
                     firstTurn = false;
                     Debug.Log("first turn!");
                     opponentFirstTurn();
@@ -117,6 +119,7 @@ public class turnManager : MonoBehaviour
     public void endAttack() {
         if (isPlayerAttack) {
             isPlayerAttack = false;
+            tieChecker();
             opponentTurn();
         }
     }
@@ -181,9 +184,9 @@ public class turnManager : MonoBehaviour
         int r = rand.Next(3, 5);
         int r2 = 0;
         int i = 0;
-        Debug.Log("r " + r + " i " + i);
+
+        //create and place card objects
         foreach (Card c in makeDeck.Hands["hand2"]) {
-            Debug.Log("r " + r + " i " + i);
             if (i < r) {
                 GameObject cardObj = null;
                 
@@ -209,11 +212,13 @@ public class turnManager : MonoBehaviour
 
                 //move card to random empty slot
                 OpponentSlotManager.moveByClick(cardObj, emptySlots[r2]);
+                /*
                 foreach (int slot in emptySlots) {
                     Debug.Log("empty slots: " + slot);
                 }
                 
                 Debug.Log("moved " + cardObj + " to " + emptySlots[r2]);
+                */
 
                 i+=1;
             }
@@ -255,6 +260,7 @@ public class turnManager : MonoBehaviour
         if (emptySlots.Count > 0) {
             foreach (Card c in makeDeck.Hands["hand2"]) {
                 if (i <= r) {
+                    tieCheck += 1;
                     GameObject cardObj = null;
                     
                     if (c.id == 1) {
@@ -318,7 +324,26 @@ public class turnManager : MonoBehaviour
         //if there are cards in the back row with no card in front of them, move them forward
         OpponentSlotManager.moveForward();
 
+        tieChecker();
+
         isOpponentAttack = false;
+    }
+
+    //detect unwinnable/unlosable game and break ties
+    private void tieChecker() {
+        if ((makeDeck.Decks["deck1"].Count == 0 || makeDeck.Decks["deck2"].Count == 0) && tieCheck > 3) {
+            List<int> emptyOpSlots = OpponentSlotManager.checkEmpty();
+            List<int> emptyPlSlots = PlayerSlotManager.checkEmpty();
+
+            //winner is the one with more cards on the table
+            //if equal, player wins
+            if (emptyOpSlots.Count > emptyPlSlots.Count) {
+                loseGame();
+            }
+            else {
+                winGame();
+            }
+        }
     }
 
 }
