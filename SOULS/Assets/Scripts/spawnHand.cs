@@ -64,7 +64,7 @@ public class spawnHand : MonoBehaviour
         //make sure number of cards in hand and space between them is up to date
         if(makeDeck.Hands != null){
             cardsHeld = makeDeck.Hands["hand1"].Count;
-            Debug.Log(cardsHeld);
+            //Debug.Log(cardsHeld);
             cardLocHorizontal = boxDistance / cardsHeld;
         }
         /*

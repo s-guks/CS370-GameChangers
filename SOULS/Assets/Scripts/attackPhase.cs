@@ -17,16 +17,22 @@ public class attackPhase : MonoBehaviour
     public void startAttack(bool playerTurn){ //true if player's attack, false if opponent's
         //check which front slots have cards
         bool firstCol = cardTracker.isSlotFilled(1) && cardTracker.isSlotFilled(7); //if both filled, true (should attack)
+        Debug.Log("firstCol = " + firstCol);
         bool secCol = cardTracker.isSlotFilled(2) && cardTracker.isSlotFilled(8);
+        Debug.Log("secCol = " + secCol);
         bool thirdCol = cardTracker.isSlotFilled(3) && cardTracker.isSlotFilled(9);
+        Debug.Log("thirdCol = " + thirdCol);
 
         if(firstCol){ //if cards across from each other (ie. can attack)
+            Debug.Log("attacking 1 & 7");
             attackForSlots(1, 7, playerTurn); //send to attack each other
         }
         if(secCol){
+            Debug.Log("attacking 2 & 8");
             attackForSlots(2, 8, playerTurn);
         }
         if(thirdCol){
+            Debug.Log("attacking 3 & 9");
             attackForSlots(3, 9, playerTurn);
         }
     }

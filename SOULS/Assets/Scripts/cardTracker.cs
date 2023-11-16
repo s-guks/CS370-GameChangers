@@ -8,8 +8,9 @@ public class cardTracker : MonoBehaviour
     public makeDeck deckScript;
     public Dictionary<GameObject, Card> cardObjects = new Dictionary<GameObject, Card>(); //dictionary to pair game objects with scriptables
 
-    public List<GameObject> slotsGameObj = new List<GameObject>(); //slots tracked as game objects
-    public List<Card> slotsScriptable = new List<Card>(); //slots tracked as scriptable objects
+    //public List<GameObject> slotsGameObj = new List<GameObject>(); //slots tracked as game objects
+    //public List<Card> slotsScriptable = new List<Card>(); //slots tracked as scriptable objects
+    public GameObject[] slotsGameObj;
 
     public List<GameObject> cardsInHand = new List<GameObject>(); //same thing but for the player's hand
 
@@ -21,6 +22,7 @@ public class cardTracker : MonoBehaviour
     void Start()
     {
         deckScript = GetComponent<makeDeck>(); //to reference card class
+        slotsGameObj = new GameObject[11]; //will need to reference as (slot-1)
     }
 
     //Global Tracker
@@ -45,54 +47,33 @@ public class cardTracker : MonoBehaviour
         cardsInHand.Remove(card);
     }
     
+    
     //Slot Tracker
     public void addToSlot(GameObject card, int slot){ //adds card to list, using index to track slot
-        slotsGameObj.Insert(slot, card);
-        slotsScriptable.Insert(slot, getScriptable(card));
+        slotsGameObj[(slot-1)] = card;
     }
 
+    
     public void clearSlot(int slot){ //clears the slot that has the passed card contained in it
         if(isSlotFilled(slot)){ //if card in slot
-            slotsGameObj[slot] = null;
-            slotsScriptable[slot] = null;
+            slotsGameObj.RemoveAt(slot);
         } 
     }
     
     public bool isSlotFilled(int slot){ //returns true if slot has card in it, false if empty
-        try {
-            tempObj = slotsGameObj[slot];
-        } catch (Exception e){ //out of bounds or null error means slot doesn't exist
-            return false;
-        }
-        if(tempObj == null){ //extra check for if null
-            return false;
-        } else {
+        if(slotsGameObj[slot] != null){
             return true;
+        } else {
+            return false;
         }
-    }
-    //two versions
-    public GameObject getObjBySlot(int slot){ //returns the game object in the slot
-        try {
-            tempObj = slotsGameObj[slot];
-        } catch { //nothing in slot
-            Debug.Log("Error: Could not get card, " + e);
-        }
-        if(tempObj == null){ //double check for if null
-            Debug.Log("Error: Could not get card, Null");
-        }
-        return tempObj;
-    }
-
-    public Card getScriptBySlot(int slot){ //returns the scriptable object in the slot
-        try {
-            tempScript = slotsScriptable[slot];
-        } catch { //nothing in slot
-            Debug.Log("Error: Could not get card, " + e);
-        }
-        if(tempScript == null){ //double check for if null
-            Debug.Log("Error: Could not get card, Null");
-        }
-        return tempScript;
     }
     
+    public GameObject getObjBySlot(int slot){ //returns the game object in the slot
+        if(isSlotFilled(slot)){ //if there is a card in the slot
+            return slotsGameObj[slot];
+        } else { //no card
+            Debug.Log("cardTracker: no card in slot");
+            return null;
+        }
+    }
 }
