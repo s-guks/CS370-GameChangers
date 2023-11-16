@@ -23,7 +23,7 @@ public class cardTracker : MonoBehaviour
         deckScript = GetComponent<makeDeck>(); //to reference card class
     }
 
-    //Overall Tracker
+    //Global Tracker
     public void addCardToDict(GameObject obj, Card script){ //adds the game and scriptable objects to the dictionary
         cardObjects.Add(obj, script);
     }
@@ -46,7 +46,7 @@ public class cardTracker : MonoBehaviour
     }
     
     //Slot Tracker
-    public void addToSlot(GameObject card, int slot){ //adds card (scriptable) to list, using index to track slot
+    public void addToSlot(GameObject card, int slot){ //adds card to list, using index to track slot
         slotsGameObj.Insert(slot, card);
         slotsScriptable.Insert(slot, getScriptable(card));
     }
@@ -71,7 +71,7 @@ public class cardTracker : MonoBehaviour
         }
     }
     //two versions
-    public GameObject getObjBySlot(int slot){
+    public GameObject getObjBySlot(int slot){ //returns the game object in the slot
         try {
             tempObj = slotsGameObj[slot];
         } catch { //nothing in slot
@@ -83,7 +83,7 @@ public class cardTracker : MonoBehaviour
         return tempObj;
     }
 
-    public Card getScriptBySlot(int slot){
+    public Card getScriptBySlot(int slot){ //returns the scriptable object in the slot
         try {
             tempScript = slotsScriptable[slot];
         } catch { //nothing in slot

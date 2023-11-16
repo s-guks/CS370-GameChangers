@@ -62,9 +62,11 @@ public class spawnHand : MonoBehaviour
     void Update()
     {
         //make sure number of cards in hand and space between them is up to date
-        cardsHeld = makeDeck.Hands["hand1"].Count;
-        cardLocHorizontal = boxDistance / cardsHeld;
-
+        if(makeDeck.Hands != null){
+            cardsHeld = makeDeck.Hands["hand1"].Count;
+            Debug.Log(cardsHeld);
+            cardLocHorizontal = boxDistance / cardsHeld;
+        }
         /*
         //make cards hoverable
         //currently broken

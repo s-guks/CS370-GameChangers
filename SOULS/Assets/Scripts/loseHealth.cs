@@ -23,7 +23,6 @@ public class loseHealth : MonoBehaviour
         Card hurtCard = cardTracker.getScriptable(hitCard); //Get reference card's scriptable first
         Card aggroCard = cardTracker.getScriptable(attackingCard);
         spriteHP = hitCard.gameObject.transform.GetChild(10).gameObject; //HP sprite is 10th index child object of card
-        //spriteHP = hurtCard.gameObject.FindWithTag("healthSprite");
        
         int HPtoLose = aggroCard.attack; //get attack of attackingCard
         int currentHP = hurtCard.health;//get current health of hitCard

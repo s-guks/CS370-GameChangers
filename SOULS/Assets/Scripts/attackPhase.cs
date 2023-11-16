@@ -46,17 +46,5 @@ public class attackPhase : MonoBehaviour
             dead = loseHealth.getsAttackedBy(playerCard, oppoCard); //player is hitCard
             if(dead){cardTracker.clearSlot(playerSlot);} //if card died, clear slot
         }
-        /* example of how works with slot numbers
-        if(firstCol){
-            playerCard = cardTracker.getObjBySlot(1); //get cards from 1 & 7
-            oppoCard = cardTracker.getObjBySlot(7);
-            if(playerTurn){ //player attacking
-                dead = loseHealth.getsAttackedBy(oppoCard, playerCard); //player is attackingCard
-                if(dead){cardTracker.clearSlot(7);} //if card died, clear slot
-            } else { //opponent attacking
-                dead = loseHealth.getsAttackedBy(playerCard, oppoCard); //player is hitCard
-                if(dead){cardTracker.clearSlot(1);} //if card died, clear slot
-            }
-        } */
     }
 }
