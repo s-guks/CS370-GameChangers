@@ -99,6 +99,7 @@ public class turnManager : MonoBehaviour
             isPlayerTurn = false;
                 if (firstTurn) {    //different first turn
                     firstTurn = false;
+                    PlayerSlotManager.moveForward();
                     Debug.Log("first turn!");
                     opponentFirstTurn();
                 }
