@@ -17,7 +17,7 @@ The flow of this game is managed using C#.
  - You must have Unity installed.
  - Clone the repo into a directory of your choice.
  - Open 'SOULS' folder as a project in Unity.
-[Doucmentation] (https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)
+<br>[Documentation] (https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)<br>
 
 
 
