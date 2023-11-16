@@ -2,7 +2,7 @@
 ## Emory CS 370 Fall 2023
 
 
-[Play the game](https://itch.io)
+[Play the game](https://game-changer-s.itch.io/souls)
 
 This is an implementation of an original turn-based card game implemented in C#. It uses Unity Game Engine.
 
@@ -17,10 +17,10 @@ The flow of this game is managed using C#.
  - You must have Unity installed.
  - Clone the repo into a directory of your choice.
  - Open 'SOULS' folder as a project in Unity.
- - [Doucmentation] (https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)
+[Doucmentation] (https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)
 
 
-**
+
 
 **Team Members:** Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
 
