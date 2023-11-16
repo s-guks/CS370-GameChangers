@@ -67,6 +67,7 @@ public class OpponentSlotManager : MonoBehaviour
         return emptySlots;
     }
 
+    // Move slots forward after check empty
     public void moveForward()
     {
         List<int> emptySlots = checkEmpty();
@@ -106,6 +107,7 @@ public class OpponentSlotManager : MonoBehaviour
         }
     }
 
+    // Allow card objects to be moved from player's hand to opponent's hand
     public void moveByClick(GameObject cardObject, int num)
     {
         originalPosition = cardObject.transform.position;
@@ -139,7 +141,7 @@ public class OpponentSlotManager : MonoBehaviour
             slot9check = true;
             Debug.Log("Bottom left slot (9) card moved.");
         }
-        else if (num == 10 && !isMoving && !slot10check)// && frontrowfull)
+        else if (num == 10 && !isMoving && !slot10check)
         {
             Debug.Log("Front Row Full check.");
             StartCoroutine(MoveCard(cardObject.transform, slot10));
@@ -147,14 +149,14 @@ public class OpponentSlotManager : MonoBehaviour
             slot10check = true;
             Debug.Log("Bottom left slot (10) card moved.");
         }
-        else if (num == 11 && !isMoving && !slot11check)// && frontrowfull)
+        else if (num == 11 && !isMoving && !slot11check)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot11));
             slot11Object = cardObject;
             slot11check = true;
             Debug.Log("Bottom left slot (11) card moved.");
         }
-        else if (num == 12 && !isMoving && !slot12check)// && frontrowfull)
+        else if (num == 12 && !isMoving && !slot12check)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot12));
             slot12Object = cardObject;
