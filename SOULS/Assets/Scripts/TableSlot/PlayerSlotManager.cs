@@ -19,6 +19,7 @@ public class PlayerSlotManager : MonoBehaviour
     public float speed = 2.0f;
     public bool interpolateRotation = true;
 
+    public cardTracker cardTracker;
     private bool isMoving = false;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
@@ -34,6 +35,7 @@ public class PlayerSlotManager : MonoBehaviour
 
     public void Start()
     {
+        cardTracker = GetComponent<cardTracker>();
         /*
         originalPosition = transform.position;
         originalRotation = transform.rotation;
@@ -172,6 +174,7 @@ public class PlayerSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot1));
             slot1Object = cardObject;
+            cardTracker.removeFromHand(cardObject);
             cardObject = null;
             slot1check = true;
             Debug.Log("Bottom left slot (1) card moved.");
@@ -180,6 +183,7 @@ public class PlayerSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot2));
             slot2Object = cardObject;
+            cardTracker.removeFromHand(cardObject);
             cardObject = null;
             slot2check = true;
             Debug.Log("Bottom left slot (2) card moved.");
@@ -188,6 +192,7 @@ public class PlayerSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot3));
             slot3Object = cardObject;
+            cardTracker.removeFromHand(cardObject);
             cardObject = null;
             slot3check = true;
             Debug.Log("Bottom left slot (3) card moved.");
@@ -197,6 +202,7 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Front Row Full check.");
             StartCoroutine(MoveCard(cardObject.transform, slot4));
             slot4Object = cardObject;
+            cardTracker.removeFromHand(cardObject);
             cardObject = null;
             slot4check = true;
             Debug.Log("Bottom left slot (4) card moved.");
@@ -205,6 +211,7 @@ public class PlayerSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot5));
             slot5Object = cardObject;
+            cardTracker.removeFromHand(cardObject);
             cardObject = null;
             slot5check = true;
             Debug.Log("Bottom left slot (5) card moved.");
@@ -213,6 +220,7 @@ public class PlayerSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot6));
             slot6Object = cardObject;
+            cardTracker.removeFromHand(cardObject);
             cardObject = null;
             slot6check = true;
             Debug.Log("Bottom left slot (6) card moved.");
