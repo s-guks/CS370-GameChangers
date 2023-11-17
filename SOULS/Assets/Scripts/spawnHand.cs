@@ -36,12 +36,16 @@ public class spawnHand : MonoBehaviour
     private float cardLocDepth = -0.1f;
 
     //move on hover variables
-    public float upAmount = 0.2f;
-    public float speed = 0.5f;
-
-    private  Vector3 dnPos;
-    private  Vector3 upPos;
+    //public float upAmount = 0.2f;
+    //public float speed = 0.5f;
+    //private  Vector3 dnPos;
+    //private  Vector3 upPos;
     //private  Vector3 currPos;
+
+    //universal id
+    public int prefabID = 0;
+
+
     
     // Start is called before the first frame update
     void Start()
@@ -130,6 +134,8 @@ public class spawnHand : MonoBehaviour
             else if (c.id == 5) {
                 cardObj = Instantiate(police5, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
             }
+            cardObj.name = (prefabID.ToString());
+            prefabID += 1;
             cardTracker.addToHand(cardObj); //adding game object to hand card tracker
             cardTracker.addCardToDict(cardObj, c); //adding game and script object to card dictionary
 

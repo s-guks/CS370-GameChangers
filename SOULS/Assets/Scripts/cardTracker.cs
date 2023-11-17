@@ -22,8 +22,9 @@ public class cardTracker : MonoBehaviour
     void Start()
     {
         deckScript = GetComponent<makeDeck>(); //to reference card class
-        slotsGameObj = new GameObject[11]; //will need to reference as (slot-1)
-    }
+        //BUGFIX: the length of the array is 12, even though it indexes 0 - 11
+        slotsGameObj = new GameObject[12]; //will need to reference as (slot-1)
+    }   
 
     //Global Tracker
     public void addCardToDict(GameObject obj, Card script){ //adds the game and scriptable objects to the dictionary
@@ -50,18 +51,20 @@ public class cardTracker : MonoBehaviour
     
     //Slot Tracker
     public void addToSlot(GameObject card, int slot){ //adds card to list, using index to track slot
-        slotsGameObj[(slot-1)] = card;
+        int realSlot = slot-1;
+        Debug.Log("add to slot in card tracker " + realSlot);
+        slotsGameObj[realSlot] = card;
     }
 
     
     public void clearSlot(int slot){ //clears the slot that has the passed card contained in it
         if(isSlotFilled(slot)){ //if card in slot
-            slotsGameObj.RemoveAt(slot);
+            slotsGameObj[(slot-1)] = null;
         } 
     }
     
     public bool isSlotFilled(int slot){ //returns true if slot has card in it, false if empty
-        if(slotsGameObj[slot] != null){
+        if(slotsGameObj[(slot-1)] != null){
             return true;
         } else {
             return false;
@@ -70,7 +73,8 @@ public class cardTracker : MonoBehaviour
     
     public GameObject getObjBySlot(int slot){ //returns the game object in the slot
         if(isSlotFilled(slot)){ //if there is a card in the slot
-            return slotsGameObj[slot];
+            int realSlot = slot-1;
+            return slotsGameObj[realSlot];
         } else { //no card
             Debug.Log("cardTracker: no card in slot");
             return null;

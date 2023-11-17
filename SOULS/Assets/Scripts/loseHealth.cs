@@ -20,8 +20,11 @@ public class loseHealth : MonoBehaviour
 
     //takes in two card objects and lowers the health of the hit card based on the attacking card's attack stat
     public bool getsAttackedBy(GameObject hitCard, GameObject attackingCard){ //returns true if hitCard dies
+        Debug.Log(hitCard);
         Card hurtCard = cardTracker.getScriptable(hitCard); //Get reference card's scriptable first
         Card aggroCard = cardTracker.getScriptable(attackingCard);
+        //Debug.Log(hurtCard.name);
+        //Debug.Log(aggroCard.name);
         spriteHP = hitCard.gameObject.transform.GetChild(10).gameObject; //HP sprite is 10th index child object of card
        
         int HPtoLose = aggroCard.attack; //get attack of attackingCard

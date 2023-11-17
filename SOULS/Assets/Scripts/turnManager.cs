@@ -205,6 +205,8 @@ public class turnManager : MonoBehaviour
                 else if (c.id == 5) {
                     cardObj = Instantiate(police5, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
                 }
+                cardObj.name = (spawnHand.prefabID.ToString());
+                spawnHand.prefabID += 1;
 
                 //get list of empty slots
                 emptySlots = OpponentSlotManager.checkEmpty();
