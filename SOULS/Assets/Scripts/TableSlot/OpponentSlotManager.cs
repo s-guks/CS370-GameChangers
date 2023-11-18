@@ -177,6 +177,11 @@ public class OpponentSlotManager : MonoBehaviour
     IEnumerator MoveCard(Transform cardObject, Transform newLocation)
     {
         isMoving = true;
+
+        // Store the original position and rotation before starting the movement
+        Vector3 originalPosition = cardObject.position;
+        Quaternion originalRotation = cardObject.rotation;
+
         Vector3 targetPosition = newLocation.position;
         Quaternion targetRotation = newLocation.rotation;
         float journeyLength = Vector3.Distance(originalPosition, targetPosition);
@@ -196,6 +201,7 @@ public class OpponentSlotManager : MonoBehaviour
             yield return null;
         }
 
+        // Ensure the card is precisely at the target position and rotation
         cardObject.position = targetPosition;
 
         if (interpolateRotation)
