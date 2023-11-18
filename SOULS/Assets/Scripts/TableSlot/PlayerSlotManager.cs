@@ -159,6 +159,12 @@ public class PlayerSlotManager : MonoBehaviour
     // Move card to desginated location
     public void moveByClick(int num)
     {
+        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
+        Debug.Log($"Slot 2. Object: {slot2Object}, Boolean: {slot2check}");
+        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
+        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
+        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
+        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
         originalPosition = cardObject.transform.position;
         originalRotation = cardObject.transform.rotation;
         bool frontrowfull = false;
