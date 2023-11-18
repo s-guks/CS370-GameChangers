@@ -149,6 +149,7 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Slot 3 is Empty and Slot 6 is Filled");
             Debug.Log("Moving from slot 6 to slot 3");
             StartCoroutine(MoveCard(slot6Object.transform, slot3));
+            //StartCoroutine(MoveCard(slot6Object.transform, slot3));
             slot3Object = slot6Object;
             slot6Object = null;
             slot3check = true;
@@ -159,12 +160,6 @@ public class PlayerSlotManager : MonoBehaviour
     // Move card to desginated location
     public void moveByClick(int num)
     {
-        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
-        Debug.Log($"Slot 2. Object: {slot2Object}, Boolean: {slot2check}");
-        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
-        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
-        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
-        Debug.Log($"Slot 1. Object: {slot1Object}, Boolean: {slot1check}");
         originalPosition = cardObject.transform.position;
         originalRotation = cardObject.transform.rotation;
         bool frontrowfull = false;
@@ -175,61 +170,67 @@ public class PlayerSlotManager : MonoBehaviour
             frontrowfull = frontRowFullCheck(num);
             Debug.Log(frontrowfull);
         }
-
         if (num == 1 && !isMoving && !slot1check)
         {
+            Debug.Log("Bottom left slot (1) card moved.");
+            slot1check = true;
             StartCoroutine(MoveCard(cardObject.transform, slot1));
             slot1Object = cardObject;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
-            slot1check = true;
-            Debug.Log("Bottom left slot (1) card moved.");
         }
         else if (num == 2 && !isMoving && !slot2check)
         {
+            Debug.Log("Bottom left slot (2) card moved.");
             StartCoroutine(MoveCard(cardObject.transform, slot2));
+            slot2check = true;
             slot2Object = cardObject;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
-            slot2check = true;
-            Debug.Log("Bottom left slot (2) card moved.");
+            
         }
         else if (num == 3 && !isMoving && !slot3check)
         {
+            Debug.Log("Bottom left slot (3) card moved.");
             StartCoroutine(MoveCard(cardObject.transform, slot3));
+            slot3check = true;
             slot3Object = cardObject;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
-            slot3check = true;
-            Debug.Log("Bottom left slot (3) card moved.");
+            
         }
         else if (num == 4 && !isMoving && !slot4check )//&& frontrowfull)
         {
-            Debug.Log("Front Row Full check.");
+            Debug.Log("Bottom left slot (4) card moved.");
             StartCoroutine(MoveCard(cardObject.transform, slot4));
+            slot4check = true;
             slot4Object = cardObject;
+            //slot4Object.transform.position = slot4.position;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
-            slot4check = true;
-            Debug.Log("Bottom left slot (4) card moved.");
+            
         }
         else if (num == 5 && !isMoving && !slot5check)// && frontrowfull)
         {
+            Debug.Log("Bottom left slot (5) card moved.");
             StartCoroutine(MoveCard(cardObject.transform, slot5));
+            slot5check = true;
             slot5Object = cardObject;
+            //slot5Object.transform.position = slot5.position;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
-            slot5check = true;
-            Debug.Log("Bottom left slot (5) card moved.");
+            
         }
         else if (num == 6 && !isMoving && !slot6check)// && frontrowfull)
         {
+            Debug.Log("Bottom left slot (6) card moved."); 
             StartCoroutine(MoveCard(cardObject.transform, slot6));
+            slot6check = true;
             slot6Object = cardObject;
+            //slot6Object.transform.position = slot6.position;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
-            slot6check = true;
-            Debug.Log("Bottom left slot (6) card moved.");
+            
         }
     }
 
@@ -237,6 +238,11 @@ public class PlayerSlotManager : MonoBehaviour
     IEnumerator MoveCard(Transform cardObject, Transform newLocation)
     {
         isMoving = true;
+
+        // Store the original position and rotation before starting the movement
+        Vector3 originalPosition = cardObject.position;
+        Quaternion originalRotation = cardObject.rotation;
+
         Vector3 targetPosition = newLocation.position;
         Quaternion targetRotation = newLocation.rotation;
         float journeyLength = Vector3.Distance(originalPosition, targetPosition);
@@ -256,6 +262,7 @@ public class PlayerSlotManager : MonoBehaviour
             yield return null;
         }
 
+        // Ensure the card is precisely at the target position and rotation
         cardObject.position = targetPosition;
 
         if (interpolateRotation)
@@ -279,4 +286,5 @@ public class PlayerSlotManager : MonoBehaviour
             return false;
         }
     }
+
 }
