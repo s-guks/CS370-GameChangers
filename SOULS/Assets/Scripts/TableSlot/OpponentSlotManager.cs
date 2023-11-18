@@ -212,6 +212,41 @@ public class OpponentSlotManager : MonoBehaviour
         isMoving = false;
     }
 
+    public void cardterminate(int slotnum)
+    {
+        if (slotnum == 7)
+        {
+            slot7check = false;
+            slot7Object = null;
+        }
+        else if (slotnum == 8)
+        {
+            slot8check = false;
+            slot8Object = null;
+        }
+        else if (slotnum == 9)
+        {
+            slot9check = false;
+            slot9Object = null;
+        }
+        else if (slotnum == 10)
+        {
+            slot10check = false;
+            slot10Object = null;
+        }
+        else if (slotnum == 11)
+        {
+            slot11check = false;
+            slot11Object = null;
+
+        }
+        else if (slotnum == 12)
+        {
+            slot12check = false;
+            slot12Object = null;
+        }
+    }
+
     // Check if front row is full
     bool frontRowFullCheck(int n)
     {

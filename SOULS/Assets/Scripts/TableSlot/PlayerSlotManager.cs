@@ -149,7 +149,6 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Slot 3 is Empty and Slot 6 is Filled");
             Debug.Log("Moving from slot 6 to slot 3");
             StartCoroutine(MoveCard(slot6Object.transform, slot3));
-            //StartCoroutine(MoveCard(slot6Object.transform, slot3));
             slot3Object = slot6Object;
             slot6Object = null;
             slot3check = true;
@@ -168,8 +167,17 @@ public class PlayerSlotManager : MonoBehaviour
         if (num == 4 || num == 5 || num == 6)
         {
             frontrowfull = frontRowFullCheck(num);
-            Debug.Log(frontrowfull);
+            Debug.Log("front row full: "+frontrowfull);
         }
+        Debug.Log("num: " + num);
+        Debug.Log("ismoving: " + isMoving);
+        Debug.Log("slot1check: " + slot1check);
+        Debug.Log("slot2check: " + slot2check);
+        Debug.Log("slot3check: " + slot3check);
+        Debug.Log("slot4check: " + slot4check);
+        Debug.Log("slot5check: " + slot5check);
+        Debug.Log("slot6check: " + slot6check);
+
         if (num == 1 && !isMoving && !slot1check)
         {
             Debug.Log("Bottom left slot (1) card moved.");
@@ -205,7 +213,6 @@ public class PlayerSlotManager : MonoBehaviour
             StartCoroutine(MoveCard(cardObject.transform, slot4));
             slot4check = true;
             slot4Object = cardObject;
-            //slot4Object.transform.position = slot4.position;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
             
@@ -216,7 +223,6 @@ public class PlayerSlotManager : MonoBehaviour
             StartCoroutine(MoveCard(cardObject.transform, slot5));
             slot5check = true;
             slot5Object = cardObject;
-            //slot5Object.transform.position = slot5.position;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
             
@@ -227,7 +233,6 @@ public class PlayerSlotManager : MonoBehaviour
             StartCoroutine(MoveCard(cardObject.transform, slot6));
             slot6check = true;
             slot6Object = cardObject;
-            //slot6Object.transform.position = slot6.position;
             cardTracker.removeFromHand(cardObject);
             cardObject = null;
             
@@ -271,6 +276,41 @@ public class PlayerSlotManager : MonoBehaviour
         }
 
         isMoving = false;
+    }
+
+    public void cardterminate(int slotnum)
+    {
+        if(slotnum == 1)
+        {
+            slot1check = false;
+            slot1Object = null;
+        }
+        else if (slotnum == 2)
+        {
+            slot2check = false;
+            slot2Object = null;
+        }
+        else if (slotnum == 3)
+        {
+            slot3check = false;
+            slot3Object = null;
+        }
+        else if (slotnum == 4)
+        {
+            slot4check = false;
+            slot4Object = null;
+        }
+        else if (slotnum == 5)
+        {
+            slot5check = false;
+            slot5Object = null;
+
+        }
+        else if (slotnum == 6)
+        {
+            slot6check = false;
+            slot6Object = null;
+        }
     }
 
     // Check if front row is full
