@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerSlotManager : MonoBehaviour
 {
@@ -169,17 +170,10 @@ public class PlayerSlotManager : MonoBehaviour
             frontrowfull = frontRowFullCheck(num);
             Debug.Log("front row full: "+frontrowfull);
         }
-        Debug.Log("num: " + num);
-        Debug.Log("ismoving: " + isMoving);
-        Debug.Log("slot1check: " + slot1check);
-        Debug.Log("slot2check: " + slot2check);
-        Debug.Log("slot3check: " + slot3check);
-        Debug.Log("slot4check: " + slot4check);
-        Debug.Log("slot5check: " + slot5check);
-        Debug.Log("slot6check: " + slot6check);
 
         if (num == 1 && !isMoving && !slot1check)
         {
+            checkCardMoveWithinSlot(cardObject.transform);
             Debug.Log("Bottom left slot (1) card moved.");
             slot1check = true;
             StartCoroutine(MoveCard(cardObject.transform, slot1));
@@ -189,6 +183,7 @@ public class PlayerSlotManager : MonoBehaviour
         }
         else if (num == 2 && !isMoving && !slot2check)
         {
+            checkCardMoveWithinSlot(cardObject.transform); 
             Debug.Log("Bottom left slot (2) card moved.");
             StartCoroutine(MoveCard(cardObject.transform, slot2));
             slot2check = true;
@@ -199,6 +194,7 @@ public class PlayerSlotManager : MonoBehaviour
         }
         else if (num == 3 && !isMoving && !slot3check)
         {
+            checkCardMoveWithinSlot(cardObject.transform); 
             Debug.Log("Bottom left slot (3) card moved.");
             StartCoroutine(MoveCard(cardObject.transform, slot3));
             slot3check = true;
@@ -209,6 +205,7 @@ public class PlayerSlotManager : MonoBehaviour
         }
         else if (num == 4 && !isMoving && !slot4check )//&& frontrowfull)
         {
+            checkCardMoveWithinSlot(cardObject.transform); 
             Debug.Log("Bottom left slot (4) card moved.");
             StartCoroutine(MoveCard(cardObject.transform, slot4));
             slot4check = true;
@@ -219,6 +216,7 @@ public class PlayerSlotManager : MonoBehaviour
         }
         else if (num == 5 && !isMoving && !slot5check)// && frontrowfull)
         {
+            checkCardMoveWithinSlot(cardObject.transform); 
             Debug.Log("Bottom left slot (5) card moved.");
             StartCoroutine(MoveCard(cardObject.transform, slot5));
             slot5check = true;
@@ -229,6 +227,7 @@ public class PlayerSlotManager : MonoBehaviour
         }
         else if (num == 6 && !isMoving && !slot6check)// && frontrowfull)
         {
+            checkCardMoveWithinSlot(cardObject.transform); 
             Debug.Log("Bottom left slot (6) card moved."); 
             StartCoroutine(MoveCard(cardObject.transform, slot6));
             slot6check = true;
@@ -278,6 +277,44 @@ public class PlayerSlotManager : MonoBehaviour
         isMoving = false;
     }
 
+    private void checkCardMoveWithinSlot(Transform trans)
+    {
+        if (AreTransformsEqual(slot1, trans))
+        {
+            Debug.Log("Card at Slot 1. Moving from Slot 1...");
+            slot1check = false;
+        }
+        else if (AreTransformsEqual(slot2, trans))
+        {
+            Debug.Log("Card at Slot 2. Moving from Slot 2...");
+            slot2check = false;
+        }
+        else if (AreTransformsEqual(slot3, trans))
+        {
+            Debug.Log("Card at Slot 3. Moving from Slot 3...");
+            slot3check = false;
+        }
+        else if (AreTransformsEqual(slot4, trans))
+        {
+            Debug.Log("Card at Slot 4. Moving from Slot 4...");
+            slot4check = false;
+        }
+        else if (AreTransformsEqual(slot5, trans))
+        {
+            Debug.Log("Card at Slot 5. Moving from Slot 5...");
+            slot5check = false;
+        }
+        else if (AreTransformsEqual(slot6, trans))
+        {
+            Debug.Log("Card at Slot 6. Moving from Slot 6...");
+            slot6check = false;
+        }
+        else
+        {
+            Debug.Log("Card is in hand.");
+        }
+    }
+
     public void cardterminate(int slotnum)
     {
         if(slotnum == 1)
@@ -313,6 +350,22 @@ public class PlayerSlotManager : MonoBehaviour
         }
     }
 
+    bool AreTransformsEqual(Transform t1, Transform t2)
+    {
+        if (t1 == null || t2 == null)
+        {
+            // One or both of the transforms are null, consider them not equal
+            return false;
+        }
+
+        // Compare position, rotation, and scale
+        if (t1.position == t2.position && t1.rotation == t2.rotation && t1.localScale == t2.localScale)
+        {
+            return true;
+        }
+
+        return false;
+    }
     // Check if front row is full
     bool frontRowFullCheck(int n)
     {
