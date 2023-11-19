@@ -74,10 +74,10 @@ public class turnManager : MonoBehaviour
         {
             endTurn();
         }
-        if (Input.GetButtonDown("EndAttack")) 
-        {
-            endAttack();
-        }
+        //if (Input.GetButtonDown("EndAttack")) 
+        //{
+        //    endAttack();
+        //}
         /*
         if (Input.GetButtonDown("Esc")) 
         {
@@ -166,12 +166,14 @@ public class turnManager : MonoBehaviour
         //this happens once before the attacking starts and once after
         PlayerSlotManager.moveForward();
 
-        //TO DO: cards attack each other
+        //cards attack each other
         attackPhase.startAttack(true); //true means it is the player's attack phase
 
         PlayerSlotManager.moveForward();
 
-        Debug.Log("attack phase--click x!");
+        //end player attack phase
+        endAttack();
+        //Debug.Log("attack phase--click x!");
     }
 
     //alter the game state to the opponent's first turn
@@ -236,7 +238,7 @@ public class turnManager : MonoBehaviour
 
         //opponent DOES NOT have an attack phase
         
-        Debug.Log("opponent's first turn");
+        //Debug.Log("opponent's first turn");
 
         //if there are cards in the back row, move them forward
         OpponentSlotManager.moveForward();
@@ -328,10 +330,10 @@ public class turnManager : MonoBehaviour
         mainCamera.GetComponent<Camera>().enabled = false;
         tableCamera.GetComponent<Camera>().enabled = true;
 
-        //TO DO: opponent attacks
+        //opponent attacks
         attackPhase.startAttack(false); //false means it is not the player's attack (ie. it's the opponent's)
 
-        Debug.Log("opponent's attack phase");
+        //Debug.Log("opponent's attack phase");
 
         //if there are cards in the back row with no card in front of them, move them forward
         OpponentSlotManager.moveForward();

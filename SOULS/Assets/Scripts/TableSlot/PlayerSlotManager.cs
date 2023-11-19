@@ -186,6 +186,12 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Bottom left slot (1) card moved.");
             cardTracker.removeFromHand(cardObject);
             cardTracker.addToSlot(cardObject, 1);
+            
+            //discard from deck in makeDeck
+            Card c = cardTracker.getScriptable(cardObject);
+            int index = makeDeck.Hands["hand1"].IndexOf(c);
+            makeDeck.Discard("hand1", index);
+            
             StartCoroutine(MoveCard(cardObject.transform, slot1));
             slot1check = true;
             slot1Object = cardObject;
@@ -197,6 +203,12 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Bottom left slot (2) card moved.");
             cardTracker.removeFromHand(cardObject);
             cardTracker.addToSlot(cardObject, 2);
+
+            //discard from deck in makeDeck
+            Card c = cardTracker.getScriptable(cardObject);
+            int index = makeDeck.Hands["hand1"].IndexOf(c);
+            makeDeck.Discard("hand1", index);
+
             StartCoroutine(MoveCard(cardObject.transform, slot2));
             slot2check = true;
             slot2Object = cardObject;
@@ -209,6 +221,12 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Bottom left slot (3) card moved.");
             cardTracker.removeFromHand(cardObject);
             cardTracker.addToSlot(cardObject, 3);
+
+            //discard from deck in makeDeck
+            Card c = cardTracker.getScriptable(cardObject);
+            int index = makeDeck.Hands["hand1"].IndexOf(c);
+            makeDeck.Discard("hand1", index);
+
             StartCoroutine(MoveCard(cardObject.transform, slot3));
             slot3check = true;
             slot3Object = cardObject;
@@ -221,6 +239,12 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Bottom left slot (4) card moved.");
             cardTracker.removeFromHand(cardObject);
             cardTracker.addToSlot(cardObject, 4);
+
+            //discard from deck in makeDeck
+            Card c = cardTracker.getScriptable(cardObject);
+            int index = makeDeck.Hands["hand1"].IndexOf(c);
+            makeDeck.Discard("hand1", index);
+
             StartCoroutine(MoveCard(cardObject.transform, slot4));
             slot4check = true;
             slot4Object = cardObject;
@@ -233,6 +257,12 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Bottom left slot (5) card moved.");
             cardTracker.removeFromHand(cardObject);
             cardTracker.addToSlot(cardObject, 5);
+
+            //discard from deck in makeDeck
+            Card c = cardTracker.getScriptable(cardObject);
+            int index = makeDeck.Hands["hand1"].IndexOf(c);
+            makeDeck.Discard("hand1", index);
+
             StartCoroutine(MoveCard(cardObject.transform, slot5));
             slot5check = true;
             slot5Object = cardObject;
@@ -245,6 +275,12 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Bottom left slot (6) card moved.");
             cardTracker.removeFromHand(cardObject);
             cardTracker.addToSlot(cardObject, 6);
+
+            //discard from deck in makeDeck
+            Card c = cardTracker.getScriptable(cardObject);
+            int index = makeDeck.Hands["hand1"].IndexOf(c);
+            makeDeck.Discard("hand1", index);
+
             StartCoroutine(MoveCard(cardObject.transform, slot6));
             slot6check = true;
             slot6Object = cardObject;
