@@ -10,6 +10,7 @@ public class OpponentSlotManager : MonoBehaviour
     public Transform slot10;
     public Transform slot11;
     public Transform slot12;
+    public cardTracker cardTracker;
     private GameObject slot7Object = null;
     private GameObject slot8Object = null;
     private GameObject slot9Object = null;
@@ -39,7 +40,7 @@ public class OpponentSlotManager : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-
+        cardTracker = GameObject.Find("cardTracker").GetComponent<cardTracker>(); //load reference
     }
 
     // Update is called once per frame
@@ -79,6 +80,8 @@ public class OpponentSlotManager : MonoBehaviour
             Debug.Log("Moving from slot 10 to slot 7");
             StartCoroutine(MoveCard(slot10Object.transform, slot7));
             slot7Object = slot10Object;
+            cardTracker.clearSlot(10);
+            cardTracker.addToSlot(slot7Object, 7);
             slot10Object = null;
             slot7check = true;
             slot10check = false;
@@ -90,6 +93,8 @@ public class OpponentSlotManager : MonoBehaviour
             Debug.Log("Moving from slot 11 to slot 8");
             StartCoroutine(MoveCard(slot11Object.transform, slot8));
             slot8Object = slot11Object;
+            cardTracker.clearSlot(11);
+            cardTracker.addToSlot(slot8Object, 8);
             slot11Object = null;
             slot8check = true;
             slot11check = false;
@@ -101,6 +106,8 @@ public class OpponentSlotManager : MonoBehaviour
             Debug.Log("Moving from slot 12 to slot 9");
             StartCoroutine(MoveCard(slot12Object.transform, slot9));
             slot9Object = slot12Object;
+            cardTracker.clearSlot(12);
+            cardTracker.addToSlot(slot9Object, 9);
             slot12Object = null;
             slot9check = true;
             slot12check = false;
@@ -124,6 +131,7 @@ public class OpponentSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot7));
             slot7Object = cardObject;
+            cardTracker.addToSlot(cardObject, 7);
             slot7check = true;
             Debug.Log("Bottom left slot (7) card moved.");
         }
@@ -131,6 +139,7 @@ public class OpponentSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot8));
             slot8Object = cardObject;
+            cardTracker.addToSlot(cardObject, 8);
             slot8check = true;
             Debug.Log("Bottom left slot (8) card moved.");
         }
@@ -138,6 +147,7 @@ public class OpponentSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot9));
             slot9Object = cardObject;
+            cardTracker.addToSlot(cardObject, 9);
             slot9check = true;
             Debug.Log("Bottom left slot (9) card moved.");
         }
@@ -146,6 +156,7 @@ public class OpponentSlotManager : MonoBehaviour
             Debug.Log("Front Row Full check.");
             StartCoroutine(MoveCard(cardObject.transform, slot10));
             slot10Object = cardObject;
+            cardTracker.addToSlot(cardObject, 10);
             slot10check = true;
             Debug.Log("Bottom left slot (10) card moved.");
         }
@@ -153,6 +164,7 @@ public class OpponentSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot11));
             slot11Object = cardObject;
+            cardTracker.addToSlot(cardObject, 11);
             slot11check = true;
             Debug.Log("Bottom left slot (11) card moved.");
         }
@@ -160,6 +172,7 @@ public class OpponentSlotManager : MonoBehaviour
         {
             StartCoroutine(MoveCard(cardObject.transform, slot12));
             slot12Object = cardObject;
+            cardTracker.addToSlot(cardObject, 12);
             slot12check = true;
             Debug.Log("Bottom left slot (12) card moved.");
         }
