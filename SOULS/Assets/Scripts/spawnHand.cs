@@ -18,6 +18,8 @@ public class spawnHand : MonoBehaviour
     public GameObject mechanic3;
     public GameObject nurse4;
     public GameObject police5;
+    public GameObject teacher6;
+    public GameObject judge7;
     
     //positions cards spawn in 
     private float horizontalPos = -0.8f;
@@ -133,6 +135,12 @@ public class spawnHand : MonoBehaviour
             }
             else if (c.id == 5) {
                 cardObj = Instantiate(police5, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
+            }
+            else if (c.id == 6) {
+                cardObj = Instantiate(teacher6, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
+            }
+            else if (c.id == 7) {
+                cardObj = Instantiate(judge7, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
             }
             cardObj.name = (prefabID.ToString());
             prefabID += 1;
