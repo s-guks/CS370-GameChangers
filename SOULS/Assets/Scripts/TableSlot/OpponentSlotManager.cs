@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OpponentSlotManager : MonoBehaviour
 {
-    public cardTracker cardTracker;
     public Transform slot7;
     public Transform slot8;
     public Transform slot9;
@@ -36,17 +35,17 @@ public class OpponentSlotManager : MonoBehaviour
     private int opponentslot5 = 11;
     private int opponentslot6 = 12;
     */
-    
+
     // Start is called before the first frame update
     public void Start()
     {
-        cardTracker = GameObject.Find("cardTracker").GetComponent<cardTracker>(); //load reference
+
     }
 
     // Update is called once per frame
     public void inputs()
     {
-        
+
     }
 
     public List<int> checkEmpty() //Return Empty Slots
@@ -80,8 +79,6 @@ public class OpponentSlotManager : MonoBehaviour
             Debug.Log("Moving from slot 10 to slot 7");
             StartCoroutine(MoveCard(slot10Object.transform, slot7));
             slot7Object = slot10Object;
-            cardTracker.clearSlot(10);
-            cardTracker.addToSlot(slot7Object, 7);
             slot10Object = null;
             slot7check = true;
             slot10check = false;
@@ -93,8 +90,6 @@ public class OpponentSlotManager : MonoBehaviour
             Debug.Log("Moving from slot 11 to slot 8");
             StartCoroutine(MoveCard(slot11Object.transform, slot8));
             slot8Object = slot11Object;
-            cardTracker.clearSlot(11);
-            cardTracker.addToSlot(slot8Object, 8);
             slot11Object = null;
             slot8check = true;
             slot11check = false;
@@ -106,8 +101,6 @@ public class OpponentSlotManager : MonoBehaviour
             Debug.Log("Moving from slot 12 to slot 9");
             StartCoroutine(MoveCard(slot12Object.transform, slot9));
             slot9Object = slot12Object;
-            cardTracker.clearSlot(12);
-            cardTracker.addToSlot(slot9Object, 9);
             slot12Object = null;
             slot9check = true;
             slot12check = false;
@@ -130,7 +123,6 @@ public class OpponentSlotManager : MonoBehaviour
         if (num == 7 && !isMoving && !slot7check)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot7));
-            cardTracker.addToSlot(cardObject, 7);
             slot7Object = cardObject;
             slot7check = true;
             Debug.Log("Bottom left slot (7) card moved.");
@@ -138,7 +130,6 @@ public class OpponentSlotManager : MonoBehaviour
         else if (num == 8 && !isMoving && !slot8check)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot8));
-            cardTracker.addToSlot(cardObject, 8);
             slot8Object = cardObject;
             slot8check = true;
             Debug.Log("Bottom left slot (8) card moved.");
@@ -146,7 +137,6 @@ public class OpponentSlotManager : MonoBehaviour
         else if (num == 9 && !isMoving && !slot9check)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot9));
-            cardTracker.addToSlot(cardObject, 9);
             slot9Object = cardObject;
             slot9check = true;
             Debug.Log("Bottom left slot (9) card moved.");
@@ -155,7 +145,6 @@ public class OpponentSlotManager : MonoBehaviour
         {
             Debug.Log("Front Row Full check.");
             StartCoroutine(MoveCard(cardObject.transform, slot10));
-            cardTracker.addToSlot(cardObject, 10);
             slot10Object = cardObject;
             slot10check = true;
             Debug.Log("Bottom left slot (10) card moved.");
@@ -163,7 +152,6 @@ public class OpponentSlotManager : MonoBehaviour
         else if (num == 11 && !isMoving && !slot11check)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot11));
-            cardTracker.addToSlot(cardObject, 11);
             slot11Object = cardObject;
             slot11check = true;
             Debug.Log("Bottom left slot (11) card moved.");
@@ -171,18 +159,19 @@ public class OpponentSlotManager : MonoBehaviour
         else if (num == 12 && !isMoving && !slot12check)
         {
             StartCoroutine(MoveCard(cardObject.transform, slot12));
-            cardTracker.addToSlot(cardObject, 12);
             slot12Object = cardObject;
             slot12check = true;
             Debug.Log("Bottom left slot (12) card moved.");
-        }else{
+        }
+        else
+        {
             Debug.Log("Error.");
-            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot7check= "+slot7check);
-            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot8check= "+slot8check);
-            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot9check= "+slot9check);
-            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot10check= "+slot10check+ ", frontrollfull"+frontrowfull);
-            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot11check= "+slot11check);
-            Debug.Log("num ="+num+", isMoving= "+isMoving+ ", slot12check= "+slot12check);
+            Debug.Log("num =" + num + ", isMoving= " + isMoving + ", slot7check= " + slot7check);
+            Debug.Log("num =" + num + ", isMoving= " + isMoving + ", slot8check= " + slot8check);
+            Debug.Log("num =" + num + ", isMoving= " + isMoving + ", slot9check= " + slot9check);
+            Debug.Log("num =" + num + ", isMoving= " + isMoving + ", slot10check= " + slot10check + ", frontrollfull" + frontrowfull);
+            Debug.Log("num =" + num + ", isMoving= " + isMoving + ", slot11check= " + slot11check);
+            Debug.Log("num =" + num + ", isMoving= " + isMoving + ", slot12check= " + slot12check);
         }
     }
 
@@ -264,7 +253,7 @@ public class OpponentSlotManager : MonoBehaviour
     bool frontRowFullCheck(int n)
     {
         int num = n - 3;
-        if((slot7check && num == 7) || (slot8check && num == 8) || (slot9check && num == 9))
+        if ((slot7check && num == 7) || (slot8check && num == 8) || (slot9check && num == 9))
         {
             return true;
         }
@@ -273,8 +262,4 @@ public class OpponentSlotManager : MonoBehaviour
             return false;
         }
     }
-
-    //public void cardterminate(int slotnum){ //placeholder so i can call it
-
-    //}
 }
