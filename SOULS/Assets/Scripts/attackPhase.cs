@@ -6,12 +6,16 @@ public class attackPhase : MonoBehaviour
 {
     public cardTracker cardTracker;
     public loseHealth loseHealth;
+    public PlayerSlotManager PlayerSlotManager;
+    public OpponentSlotManager OpponentSlotManager;
     
     // Start is called before the first frame update
     void Start()
     {
         cardTracker = GameObject.Find("cardTracker").GetComponent<cardTracker>(); //referencing
         loseHealth = GameObject.Find("loseHealth").GetComponent<loseHealth>();
+        PlayerSlotManager = GameObject.Find("PlayerSlotManager").GetComponent<PlayerSlotManager>(); //referencing
+        OpponentSlotManager = GameObject.Find("OpponentSlotManager").GetComponent<OpponentSlotManager>(); //referencing
     }
 
     public void startAttack(bool playerTurn){ //true if player's attack, false if opponent's
@@ -47,10 +51,16 @@ public class attackPhase : MonoBehaviour
 
         if(playerTurn){ //player attacking
             dead = loseHealth.getsAttackedBy(oppoCard, playerCard); //player is attackingCard
-            if(dead){cardTracker.clearSlot(oppoSlot);} //if card died, clear slot
+            if(dead){ //if card died, clear slot
+                cardTracker.clearSlot(oppoSlot);
+                OpponentSlotManager.cardterminate(oppoSlot); //opponent card dead
+            } 
         } else { //opponent attacking
             dead = loseHealth.getsAttackedBy(playerCard, oppoCard); //player is hitCard
-            if(dead){cardTracker.clearSlot(playerSlot);} //if card died, clear slot
+            if(dead){ //if card died, clear slot
+                cardTracker.clearSlot(playerSlot);
+                PlayerSlotManager.cardterminate(playerSlot); //player card deaed
+            }
         }
     }
 }

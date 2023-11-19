@@ -230,4 +230,8 @@ public class OpponentSlotManager : MonoBehaviour
             return false;
         }
     }
+
+    public void cardterminate(int slotnum){ //placeholder so i can call it
+
+    }
 }

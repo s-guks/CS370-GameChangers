@@ -276,4 +276,8 @@ public class PlayerSlotManager : MonoBehaviour
             return false;
         }
     }
+
+    public void cardterminate(int slotnum){ //placeholder header so i can call it
+
+    }
 }
