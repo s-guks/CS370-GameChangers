@@ -274,7 +274,7 @@ public class OpponentSlotManager : MonoBehaviour
         }
     }
 
-    public void cardterminate(int slotnum){ //placeholder so i can call it
+    //public void cardterminate(int slotnum){ //placeholder so i can call it
 
-    }
+    //}
 }
