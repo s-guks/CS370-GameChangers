@@ -176,20 +176,20 @@ public class PlayerSlotManager : MonoBehaviour
         {
             checkCardMoveWithinSlot(cardObject.transform);
             Debug.Log("Bottom left slot (1) card moved.");
-            slot1check = true;
-            StartCoroutine(MoveCard(cardObject.transform, slot1));
-            slot1Object = cardObject;
             cardTracker.removeFromHand(cardObject);
+            StartCoroutine(MoveCard(cardObject.transform, slot1));
+            slot1check = true;
+            slot1Object = cardObject;
             cardObject = null;
         }
         else if (num == 2 && !isMoving && !slot2check)
         {
             checkCardMoveWithinSlot(cardObject.transform);
             Debug.Log("Bottom left slot (2) card moved.");
+            cardTracker.removeFromHand(cardObject);
             StartCoroutine(MoveCard(cardObject.transform, slot2));
             slot2check = true;
             slot2Object = cardObject;
-            cardTracker.removeFromHand(cardObject);
             cardObject = null;
 
         }
@@ -197,10 +197,10 @@ public class PlayerSlotManager : MonoBehaviour
         {
             checkCardMoveWithinSlot(cardObject.transform);
             Debug.Log("Bottom left slot (3) card moved.");
+            cardTracker.removeFromHand(cardObject);
             StartCoroutine(MoveCard(cardObject.transform, slot3));
             slot3check = true;
             slot3Object = cardObject;
-            cardTracker.removeFromHand(cardObject);
             cardObject = null;
 
         }
@@ -208,10 +208,10 @@ public class PlayerSlotManager : MonoBehaviour
         {
             checkCardMoveWithinSlot(cardObject.transform);
             Debug.Log("Bottom left slot (4) card moved.");
+            cardTracker.removeFromHand(cardObject);
             StartCoroutine(MoveCard(cardObject.transform, slot4));
             slot4check = true;
             slot4Object = cardObject;
-            cardTracker.removeFromHand(cardObject);
             cardObject = null;
 
         }
@@ -219,10 +219,10 @@ public class PlayerSlotManager : MonoBehaviour
         {
             checkCardMoveWithinSlot(cardObject.transform);
             Debug.Log("Bottom left slot (5) card moved.");
+            cardTracker.removeFromHand(cardObject);
             StartCoroutine(MoveCard(cardObject.transform, slot5));
             slot5check = true;
             slot5Object = cardObject;
-            cardTracker.removeFromHand(cardObject);
             cardObject = null;
 
         }
@@ -230,10 +230,10 @@ public class PlayerSlotManager : MonoBehaviour
         {
             checkCardMoveWithinSlot(cardObject.transform);
             Debug.Log("Bottom left slot (6) card moved.");
+            cardTracker.removeFromHand(cardObject);
             StartCoroutine(MoveCard(cardObject.transform, slot6));
             slot6check = true;
             slot6Object = cardObject;
-            cardTracker.removeFromHand(cardObject);
             cardObject = null;
 
         }
