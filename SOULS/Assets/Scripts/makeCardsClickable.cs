@@ -22,8 +22,7 @@ public class makeCardsClickable : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //finding where in 3D space the player clicks
         RaycastHit hit; //variable to track where ray intersects with game objects
         if(Input.GetMouseButtonDown(0)) { //if user clicks
-            if(Physics.Raycast(ray,out hit) && hit.collider.gameObject == gameObject) { //if click on button
-                //CamSwitch.switchToTable(); //make camera look over table
+            if(Physics.Raycast(ray,out hit) && hit.collider.gameObject == gameObject) { //if click on card
                 PlayerSlotManager.cardClicked(card); //send card as game object to slot code
             }
         }
