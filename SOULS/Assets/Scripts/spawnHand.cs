@@ -137,6 +137,7 @@ public class spawnHand : MonoBehaviour
             cardObj.name = (prefabID.ToString());
             prefabID += 1;
             cardTracker.addToHand(cardObj); //adding game object to hand card tracker
+            //cardTracker.addHandScript(c);
             cardTracker.addCardToDict(cardObj, c); //adding game and script object to card dictionary
 
             //doesn't work?

@@ -11,8 +11,10 @@ public class cardTracker : MonoBehaviour
     //public List<GameObject> slotsGameObj = new List<GameObject>(); //slots tracked as game objects
     //public List<Card> slotsScriptable = new List<Card>(); //slots tracked as scriptable objects
     public GameObject[] slotsGameObj;
+    //public Card[] slotsScripts; //scriptable version
 
     public List<GameObject> cardsInHand = new List<GameObject>(); //same thing but for the player's hand
+    //public List<GameObject> cardsHandScripts = new List<GameObject>(); //scriptable version
 
     private GameObject tempObj;
     private Card tempScript;
@@ -72,6 +74,7 @@ public class cardTracker : MonoBehaviour
     }
     
     public GameObject getObjBySlot(int slot){ //returns the game object in the slot
+        Debug.Log("HERE > " + slotsGameObj);
         if(isSlotFilled(slot)){ //if there is a card in the slot
             int realSlot = slot-1;
             return slotsGameObj[realSlot];
@@ -80,4 +83,47 @@ public class cardTracker : MonoBehaviour
             return null;
         }
     }
+    /*
+    //Scriptable Trackers
+    //Hand
+    public void addHandScript(Card card){ //same thing but for the hand
+        cardsHandScripts.Add(card);
+    }
+
+    public void removeHandScript(Card card) { //card is played
+        cardsHandScripts.Remove(card);
+    }
+
+    //Slots
+    public void addScriptToSlot(Card card, int slot){ //adds card to list, using index to track slot
+        int realSlot = slot-1;
+        Debug.Log("add to slot in card tracker " + realSlot);
+        slotsScripts[realSlot] = card;
+    }
+
+    
+    public void clearScriptSlot(int slot){ //clears the slot that has the passed card contained in it
+        if(isSlotFilledScript(slot)){ //if card in slot
+            slotsScripts[(slot-1)] = null;
+        } 
+    }
+    
+    public bool isSlotFilledScript(int slot){ //returns true if slot has card in it, false if empty
+        if(slotsScripts[(slot-1)] != null){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public Card getScriptBySlot(int slot){ //returns the card in the slot
+        if(isSlotFilledScript(slot)){ //if there is a card in the slot
+            int realSlot = slot-1;
+            return slotsScripts[realSlot];
+        } else { //no card
+            Debug.Log("cardTracker: no card in slot");
+            return null;
+        }
+    }
+    */
 }

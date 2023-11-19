@@ -20,21 +20,21 @@ public class loseHealth : MonoBehaviour
 
     //takes in two card objects and lowers the health of the hit card based on the attacking card's attack stat
     public bool getsAttackedBy(GameObject hitCard, GameObject attackingCard){ //returns true if hitCard dies
-        Debug.Log(hitCard);
         Card hurtCard = cardTracker.getScriptable(hitCard); //Get reference card's scriptable first
         Card aggroCard = cardTracker.getScriptable(attackingCard);
-        //Debug.Log(hurtCard.name);
-        //Debug.Log(aggroCard.name);
+        Debug.Log(hurtCard.name);
+        Debug.Log(aggroCard.name);
         spriteHP = hitCard.gameObject.transform.GetChild(10).gameObject; //HP sprite is 10th index child object of card
        
         int HPtoLose = aggroCard.attack; //get attack of attackingCard
         int currentHP = hurtCard.health;//get current health of hitCard
         int newHealth = currentHP - HPtoLose;//calculate new health
+        Debug.Log(newHealth);
 
         if(newHealth <= 0){ //if health <= 0, update sprite to 0 and kill card
             hurtCard.health = 0; //updating card's health stat
             updatedHPMaterial = Resources.Load<Material>("newZero"); //get material for zero sprite
-            spriteHP.GetComponent<SpriteRenderer>().material = updatedHPMaterial; //update HP sprite to zero
+            spriteHP.GetComponent<MeshRenderer>().material = updatedHPMaterial; //update HP sprite to zero
             Destroy(hitCard); //kill card object
             return true;
         } else { //else, update hp sprite and card hp to new health
@@ -62,7 +62,7 @@ public class loseHealth : MonoBehaviour
                 Debug.Log("Error: newHealth out of bounds"); //log error
                 break;
             }
-            spriteHP.GetComponent<SpriteRenderer>().material = updatedHPMaterial; //update HP sprite
+            spriteHP.GetComponent<MeshRenderer>().material = updatedHPMaterial; //update HP sprite
             hurtCard.health = newHealth; //updating health stat in card
             return false;
         }

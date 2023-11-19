@@ -25,6 +25,7 @@ public class turnManager : MonoBehaviour
     public OpponentSlotManager OpponentSlotManager;
     public PlayerSlotManager PlayerSlotManager;
     public attackPhase attackPhase;
+    public cardTracker cardTracker;
     
     //positions cards spawn in (opponent)
         private float horizontalPos = -1.494676f;
@@ -51,6 +52,7 @@ public class turnManager : MonoBehaviour
         OpponentSlotManager = GameObject.Find("OpponentSlotManager").GetComponent<OpponentSlotManager>();
         PlayerSlotManager = GameObject.Find("PlayerSlotManager").GetComponent<PlayerSlotManager>();
         attackPhase = GameObject.Find("attackPhase").GetComponent<attackPhase>();
+        cardTracker = GameObject.Find("cardTracker").GetComponent<cardTracker>();
         
         //draw cards
         makeDeck.GameStart();
@@ -205,6 +207,8 @@ public class turnManager : MonoBehaviour
                 else if (c.id == 5) {
                     cardObj = Instantiate(police5, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
                 }
+                cardTracker.addCardToDict(cardObj, c); //add to tracker
+                
                 cardObj.name = (spawnHand.prefabID.ToString());
                 spawnHand.prefabID += 1;
 
@@ -277,6 +281,7 @@ public class turnManager : MonoBehaviour
                     else if (c.id == 5) {
                         cardObj = Instantiate(police5, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
                     }
+                    cardTracker.addCardToDict(cardObj, c); //add to tracker
 
                     //get list of empty slots
                     emptySlots = OpponentSlotManager.checkEmpty();
