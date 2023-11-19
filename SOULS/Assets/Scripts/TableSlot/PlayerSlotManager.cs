@@ -21,6 +21,7 @@ public class PlayerSlotManager : MonoBehaviour
     public bool interpolateRotation = true;
 
     public cardTracker cardTracker;
+    public makeDeck makeDeck;
     private bool isMoving = false;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
@@ -37,6 +38,7 @@ public class PlayerSlotManager : MonoBehaviour
     public void Start()
     {
         cardTracker = GameObject.Find("cardTracker").GetComponent<cardTracker>(); //load reference
+        makeDeck = GameObject.Find("makeDeck").GetComponent<makeDeck>(); //load reference
         /*
         originalPosition = transform.position;
         originalRotation = transform.rotation;
