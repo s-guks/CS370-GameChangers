@@ -46,11 +46,20 @@ public class cardTracker : MonoBehaviour
         cardsInHand.Add(card);
     }
 
-    public void removeFromHand(GameObject card) { //card is played
-        cardsInHand.Remove(card);
+    public void removeFromHand(GameObject card)
+    {
+        if (cardsInHand.Contains(card))
+        {
+            Debug.Log("Removing card from hand: " + card.name);
+            cardsInHand.Remove(card);
+        }
+        else
+        {
+            Debug.Log("Card not found in hand: " + card.name);
+        }
     }
-    
-    
+
+
     //Slot Tracker
     public void addToSlot(GameObject card, int slot){ //adds card to list, using index to track slot
         int realSlot = slot-1;
