@@ -349,6 +349,7 @@ public class turnManager : MonoBehaviour
         //turn is over
         isOpponentTurn = false;
         opponentAttackPhase();
+        PlayerSlotManager.moveForward();
 
         //check if opponent has won after opponsnt's attack phase ends
         playerEmptySlots = PlayerSlotManager.checkEmpty();
