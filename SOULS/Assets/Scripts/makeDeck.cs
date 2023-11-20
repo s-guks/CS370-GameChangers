@@ -137,7 +137,7 @@ public class makeDeck : MonoBehaviour {
     public Card DrawRandom()
     {
         var rand = new System.Random();
-        int r = rand.Next(0, 5);
+        int r = rand.Next(0, 7);        //number of cards in Awake()
         Card temp = ScriptableObject.CreateInstance<Card>();
         temp.cardName = Cards[r].cardName;
         temp.id = Cards[r].id;
@@ -163,7 +163,7 @@ public class makeDeck : MonoBehaviour {
         for (int i = 0; i < numberOfCards; i++)
         {
             var rand = new System.Random();
-            int r = rand.Next(0, 6);
+            int r = rand.Next(0, 7);       //number of cards in Awake()
             Card temp = ScriptableObject.CreateInstance<Card>();
             temp.cardName = Cards[r].cardName;
             temp.id = Cards[r].id;
@@ -185,10 +185,11 @@ public class makeDeck : MonoBehaviour {
     }
 
     public void Draw(string hand, string deck, int draw_amount){
-        if (Decks[deck].Peek() == null) return;
+        Debug.Log(Decks[deck].Count);
+        if (Decks[deck].Count == 1) return;
         while (Decks[deck].Peek() != null && draw_amount > 0) {
             Hands[hand].Add(Decks[deck].Pop());
-            draw_amount--;
+            draw_amount -= 1;
         }
     }
 

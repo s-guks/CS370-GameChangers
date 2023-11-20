@@ -11,6 +11,7 @@ public class OpponentSlotManager : MonoBehaviour
     public Transform slot11;
     public Transform slot12;
     public cardTracker cardTracker;
+    public makeDeck makeDeck;
     private GameObject slot7Object = null;
     private GameObject slot8Object = null;
     private GameObject slot9Object = null;
@@ -41,6 +42,7 @@ public class OpponentSlotManager : MonoBehaviour
     public void Start()
     {
         cardTracker = GameObject.Find("cardTracker").GetComponent<cardTracker>(); //load reference
+        makeDeck = GameObject.Find("makeDeck").GetComponent<makeDeck>();
     }
 
     // Update is called once per frame
@@ -114,7 +116,7 @@ public class OpponentSlotManager : MonoBehaviour
         }
     }
 
-    // Allow card objects to be moved from player's hand to opponent's hand
+    // Allow card objects to be moved from opponent's hand to opponent's slots
     public void moveByClick(GameObject cardObject, int num)
     {
         originalPosition = cardObject.transform.position;
@@ -129,6 +131,9 @@ public class OpponentSlotManager : MonoBehaviour
 
         if (num == 7 && !isMoving && !slot7check)
         {
+            //discard from deck in makeDeck
+            makeDeck.Discard("hand2", 0);
+
             StartCoroutine(MoveCard(cardObject.transform, slot7));
             slot7Object = cardObject;
             cardTracker.addToSlot(cardObject, 7);
@@ -137,6 +142,9 @@ public class OpponentSlotManager : MonoBehaviour
         }
         else if (num == 8 && !isMoving && !slot8check)
         {
+            //discard from deck in makeDeck
+            makeDeck.Discard("hand2", 0);
+
             StartCoroutine(MoveCard(cardObject.transform, slot8));
             slot8Object = cardObject;
             cardTracker.addToSlot(cardObject, 8);
@@ -145,6 +153,9 @@ public class OpponentSlotManager : MonoBehaviour
         }
         else if (num == 9 && !isMoving && !slot9check)
         {
+            //discard from deck in makeDeck
+            makeDeck.Discard("hand2", 0);
+
             StartCoroutine(MoveCard(cardObject.transform, slot9));
             slot9Object = cardObject;
             cardTracker.addToSlot(cardObject, 9);
@@ -153,6 +164,9 @@ public class OpponentSlotManager : MonoBehaviour
         }
         else if (num == 10 && !isMoving && !slot10check)
         {
+            //discard from deck in makeDeck
+            makeDeck.Discard("hand2", 0);
+
             Debug.Log("Front Row Full check.");
             StartCoroutine(MoveCard(cardObject.transform, slot10));
             slot10Object = cardObject;
@@ -162,6 +176,9 @@ public class OpponentSlotManager : MonoBehaviour
         }
         else if (num == 11 && !isMoving && !slot11check)
         {
+            //discard from deck in makeDeck
+            makeDeck.Discard("hand2", 0);
+
             StartCoroutine(MoveCard(cardObject.transform, slot11));
             slot11Object = cardObject;
             cardTracker.addToSlot(cardObject, 11);
@@ -170,6 +187,9 @@ public class OpponentSlotManager : MonoBehaviour
         }
         else if (num == 12 && !isMoving && !slot12check)
         {
+            //discard from deck in makeDeck
+            makeDeck.Discard("hand2", 0);
+
             StartCoroutine(MoveCard(cardObject.transform, slot12));
             slot12Object = cardObject;
             cardTracker.addToSlot(cardObject, 12);
