@@ -266,6 +266,12 @@ public class turnManager : MonoBehaviour
     //alter the game state to the opponent's turn (every turn but the first)
     private void opponentTurn() {
 
+        //double-check that the opponent didn't just lose
+        emptySlots = OpponentSlotManager.checkEmpty();
+            if (emptySlots.Count == 6) {
+                winGame();
+            }
+
         tieCheck += 1;
         
         isOpponentTurn = true;
@@ -388,7 +394,7 @@ public class turnManager : MonoBehaviour
 
             //winner is the one with more cards on the table
             //if equal, player wins
-            if (emptyOpSlots.Count > emptyPlSlots.Count) {
+            if (emptyOpSlots.Count < emptyPlSlots.Count) {
                 loseGame();
             }
             else {
