@@ -208,7 +208,6 @@ public class OpponentSlotManager : MonoBehaviour
         }
     }
 
-
     IEnumerator MoveCard(Transform cardObject, Transform newLocation)
     {
         isMoving = true;

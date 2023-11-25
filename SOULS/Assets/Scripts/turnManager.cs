@@ -121,6 +121,7 @@ public class turnManager : MonoBehaviour
         }
     }
 
+
     //end the attack phase
     //public, can be referenced by other scripts
     public void endAttack() {
@@ -167,7 +168,7 @@ public class turnManager : MonoBehaviour
         //cards in the back row without a card in front of them move forward
         //this happens once before the attacking starts and once after
         PlayerSlotManager.moveForward();
-
+        
         //cards attack each other
         attackPhase.startAttack(true); //true means it is the player's attack phase
 
@@ -263,6 +264,23 @@ public class turnManager : MonoBehaviour
         playerTurn();
     }
 
+    IEnumerator Wait()
+    {
+        Debug.Log("Before waiting for 2 seconds");
+        yield return new WaitForSeconds(2f);
+        Debug.Log("After waiting for 2 seconds");
+        opponentAttackPhase();
+        PlayerSlotManager.moveForward();
+
+        //check if opponent has won after opponsnt's attack phase ends
+        playerEmptySlots = PlayerSlotManager.checkEmpty();
+        if (playerEmptySlots.Count == 6)
+        {
+            loseGame();
+        }
+        playerTurn();
+    }
+
     //alter the game state to the opponent's turn (every turn but the first)
     private void opponentTurn() {
 
@@ -354,15 +372,8 @@ public class turnManager : MonoBehaviour
 
         //turn is over
         isOpponentTurn = false;
-        opponentAttackPhase();
-        PlayerSlotManager.moveForward();
-
-        //check if opponent has won after opponsnt's attack phase ends
-        playerEmptySlots = PlayerSlotManager.checkEmpty();
-            if (playerEmptySlots.Count == 6) {
-                loseGame();
-            }
-        playerTurn();
+        StartCoroutine(Wait());
+        
     }
 
     //opponent's cards attack the player's cards
