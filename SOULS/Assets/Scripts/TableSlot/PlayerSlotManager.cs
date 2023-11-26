@@ -431,4 +431,41 @@ public class PlayerSlotManager : MonoBehaviour
         }
     }
 
+    public float moveSpeed = 5f; // Adjust the speed as needed
+    private bool isMovingForward = true;
+
+    void attackanimation()
+    {
+        if (isMovingForward)
+        {
+            MoveForward();
+        }
+        else
+        {
+            MoveBackward();
+        }
+    }
+
+    void MoveForward()
+    {
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+
+        // Check if the card has moved far enough forward
+        if (transform.position.z >= 5f) // Adjust the threshold as needed
+        {
+            isMovingForward = false;
+        }
+    }
+
+    void MoveBackward()
+    {
+        transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+
+        // Check if the card has moved back to the original position
+        if (transform.position.z <= 0f) // Assuming the original position is at z = 0
+        {
+            isMovingForward = true;
+        }
+    }
+
 }
