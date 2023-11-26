@@ -50,6 +50,7 @@ public class attackPhase : MonoBehaviour
         oppoCard = cardTracker.getObjBySlot(oppoSlot);
 
         if(playerTurn){ //player attacking
+            PlayerSlotManager.attackAnimation(playerCard);
             dead = loseHealth.getsAttackedBy(oppoCard, playerCard); //player is attackingCard
             if(dead){ //if card died, clear slot
                 cardTracker.clearSlot(oppoSlot);
