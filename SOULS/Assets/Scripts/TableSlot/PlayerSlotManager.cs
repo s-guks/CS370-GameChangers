@@ -186,12 +186,12 @@ public class PlayerSlotManager : MonoBehaviour
             Debug.Log("Bottom left slot (1) card moved.");
             cardTracker.removeFromHand(cardObject);
             cardTracker.addToSlot(cardObject, 1);
-            
+
             //discard from deck in makeDeck
             Card c = cardTracker.getScriptable(cardObject);
             int index = makeDeck.Hands["hand1"].IndexOf(c);
             makeDeck.Discard("hand1", index);
-            
+
             StartCoroutine(MoveCard(cardObject.transform, slot1));
             slot1check = true;
             slot1Object = cardObject;
@@ -431,41 +431,25 @@ public class PlayerSlotManager : MonoBehaviour
         }
     }
 
-    public float moveSpeed = 5f; // Adjust the speed as needed
-    private bool isMovingForward = true;
-
-    void attackanimation()
+    
+    public void attackAnimation(GameObject card, int moveforward)
     {
-        if (isMovingForward)
+        float moveSpeed = 5f; // Adjust the speed as needed
+        float fixedTimeStep = 0.02f;
+        Vector3 targetForwardVector = new Vector3(0f, 0f, 10f);
+        Vector3 targetbackwardVector = new Vector3(0f, 0f, -10f);
+        if (moveforward == 1)
         {
-            MoveForward();
+            Debug.Log("MoveForward");
+            card.transform.Translate(targetForwardVector * moveSpeed * fixedTimeStep);
+            Debug.Log("MoveForward"+ targetForwardVector * moveSpeed * fixedTimeStep);
         }
         else
         {
-            MoveBackward();
+            Debug.Log("MoveBackward");
+            card.transform.Translate(targetbackwardVector * moveSpeed * fixedTimeStep);
+            Debug.Log("MoveBackward" + targetForwardVector * moveSpeed * fixedTimeStep);
         }
+
     }
-
-    void MoveForward()
-    {
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-
-        // Check if the card has moved far enough forward
-        if (transform.position.z >= 5f) // Adjust the threshold as needed
-        {
-            isMovingForward = false;
-        }
-    }
-
-    void MoveBackward()
-    {
-        transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
-
-        // Check if the card has moved back to the original position
-        if (transform.position.z <= 0f) // Assuming the original position is at z = 0
-        {
-            isMovingForward = true;
-        }
-    }
-
 }

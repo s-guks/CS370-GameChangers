@@ -40,7 +40,20 @@ public class attackPhase : MonoBehaviour
             attackForSlots(3, 9, playerTurn);
         }
     }
-
+    IEnumerator WaitBackward(float seconds, GameObject playerCard)
+    {
+        Debug.Log($"Before waiting for {seconds} seconds");
+        yield return new WaitForSeconds(seconds);
+        PlayerSlotManager.attackAnimation(playerCard, 0);
+        Debug.Log($"After waiting for {seconds} seconds");
+    }
+    IEnumerator WaitForward(float seconds, GameObject oppoCard)
+    {
+        Debug.Log($"Before waiting for {seconds} seconds");
+        yield return new WaitForSeconds(seconds);
+        PlayerSlotManager.attackAnimation(oppoCard, 1);
+        Debug.Log($"After waiting for {seconds} seconds");
+    }
     public void attackForSlots(int playerSlot, int oppoSlot, bool playerTurn){
         GameObject playerCard;
         GameObject oppoCard;
@@ -50,13 +63,16 @@ public class attackPhase : MonoBehaviour
         oppoCard = cardTracker.getObjBySlot(oppoSlot);
 
         if(playerTurn){ //player attacking
-            PlayerSlotManager.attackAnimation(playerCard);
+            PlayerSlotManager.attackAnimation(playerCard,1);
+            StartCoroutine(WaitBackward(1, playerCard));
             dead = loseHealth.getsAttackedBy(oppoCard, playerCard); //player is attackingCard
             if(dead){ //if card died, clear slot
                 cardTracker.clearSlot(oppoSlot);
                 OpponentSlotManager.cardterminate(oppoSlot); //opponent card dead
             } 
         } else { //opponent attacking
+            PlayerSlotManager.attackAnimation(oppoCard, 0);
+            StartCoroutine(WaitForward(1, oppoCard));
             dead = loseHealth.getsAttackedBy(playerCard, oppoCard); //player is hitCard
             if(dead){ //if card died, clear slot
                 cardTracker.clearSlot(playerSlot);
