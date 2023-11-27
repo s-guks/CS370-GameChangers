@@ -76,11 +76,12 @@ public class turnManager : MonoBehaviour
         {
             endTurn();
         }
-        //if (Input.GetButtonDown("EndAttack")) 
-        //{
-        //    endAttack();
-        //}
+        //testing commands no longer necessary; attack phase ends automatically
         /*
+        if (Input.GetButtonDown("EndAttack")) 
+        {
+            endAttack();
+        }
         if (Input.GetButtonDown("Esc")) 
         {
             winGame();
@@ -106,7 +107,6 @@ public class turnManager : MonoBehaviour
                 if (firstTurn) {    //different first turn
                     firstTurn = false;
                     PlayerSlotManager.moveForward();
-                    Debug.Log("first turn!");
                     opponentFirstTurn();
                 }
                 else {
@@ -154,7 +154,7 @@ public class turnManager : MonoBehaviour
         //swap the camera to the main camera
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;
-        Debug.Log("player's turn--click z!");
+        Debug.Log("player's turn--click z or the end turn button!");
     }
 
     //the player's cards attack the opponent's cards
@@ -176,7 +176,6 @@ public class turnManager : MonoBehaviour
 
         //end player attack phase
         endAttack();
-        //Debug.Log("attack phase--click x!");
     }
 
     //alter the game state to the opponent's first turn
@@ -236,6 +235,8 @@ public class turnManager : MonoBehaviour
 
                 //move card to random empty slot
                 OpponentSlotManager.moveByClick(cardObj, emptySlots[r2]);
+                
+                //for testing
                 /*
                 foreach (int slot in emptySlots) {
                     Debug.Log("empty slots: " + slot);
@@ -253,8 +254,6 @@ public class turnManager : MonoBehaviour
         }
 
         //opponent DOES NOT have an attack phase
-        
-        //Debug.Log("opponent's first turn");
 
         //if there are cards in the back row, move them forward
         OpponentSlotManager.moveForward();
@@ -300,8 +299,6 @@ public class turnManager : MonoBehaviour
         //swap the camera to the main camera
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;
-        
-        //Debug.Log("opponent's turn");
 
         //get list of empty slots
         emptySlots = OpponentSlotManager.checkEmpty();
@@ -314,7 +311,7 @@ public class turnManager : MonoBehaviour
         int length = makeDeck.Hands["hand2"].Count;
                 
                 while (length > 0) {
-                    if (emptySlots.Count > 0) {
+                    if (r > 0) {
 
                         tieCheck = 0;
                         
@@ -354,6 +351,7 @@ public class turnManager : MonoBehaviour
                         //move card to random empty slot
                         OpponentSlotManager.moveByClick(cardObj, emptySlots[r2]);
 
+                        //for testing
                         //Debug.Log("moved " + cardObj + " to " + emptySlots[r2]);
 
                         i+=1;
@@ -363,9 +361,6 @@ public class turnManager : MonoBehaviour
                         length = -1;
                     }
                 }
-            
-        
-
 
         //if there are cards in the back row with no card in front of them, move them forward
         OpponentSlotManager.moveForward();
@@ -373,7 +368,6 @@ public class turnManager : MonoBehaviour
         //turn is over
         isOpponentTurn = false;
         StartCoroutine(Wait());
-        
     }
 
     //opponent's cards attack the player's cards
@@ -386,8 +380,6 @@ public class turnManager : MonoBehaviour
 
         //opponent attacks
         attackPhase.startAttack(false); //false means it is not the player's attack (ie. it's the opponent's)
-
-        //Debug.Log("opponent's attack phase");
 
         //if there are cards in the back row with no card in front of them, move them forward
         OpponentSlotManager.moveForward();

@@ -73,6 +73,7 @@ public class spawnHand : MonoBehaviour
             //Debug.Log(cardsHeld);
             cardLocHorizontal = boxDistance / cardsHeld;
         }
+        
         /*
         //make cards hoverable
         //currently broken
