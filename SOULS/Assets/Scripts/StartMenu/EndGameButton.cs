@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events; //added to trigger events
 
 
-public class endGameButton : MonoBehaviour
+public class EndGameButton : MonoBehaviour
 {
     public UnityEvent unityEvent = new UnityEvent(); //variable to call unity events
     public GameObject button; //variable for button object

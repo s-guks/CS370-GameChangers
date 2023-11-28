@@ -23,6 +23,6 @@ public class MenuManager : MonoBehaviour
     }
     
     public void quitGame() {
-        Application.Quit();
+        SceneManager.LoadScene("Tutorial1", LoadSceneMode.Single);
     }
 }
