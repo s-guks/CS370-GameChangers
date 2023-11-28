@@ -432,23 +432,47 @@ public class PlayerSlotManager : MonoBehaviour
     }
 
     
-    public void attackAnimation(GameObject card, int moveforward)
+    public void attackAnimation(GameObject card, int player, int moveforward)
     {
         float moveSpeed = 5f; // Adjust the speed as needed
         float fixedTimeStep = 0.02f;
         Vector3 targetForwardVector = new Vector3(0f, 0f, 10f);
         Vector3 targetbackwardVector = new Vector3(0f, 0f, -10f);
-        if (moveforward == 1)
+        Vector3 targetupwardVector = new Vector3(0f, 3f, 0f);
+        Vector3 targetdownwardVector = new Vector3(0f, -3f, 0);
+        if(player == 1)
         {
-            Debug.Log("MoveForward");
-            card.transform.Translate(targetForwardVector * moveSpeed * fixedTimeStep);
-            Debug.Log("MoveForward"+ targetForwardVector * moveSpeed * fixedTimeStep);
+            if (moveforward == 1)
+            {
+                Debug.Log("MoveForward");
+                card.transform.Translate(targetForwardVector * moveSpeed * fixedTimeStep);
+                card.transform.Translate(targetupwardVector * 2f * 0.01f);
+                Debug.Log("MoveForward" + targetForwardVector * moveSpeed * fixedTimeStep);
+            }
+            else
+            {
+                Debug.Log("MoveBackward");
+                card.transform.Translate(targetbackwardVector * moveSpeed * fixedTimeStep);
+                card.transform.Translate(targetdownwardVector * 2f * 0.01f);
+                Debug.Log("MoveBackward" + targetForwardVector * moveSpeed * fixedTimeStep);
+            }
         }
         else
         {
-            Debug.Log("MoveBackward");
-            card.transform.Translate(targetbackwardVector * moveSpeed * fixedTimeStep);
-            Debug.Log("MoveBackward" + targetForwardVector * moveSpeed * fixedTimeStep);
+            if (moveforward == 1)
+            {
+                Debug.Log("MoveForward");
+                card.transform.Translate(targetForwardVector * moveSpeed * fixedTimeStep);
+                card.transform.Translate(targetdownwardVector * 2f * 0.01f);
+                Debug.Log("MoveForward" + targetForwardVector * moveSpeed * fixedTimeStep);
+            }
+            else
+            {
+                Debug.Log("MoveBackward");
+                card.transform.Translate(targetbackwardVector * moveSpeed * fixedTimeStep);
+                card.transform.Translate(targetupwardVector * 2f * 0.01f);
+                Debug.Log("MoveBackward" + targetForwardVector * moveSpeed * fixedTimeStep);
+            }
         }
 
     }
