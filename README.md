@@ -25,7 +25,8 @@ The flow of this game is managed using C#.
 **Team Members:** Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
 
 ---
-**Links:** <br>
+**Links:** <br> 
+[Sprint 7](https://docs.google.com/presentation/d/1JPCw2pf5SY3mDqqvEpe6-B19-wYBktfqHLsJGcHbh-0/edit?usp=sharing) <br>
 [Sprint 7](https://docs.google.com/presentation/d/1zNFlW2Mme1dszAlPT7xyroy-G7-WdNrEFqM3euskduA/edit#slide=id.g285146d2de8_2_1540) <br>
 [Sprint 6](https://docs.google.com/presentation/d/1AY7oRZFdKcCpWTRR7ZDauV4nz9rFj0WTXKzpFI0j3UE/edit?usp=sharing) <br>
 [Sprint 5](https://docs.google.com/presentation/d/16NwYxn2YLF7hW1fJyc-IWQ1-dl39KmfO1AtW9A-4kVc/edit#slide=id.g28e0cbf70ff_1_25) <br>
