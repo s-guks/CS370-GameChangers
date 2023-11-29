@@ -30,7 +30,7 @@ public class growOnMouseOver : MonoBehaviour
     {
         Grow(false);
     }
-
+//grow method to start or stop the animation
     public void Grow(bool isMouseOver)
     {
         IsMouseOver = isMouseOver;
@@ -45,7 +45,7 @@ public class growOnMouseOver : MonoBehaviour
 
         co = StartCoroutine(AnimateGrow());
     }
-
+//coroutine to animate the object
     IEnumerator AnimateGrow()
     {
         float elapsed = 0.0f;
