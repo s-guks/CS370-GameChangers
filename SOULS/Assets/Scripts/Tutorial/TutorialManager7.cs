@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class TutorialManager2 : MonoBehaviour
+public class TutorialManager7 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

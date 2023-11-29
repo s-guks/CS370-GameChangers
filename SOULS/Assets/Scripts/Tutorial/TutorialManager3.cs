@@ -18,11 +18,11 @@ public class TutorialManager3 : MonoBehaviour
         
     }
 
-    public void previous1() {
-        SceneManager.LoadScene("Tutorial1", LoadSceneMode.Single);
+    public void previous2() {
+        SceneManager.LoadScene("Tutorial2", LoadSceneMode.Single);
     }
     
-    public void next3() {
-        SceneManager.LoadScene("Tutorial3", LoadSceneMode.Single);
+    public void next4() {
+        SceneManager.LoadScene("Tutorial4", LoadSceneMode.Single);
     }
 }
