@@ -35,10 +35,14 @@ public class PlayerSlotManager : MonoBehaviour
     private bool cardSelected = false;
     private GameObject cardObject;
 
+    public Material transparent;
+    public GameObject clickedBox;
+
     public void Start()
     {
         cardTracker = GameObject.Find("cardTracker").GetComponent<cardTracker>(); //load reference
         makeDeck = GameObject.Find("makeDeck").GetComponent<makeDeck>(); //load reference
+        transparent = Resources.Load<Material>("Transparent"); //loading transparent material for unhighlighting card
         /*
         originalPosition = transform.position;
         originalRotation = transform.rotation;
@@ -192,6 +196,7 @@ public class PlayerSlotManager : MonoBehaviour
             int index = makeDeck.Hands["hand1"].IndexOf(c);
             makeDeck.Discard("hand1", index);
 
+            makeTransparent(); //unhighlight card
             StartCoroutine(MoveCard(cardObject.transform, slot1));
             slot1check = true;
             slot1Object = cardObject;
@@ -209,6 +214,7 @@ public class PlayerSlotManager : MonoBehaviour
             int index = makeDeck.Hands["hand1"].IndexOf(c);
             makeDeck.Discard("hand1", index);
 
+            makeTransparent(); //unhighlight card
             StartCoroutine(MoveCard(cardObject.transform, slot2));
             slot2check = true;
             slot2Object = cardObject;
@@ -227,6 +233,7 @@ public class PlayerSlotManager : MonoBehaviour
             int index = makeDeck.Hands["hand1"].IndexOf(c);
             makeDeck.Discard("hand1", index);
 
+            makeTransparent(); //unhighlight card
             StartCoroutine(MoveCard(cardObject.transform, slot3));
             slot3check = true;
             slot3Object = cardObject;
@@ -244,7 +251,8 @@ public class PlayerSlotManager : MonoBehaviour
             Card c = cardTracker.getScriptable(cardObject);
             int index = makeDeck.Hands["hand1"].IndexOf(c);
             makeDeck.Discard("hand1", index);
-
+            
+            makeTransparent(); //unhighlight card
             StartCoroutine(MoveCard(cardObject.transform, slot4));
             slot4check = true;
             slot4Object = cardObject;
@@ -263,6 +271,7 @@ public class PlayerSlotManager : MonoBehaviour
             int index = makeDeck.Hands["hand1"].IndexOf(c);
             makeDeck.Discard("hand1", index);
 
+            makeTransparent(); //unhighlight card
             StartCoroutine(MoveCard(cardObject.transform, slot5));
             slot5check = true;
             slot5Object = cardObject;
@@ -281,6 +290,7 @@ public class PlayerSlotManager : MonoBehaviour
             int index = makeDeck.Hands["hand1"].IndexOf(c);
             makeDeck.Discard("hand1", index);
 
+            makeTransparent(); //unhighlight card
             StartCoroutine(MoveCard(cardObject.transform, slot6));
             slot6check = true;
             slot6Object = cardObject;
@@ -476,4 +486,10 @@ public class PlayerSlotManager : MonoBehaviour
         }
 
     }
+
+    public void makeTransparent(){ // unhighlights the clickable box around the card
+        clickedBox = cardObject.gameObject.transform.GetChild(0).gameObject; //get the clickable box
+        clickedBox.GetComponent<MeshRenderer>().material = transparent; //reset the material to transparent
+    }
+
 }
