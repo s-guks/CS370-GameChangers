@@ -43,5 +43,21 @@ public class makeDrawCardButtonClickable : MonoBehaviour
                 }
             }
         }
+
+        //keyboard shortcut, same as above
+        if (Input.GetButtonDown("DrawCard")) 
+        {
+            if (turnManager.isPlayerTurn && !turnManager.drawWasClicked) {
+                    //draw card into database
+                    makeDeck.Draw("hand1", "deck1", 1); 
+
+                    //spawn card
+                    spawnHand.spawnCards();
+
+                    //can only draw one card per turn
+                    turnManager.drawWasClicked = true;
+                }
+        }
     }
+
 }
