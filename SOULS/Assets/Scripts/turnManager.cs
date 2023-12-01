@@ -54,6 +54,8 @@ public class turnManager : MonoBehaviour
     //check if no cards are being played
     private int tieCheck;
 
+    public GameObject turnSign; //for changing the material of the turn sign
+
     // Start is called before the first frame update
     void Start()
     {
@@ -153,6 +155,7 @@ public class turnManager : MonoBehaviour
     //alter the game state to the player's turn
     private void playerTurn() {
         isPlayerTurn = true;
+        changeSign(true);
 
         //enable draw card button
         drawWasClicked = false;
@@ -187,6 +190,7 @@ public class turnManager : MonoBehaviour
     //alter the game state to the opponent's first turn
     private void opponentFirstTurn() {
         isOpponentTurn = true;
+        changeSign(false);
 
         //swap the camera to the main camera
         mainCamera.GetComponent<Camera>().enabled = true;
@@ -316,6 +320,7 @@ public class turnManager : MonoBehaviour
         tieCheck += 1;
         
         isOpponentTurn = true;
+        changeSign(false);
 
         //opponent plays cards
         makeDeck.Draw("hand2", "deck2", 1);
@@ -446,6 +451,17 @@ public class turnManager : MonoBehaviour
                 winGame();
             }
         }
+    }
+
+    private void changeSign(bool player){ //changes sign to Player's Turn if true, Opponent's Turn if false
+        Material newSign;
+        if(player){ //player sign
+            newSign = Resources.Load<Material>("playerSign"); //load player sign material
+        } else { //opponent sign
+            newSign = Resources.Load<Material>("opponentSign"); //load opponent sign material
+        }
+        turnSign.GetComponent<MeshRenderer>().material = newSign; //update sign material
+        return;
     }
 
 }
