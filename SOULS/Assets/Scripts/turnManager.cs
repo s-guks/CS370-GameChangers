@@ -163,7 +163,7 @@ public class turnManager : MonoBehaviour
         //swap the camera to the main camera
         mainCamera.GetComponent<Camera>().enabled = true;
         tableCamera.GetComponent<Camera>().enabled = false;
-        Debug.Log("player's turn--click z or the end turn button!");
+        //Debug.Log("player's turn--click z or the end turn button!");
     }
 
     //the player's cards attack the opponent's cards
@@ -402,6 +402,7 @@ public class turnManager : MonoBehaviour
                         //Debug.Log("moved " + cardObj + " to " + emptySlots[r2]);
 
                         i+=1;
+                        r = r-1;
                         length = makeDeck.Hands["hand2"].Count;
                     }
                     else {

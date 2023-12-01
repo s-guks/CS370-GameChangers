@@ -17,4 +17,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseGame.unity
     guid: c343d6520a83a5a4b8e040a1d5cac4eb
+  - enabled: 1
+    path: Assets/Scenes/Tutorial1.unity
+    guid: b2626f2db2270d5438abf2a881285206
+  - enabled: 1
+    path: Assets/Scenes/Tutorial2.unity
+    guid: ca613ad9b5a178a49bec0ffce9d14596
+  - enabled: 1
+    path: Assets/Scenes/Tutorial3.unity
+    guid: ef7d407ea5e95e748a1853d8a2b196fc
+  - enabled: 1
+    path: Assets/Scenes/Tutorial4.unity
+    guid: 7933fafad4745c94f88b1a04b4d44bac
+  - enabled: 1
+    path: Assets/Scenes/Tutorial5.unity
+    guid: a91e2a2bc12a84b44aa5ce4120af458f
+  - enabled: 1
+    path: Assets/Scenes/Tutorial6.unity
+    guid: a680cca0c7a907a43897b140bd0466b6
   m_configObjects: {}
