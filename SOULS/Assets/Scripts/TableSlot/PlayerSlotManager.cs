@@ -100,7 +100,7 @@ public class PlayerSlotManager : MonoBehaviour
 
     public void cardClicked(GameObject card)
     {
-        if(alreadyClicked && cardObject != null){ //if new card was clicked (should never be null and true at same time, but added as safeguard)
+        if(alreadyClicked){ //if new card was clicked (should never be null and true at same time, but added as safeguard)
             makeTransparent(cardObject); //unhighlight previously clicked card
                 //cardObject works here since it hasn't been updated yet
             alreadyClicked = false;
