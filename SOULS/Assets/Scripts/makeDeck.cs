@@ -235,7 +235,7 @@ public class makeDeck : MonoBehaviour {
         for (int i = 0; i < numberOfCards; i++)
         {
             var rand = new System.Random();
-            double d = rand.NextDouble(0, 1);
+            double d = rand.NextDouble();
             Card temp = ScriptableObject.CreateInstance<Card>();
             int r;
             if (d < 0.05)
