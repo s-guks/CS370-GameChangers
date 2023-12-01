@@ -20,6 +20,12 @@ public class spawnHand : MonoBehaviour
     public GameObject police5;
     public GameObject teacher6;
     public GameObject judge7;
+    public GameObject waitress8;
+    public GameObject detective9;
+    public GameObject plumber10;
+    public GameObject chef11;
+    public GameObject pilot12;
+    public GameObject developer13;
     
     //positions cards spawn in 
     private float horizontalPos = -0.8f;
@@ -143,6 +149,25 @@ public class spawnHand : MonoBehaviour
             else if (c.id == 7) {
                 cardObj = Instantiate(judge7, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
             }
+            else if (c.id == 8) {
+                cardObj = Instantiate(waitress8, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
+            }
+            else if (c.id == 9) {
+                cardObj = Instantiate(detective9, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
+            }
+            else if (c.id == 10) {
+                cardObj = Instantiate(plumber10, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
+            }
+            else if (c.id == 11) {
+                cardObj = Instantiate(chef11, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
+            }
+            else if (c.id == 12) {
+                cardObj = Instantiate(pilot12, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
+            }
+            else if (c.id == 13) {
+                cardObj = Instantiate(developer13, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.Euler(-70f, 0.0f, 0.0f));
+            }
+
             cardObj.name = (prefabID.ToString());
             prefabID += 1;
             cardTracker.addToHand(cardObj); //adding game object to hand card tracker

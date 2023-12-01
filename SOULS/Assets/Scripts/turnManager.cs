@@ -40,6 +40,12 @@ public class turnManager : MonoBehaviour
     public GameObject police5;
     public GameObject teacher6;
     public GameObject judge7;
+    public GameObject waitress8;
+    public GameObject detective9;
+    public GameObject plumber10;
+    public GameObject chef11;
+    public GameObject pilot12;
+    public GameObject developer13;
 
     //list of empty opponent slots
     private List<int> emptySlots;
@@ -224,6 +230,24 @@ public class turnManager : MonoBehaviour
                 else if (c.id == 7) {
                     cardObj = Instantiate(judge7, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
                 }
+                else if (c.id == 8) {
+                cardObj = Instantiate(waitress8, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                }
+                else if (c.id == 9) {
+                    cardObj = Instantiate(detective9, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                }
+                else if (c.id == 10) {
+                    cardObj = Instantiate(plumber10, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                }
+                else if (c.id == 11) {
+                    cardObj = Instantiate(chef11, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                }
+                else if (c.id == 12) {
+                    cardObj = Instantiate(pilot12, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                }
+                else if (c.id == 13) {
+                    cardObj = Instantiate(developer13, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                }
                 cardTracker.addCardToDict(cardObj, c); //add to tracker
                 
                 cardObj.name = (spawnHand.prefabID.ToString());
@@ -338,6 +362,24 @@ public class turnManager : MonoBehaviour
                         }
                         else if (c.id == 7) {
                             cardObj = Instantiate(judge7, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                        }
+                        else if (c.id == 8) {
+                            cardObj = Instantiate(waitress8, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                        }
+                        else if (c.id == 9) {
+                            cardObj = Instantiate(detective9, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                        }
+                        else if (c.id == 10) {
+                            cardObj = Instantiate(plumber10, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                        }
+                        else if (c.id == 11) {
+                            cardObj = Instantiate(chef11, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                        }
+                        else if (c.id == 12) {
+                            cardObj = Instantiate(pilot12, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
+                        }
+                        else if (c.id == 13) {
+                            cardObj = Instantiate(developer13, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);
                         }
                         else { //if there's no id just spawn a butcher 
                             cardObj = Instantiate(butcher1, new Vector3(horizontalPos, verticalPos, depthPos), Quaternion.identity);

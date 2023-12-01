@@ -57,7 +57,7 @@ public class makeDeck : MonoBehaviour {
         c1.skill = null;
         c1.texture = 1;
         c1.borderColor = null;
-        c1.probability = 1;
+        c1.probability = 1; //good? card
         c1.idObj = 0;
         Cards.Add(c1);
 
@@ -69,7 +69,7 @@ public class makeDeck : MonoBehaviour {
         c2.skill = null;
         c2.texture = 1;
         c2.borderColor = null;
-        c2.probability = 1;
+        c2.probability = 1; //mid card
         c2.idObj = 0;
         Cards.Add(c2);
 
@@ -81,19 +81,19 @@ public class makeDeck : MonoBehaviour {
         c3.skill = null;
         c3.texture = 1;
         c3.borderColor = null;
-        c3.probability = 1;
+        c3.probability = 1; //mid card
         c3.idObj = 0;
         Cards.Add(c3);
 
         Card c4 = ScriptableObject.CreateInstance<Card>();
         c4.cardName = "Natalie the Nurse";
         c4.id = 4;
-        c4.attack = 2;
-        c4.health = 5;
+        c4.attack = 1;
+        c4.health = 6;
         c4.skill = null;
         c4.texture = 1;
         c4.borderColor = null;
-        c4.probability = 1;
+        c4.probability = 1; //good? card
         c4.idObj = 0;
         Cards.Add(c4);
 
@@ -105,7 +105,7 @@ public class makeDeck : MonoBehaviour {
         c5.skill = null;
         c5.texture = 1;
         c5.borderColor = null;
-        c5.probability = 1;
+        c5.probability = 1; //mid card
         c5.idObj = 0;
         Cards.Add(c5);
 
@@ -117,7 +117,7 @@ public class makeDeck : MonoBehaviour {
         c6.skill = null;
         c6.texture = 1;
         c6.borderColor = null;
-        c6.probability = 1;
+        c6.probability = 1; //mid card
         c6.idObj = 0;
         Cards.Add(c6);
 
@@ -129,15 +129,87 @@ public class makeDeck : MonoBehaviour {
         c7.skill = null;
         c7.texture = 1;
         c7.borderColor = null;
-        c7.probability = 1;
+        c7.probability = 1; //good card
         c7.idObj = 0;
         Cards.Add(c7);
+
+        Card c8 = ScriptableObject.CreateInstance<Card>();
+        c8.cardName = "Wendy the Waitress";
+        c8.id = 8;
+        c8.attack = 2;
+        c8.health = 3;
+        c8.skill = null;
+        c8.texture = 1;
+        c8.borderColor = null;
+        c8.probability = 1; //mid card
+        c8.idObj = 0;
+        Cards.Add(c8);
+
+        Card c9 = ScriptableObject.CreateInstance<Card>();
+        c9.cardName = "Demarco the Detective";
+        c9.id = 9;
+        c9.attack = 4;
+        c9.health = 2;
+        c9.skill = null;
+        c9.texture = 1;
+        c9.borderColor = null;
+        c9.probability = 1; //upper-mid card
+        c9.idObj = 0;
+        Cards.Add(c9);
+        
+        Card c10 = ScriptableObject.CreateInstance<Card>();
+        c10.cardName = "Pedro the Plumber";
+        c10.id = 10;
+        c10.attack = 2;
+        c10.health = 2;
+        c10.skill = null;
+        c10.texture = 1;
+        c10.borderColor = null;
+        c10.probability = 1; //mid card
+        c10.idObj = 0;
+        Cards.Add(c10);
+
+        Card c11 = ScriptableObject.CreateInstance<Card>();
+        c11.cardName = "Chaz the Chef";
+        c11.id = 11;
+        c11.attack = 2;
+        c11.health = 5;
+        c11.skill = null;
+        c11.texture = 1;
+        c11.borderColor = null;
+        c11.probability = 1; //good card
+        c11.idObj = 0;
+        Cards.Add(c11);
+
+        Card c12 = ScriptableObject.CreateInstance<Card>();
+        c12.cardName = "Perry the Pilot";
+        c12.id = 12;
+        c12.attack = 2;
+        c12.health = 3;
+        c12.skill = null;
+        c12.texture = 1;
+        c12.borderColor = null;
+        c12.probability = 1; //mid card
+        c12.idObj = 0;
+        Cards.Add(c12);
+
+        Card c13 = ScriptableObject.CreateInstance<Card>();
+        c13.cardName = "Don the Developer";
+        c13.id = 12;
+        c13.attack = 1;
+        c13.health = 2;
+        c13.skill = null;
+        c13.texture = 1;
+        c13.borderColor = null;
+        c13.probability = 1; //bad card
+        c13.idObj = 0;
+        Cards.Add(c13);
     }
 
     public Card DrawRandom()
     {
         var rand = new System.Random();
-        int r = rand.Next(0, 7);        //number of cards in Awake()
+        int r = rand.Next(0, 13);        //number of cards in Awake()
         Card temp = ScriptableObject.CreateInstance<Card>();
         temp.cardName = Cards[r].cardName;
         temp.id = Cards[r].id;
@@ -163,7 +235,7 @@ public class makeDeck : MonoBehaviour {
         for (int i = 0; i < numberOfCards; i++)
         {
             var rand = new System.Random();
-            int r = rand.Next(0, 7);       //number of cards in Awake()
+            int r = rand.Next(0, 13);       //number of cards in Awake()
             Card temp = ScriptableObject.CreateInstance<Card>();
             temp.cardName = Cards[r].cardName;
             temp.id = Cards[r].id;

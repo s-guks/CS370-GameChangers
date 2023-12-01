@@ -22,14 +22,12 @@ public class loseHealth : MonoBehaviour
     public bool getsAttackedBy(GameObject hitCard, GameObject attackingCard){ //returns true if hitCard dies
         Card hurtCard = cardTracker.getScriptable(hitCard); //Get reference card's scriptable first
         Card aggroCard = cardTracker.getScriptable(attackingCard);
-        Debug.Log(hurtCard.name);
-        Debug.Log(aggroCard.name);
         spriteHP = hitCard.gameObject.transform.GetChild(10).gameObject; //HP sprite is 10th index child object of card
        
         int HPtoLose = aggroCard.attack; //get attack of attackingCard
         int currentHP = hurtCard.health;//get current health of hitCard
         int newHealth = currentHP - HPtoLose;//calculate new health
-        Debug.Log(newHealth);
+        Debug.Log("Updated health: " + newHealth);
 
         if(newHealth <= 0){ //if health <= 0, update sprite to 0 and kill card
             hurtCard.health = 0; //updating card's health stat
