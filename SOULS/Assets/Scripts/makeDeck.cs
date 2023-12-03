@@ -36,8 +36,8 @@ public class makeDeck : MonoBehaviour {
     {
         Decks = new(0);
         Hands = new(0);
-        Decks.Add("deck1", CreateRandomDeck(25));
-        Decks.Add("deck2", CreateRandomDeck(25));
+        Decks.Add("deck1", CreateRandomDeck(15));
+        Decks.Add("deck2", CreateRandomDeck(15));
         Hands.Add("hand1", new List<Card>());
         Hands.Add("hand2", new List<Card>());
         Draw("hand1", "deck1", 4);
