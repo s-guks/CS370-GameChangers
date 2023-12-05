@@ -7,21 +7,21 @@
 This is an implementation of an original turn-based card game implemented in C#. It uses Unity Game Engine. 
 Reminder: Please wait for all card animations to finish executing before pressing the end turn/draw card button. : )
 
-## Rendering
-This game supports rendering via the Unity rendering engine.
-
-## Game Logic
-The flow of this game is managed using C#. 
-
 ## Working With This Repo
 
  - You must have Unity installed.
  - Clone the repo into a directory of your choice.
  - Open 'SOULS' folder as a project in Unity.
-<br>[Documentation] (https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)<br>
+
+<br> [Documentation](https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)<br>
+<br> [Video](https://www.youtube.com/watch?v=YjUHeHK0Nx4)<br>
 
 
+## Rendering
+This game supports rendering via the Unity rendering engine.
 
+## Game Logic
+The flow of this game is managed using C#. 
 
 **Team Members:** Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
 
