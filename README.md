@@ -18,7 +18,7 @@ Reminder: Please wait for all card animations to finish executing before pressin
 
 
 ## **Team Members:** 
-# Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
+### Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
 
 ---
 **Links:** <br> 
