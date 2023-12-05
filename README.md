@@ -13,8 +13,10 @@ Reminder: Please wait for all card animations to finish executing before pressin
  - Clone the repo into a directory of your choice.
  - Open 'SOULS' folder as a project in Unity.
 
-<br> [Documentation](https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)<br>
-<br> [Video](https://www.youtube.com/watch?v=YjUHeHK0Nx4)<br>
+## <br> [Documentation](https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)<br>
+## <br> [Video](https://www.youtube.com/watch?v=YjUHeHK0Nx4)<br>
+
+---
 
 **Links:** <br> 
 [Sprint 8](https://docs.google.com/presentation/d/1JPCw2pf5SY3mDqqvEpe6-B19-wYBktfqHLsJGcHbh-0/edit?usp=sharing) <br>
