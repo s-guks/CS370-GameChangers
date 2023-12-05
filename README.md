@@ -16,11 +16,6 @@ Reminder: Please wait for all card animations to finish executing before pressin
 <br> [Documentation](https://docs.google.com/document/d/1WLhAJvbYEuw6xkpE8mYSTdLun5yRVibJV3SKiy9Iwmg/edit?usp=sharing)<br>
 <br> [Video](https://www.youtube.com/watch?v=YjUHeHK0Nx4)<br>
 
-
-## **Team Members:** 
-### Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
-
----
 **Links:** <br> 
 [Sprint 8](https://docs.google.com/presentation/d/1JPCw2pf5SY3mDqqvEpe6-B19-wYBktfqHLsJGcHbh-0/edit?usp=sharing) <br>
 [Sprint 7](https://docs.google.com/presentation/d/1zNFlW2Mme1dszAlPT7xyroy-G7-WdNrEFqM3euskduA/edit#slide=id.g285146d2de8_2_1540) <br>
@@ -36,6 +31,13 @@ Reminder: Please wait for all card animations to finish executing before pressin
 [Sprint Timeline](https://docs.google.com/document/d/1WYvsGLdKtCPHooCMdgniGkq3gmHA9t2zn91hrpFuEkg/edit?usp=sharing) <br>
 
 ---
+
+
+## **Team Members:** 
+### Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
+
+---
+
 
 **Member A: Brian Hsu**  
 *Skills:* Python, Java, C, Assembly, HTML/CSS<br>
