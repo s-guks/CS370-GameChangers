@@ -4,7 +4,7 @@
 
 [Play the game](https://game-changer-s.itch.io/souls)
 
-This is an implementation of an original turn-based card game implemented in C#. It uses Unity Game Engine.
+This is an implementation of an original turn-based card game implemented in C#. It uses Unity Game Engine. Reminder: Please wait for all card animations to finish executing before pressing the end turn/draw card button. : )
 
 ## Rendering
 This game supports rendering via the Unity rendering engine.
