@@ -17,13 +17,8 @@ Reminder: Please wait for all card animations to finish executing before pressin
 <br> [Video](https://www.youtube.com/watch?v=YjUHeHK0Nx4)<br>
 
 
-## Rendering
-This game supports rendering via the Unity rendering engine.
-
-## Game Logic
-The flow of this game is managed using C#. 
-
-**Team Members:** Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
+## **Team Members:** 
+# Brian Hsu, Danielle Linbeck, James Lai, Samuel Yang, Shirley Yang, Sofia Gukelberger
 
 ---
 **Links:** <br> 
@@ -87,6 +82,13 @@ The flow of this game is managed using C#.
 *Tools:* Figma, Git/Github, Canva, VS Code, Trello <br>
 *Interests:* Video Games, Books, Creative Writing, Ice Hockey <br>
 *Bio:* Senior majoring in CS and Creative Writing <br>
+
+
+## Rendering
+This game supports rendering via the Unity rendering engine.
+
+## Game Logic
+The flow of this game is managed using C#. 
 
 
 
