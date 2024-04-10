@@ -2,7 +2,7 @@
 ## Emory CS 370 Fall 2023
 
 
-[Play the game](https://game-changer-s.itch.io/souls)
+# [Play the game](https://game-changer-s.itch.io/souls)
 
 This is an implementation of an original turn-based card game implemented in C#. It uses Unity Game Engine. 
 Reminder: Please wait for all card animations to finish executing before pressing the end turn/draw card button. : )
